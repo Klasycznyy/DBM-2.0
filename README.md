@@ -1,2 +1,2 @@
-# DBM-2.0
-Discord Bot Maker
+# Commands
+● W tej zakładce znajdziesz masa moich rawdat, polecam korzystać :)
