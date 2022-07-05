@@ -1,22 +1,21 @@
-# 🗂️ Pikes Raw Data Repository 🗂️ 
+# 🗂️ kZelix Rawdaty do DBM v2.0 🗂️ 
 [![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/aqua.png)](#Important)
-## ⚠️ Important ⚠️
-A lot of new commands now require new intents. Please make sure you read the information on the command.
+## ⚠️ Ważne Informację ⚠️
+Wiele nowych komend wymaga teraz nowych intencji. Upewnij się, że przeczytałeś informację na temat polecenia.
 
-Any bugs or issues should be directly reported to Pike#6424 on Discord or open up an issue here. I will be glad to help!
+Wszelkie błędy i problemy należy zgłaszać bezpośrednio do _Perf3kcja#9921 na Discordzie.
 
-All commands listed (non-archive) have been ported over to Discord.js v12. All archived commands/events are no longer supported. They are not ported over and will not be updated
 [![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/aqua.png)](#Important)
-## 📝  Information 📝  
-Welcome to my raw data repository! Here are many of the command sets I have made. Feel free to look around and if you have any questions, dont hestiate to DM me! I am Pike#6424 and I am also in the main DBM Mods Discord server! When I dont respond in DMs, feel free to DM me again to remind me.  I may forget from time to time.
+## 📝 Informację 📝  
+Witam na moim profilu GitHub! Tutaj znajduje się wiele komend, które wykonałem. Czuj się swobodnie i rozejrzyj się, a jeśli masz jakieś pytania, nie krępuj się i napisz do mnie DM! _Perf3kcja#9921. Kiedy nie odpowiadam na DM'y, nie krępuj się i napisz do mnie ponownie DM, aby mi przypomnieć. Mogę zapomnieć od czasu do czasu.
 
-Most of commands/events here are script based to make them easier to do in DBM.
+Większość komend/events tutaj jest oparta na skryptach, aby ułatwić ich wykonanie w DBM v2.0.
 
-I am always taking suggestions and requests and will do my best to update them on time. Any bugs can be reported to me as said above.
+Zawsze przyjmuję sugestie i prośby i zrobię wszystko, aby aktualizować je na czas. Wszelkie błędy mogą być zgłaszane do mnie, jak powiedziano powyżej.
 
-All commands and events here now have a by default enabled updater that notifies the bot owner of an update. It is done only on start.
+Wszystkie komendy i eventy tutaj mają teraz domyślnie włączony updater, który powiadamia właściciela bota o aktualizacji. Jest to wykonywane tylko przy starcie.
 [![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/aqua.png)](#Important)
-## Current Systems  
+## Systemy Bieżące 
   
 #####  - [Invite Manager Rewritten | V1.1](https://github.com/ItzPike/DBM-Rawdata-Releases/tree/master/Invite%20Manager)
 #####  - [Reaction Menu | V1.5.1](https://github.com/ItzPike/DBM-Rawdata-Releases/tree/master/Role%20Reaction%20Menu)
@@ -26,9 +25,9 @@ All commands and events here now have a by default enabled updater that notifies
 #####  - [RPC | V1](https://github.com/ItzPike/DBM-Rawdata-Releases/tree/master/Rock%20Paper%20Scissors)
   
 [![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/aqua.png)](#Important)
-## Archived
-All archived projects are proejects that I have mostly given up on and/or will no longer maintain. No further updates will be pushed to them. All systems outside will be maintained to the best of my ability
+## Archiwizowane
+Wszystkie zarchiwizowane projekty są projektami, które w większości porzuciłem i/lub nie będę ich dłużej utrzymywał. Żadne dalsze aktualizacje nie będą do nich wprowadzane. Wszystkie systemy na zewnątrz będą utrzymywane w miarę moich możliwości.
 [![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/aqua.png)](#Important)
-## How to import
-All command systems here are seperated intially by folders. Every command system folder like Reaction Menu has a commands and events folder. Command folders contain the raw data for the command. The event folder contains the raw data for the events. You would open each file up individually in these folders and you would import them to DBM the usual way with raw data.
+## Jak importować
+Wszystkie systemy komend są tutaj rozdzielone folderami. Każdy folder systemu poleceń, jak np. Commands, ma folder komend i eventów. Otwierasz każdy plik indywidualnie w tych folderach i importujesz je do DBM w zwykły sposób.
 [![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/aqua.png)](#Important)
