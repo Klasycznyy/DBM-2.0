@@ -18,6 +18,7 @@ Wszystkie komendy i eventy tutaj mają teraz domyślnie włączony updater, któ
 ## Systemy Bieżące 
   
 #####  - [4Fun](https://github.com/Klasycznyy/DBM-2.0/tree/main/Commands/4Fun) / v2.0 Beta
+#####  - [Moderacja](https://github.com/Klasycznyy/DBM-2.0/tree/main/Commands/Moderacja) / v2.0 Beta
   
 [![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/aqua.png)](#Important)
 ## Archiwizowane
