@@ -17,7 +17,7 @@ Wszystkie komendy i eventy tutaj mają teraz domyślnie włączony updater, któ
 [![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/aqua.png)](#Important)
 ## Systemy Bieżące 
   
-#####  - [Commands](https://github.com/ItzPike/DBM-Rawdata-Releases/tree/master/Invite%20Manager)
+#####  - [Commands](https://github.com/Klasycznyy/DBM-2.0/tree/main/Commands)
   
 [![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/aqua.png)](#Important)
 ## Archiwizowane
