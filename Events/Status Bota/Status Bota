@@ -1,1 +1,63 @@
-greggerg
+{
+  "name": "status",
+  "temp": "",
+  "event-type": "48",
+  "_id": "jQUvX",
+  "actions": [
+    {
+      "server": "0",
+      "varName": "",
+      "info": "35",
+      "storage": "1",
+      "varName2": "count",
+      "name": "Store Server Info"
+    },
+    {
+      "gameName": "👤 Bot Owner: _perf3kcja",
+      "gameLink": "",
+      "activityType": "LISTENING",
+      "name": "Set Bot Game"
+    },
+    {
+      "time": "5",
+      "measurement": "1",
+      "name": "Wait"
+    },
+    {
+      "gameName": "${tempVars(\"count\")} użytkowników.",
+      "gameLink": "",
+      "activityType": "WATCHING",
+      "name": "Set Bot Game"
+    },
+    {
+      "time": "14",
+      "measurement": "1",
+      "name": "Wait"
+    },
+    {
+      "gameName": ".gg/4fUfNVDPEd",
+      "gameLink": "",
+      "activityType": "PLAYING",
+      "name": "Set Bot Game"
+    },
+    {
+      "time": "6",
+      "measurement": "1",
+      "name": "Wait"
+    },
+    {
+      "call": "1",
+      "name": "Jump to Action"
+    },
+    {
+      "comment": "## Rawdata wykonana przez: _perf3kcja",
+      "color": "#fff700",
+      "name": "Comment"
+    },
+    {
+      "comment": "## I została ona opublikowana na Github.",
+      "color": "#e1ff00",
+      "name": "Comment"
+    }
+  ]
+}
