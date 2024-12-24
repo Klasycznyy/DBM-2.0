@@ -1,0 +1,182 @@
+{
+  "name": "Propozycja",
+  "permissions": "NONE",
+  "permissions2": "NONE",
+  "restriction": "1",
+  "_id": "XYoNO",
+  "actions": [
+    {
+      "channel": "0",
+      "varName": "",
+      "info": "1",
+      "storage": "1",
+      "varName2": "ID",
+      "name": "Store Channel Info"
+    },
+    {
+      "comment": "## V v V ID Kanału gdzie propozycja ma być wysyłana",
+      "color": "#fff700",
+      "name": "Comment"
+    },
+    {
+      "storage": "1",
+      "varName": "ID",
+      "comparison": "1",
+      "value": "1287856306291740703",
+      "branch": {
+        "iftrue": "0",
+        "iffalse": "1"
+      },
+      "name": "Check Variable"
+    },
+    {
+      "user": "1",
+      "varName": "",
+      "info": "4",
+      "storage": "1",
+      "varName2": "avatar",
+      "name": "Store User Info"
+    },
+    {
+      "storage": "0",
+      "varName": "",
+      "reason": "",
+      "name": "Delete Message"
+    },
+    {
+      "member": "1",
+      "varName": "",
+      "info": "3",
+      "storage": "1",
+      "varName2": "tag",
+      "name": "Store Member Info"
+    },
+    {
+      "member": "1",
+      "varName": "",
+      "info": "2",
+      "storage": "1",
+      "varName2": "12x",
+      "name": "Store Member Info"
+    },
+    {
+      "info": "1",
+      "infoIndex": "1",
+      "storage": "1",
+      "varName": "tekst",
+      "name": "Store Command Params"
+    },
+    {
+      "server": "0",
+      "varName": "",
+      "info": "5",
+      "storage": "1",
+      "varName2": "1234",
+      "name": "Store Server Info"
+    },
+    {
+      "info": "0",
+      "find": "1292158833132699710",
+      "storage": "1",
+      "varName": "osoba",
+      "name": "Find Custom Emoji"
+    },
+    {
+      "channel": "0",
+      "varName": "",
+      "message": "",
+      "buttons": [],
+      "selectMenus": [],
+      "attachments": [],
+      "embeds": [
+        {
+          "title": "${tempVars(\"osoba\")} **Sugestie Serwerowe!**",
+          "url": "",
+          "color": "#0f0f0f",
+          "timestamp": "false",
+          "imageUrl": "https://i.imgur.com/KZJmjXQ.png",
+          "thumbUrl": "",
+          "description": "📜 **Propozycja:** *```${tempVars(\"tekst\")}```*\n",
+          "fields": [],
+          "author": "${tempVars(\"tag\")}",
+          "authorUrl": "",
+          "authorIcon": "${tempVars(\"avatar\")}",
+          "footerText": "",
+          "footerIconUrl": ""
+        }
+      ],
+      "reply": true,
+      "ephemeral": false,
+      "tts": false,
+      "overwrite": false,
+      "dontSend": false,
+      "editMessage": "0",
+      "editMessageVarName": "",
+      "storage": "1",
+      "varName2": "ta",
+      "name": "Send Message"
+    },
+    {
+      "fromTarget": {
+        "_index": 0,
+        "channel": "3",
+        "channelVarName": "ta"
+      },
+      "threadName": "Propozycja. ~ ${tempVars(\"12x\")}",
+      "autoArchiveDuration": "1440",
+      "reason": "",
+      "storage": "1",
+      "storageVarName": "grggr",
+      "name": "Create Thread"
+    },
+    {
+      "storage": "1",
+      "varName": "grggr",
+      "member": "1",
+      "varName2": "",
+      "name": "Add Member to Thread"
+    },
+    {
+      "info": "0",
+      "find": "1287848897149931577",
+      "storage": "1",
+      "varName": "yes",
+      "name": "Find Custom Emoji"
+    },
+    {
+      "info": "0",
+      "find": "1287848995246444730",
+      "storage": "1",
+      "varName": "nie",
+      "name": "Find Custom Emoji"
+    },
+    {
+      "storage": "1",
+      "varName": "ta",
+      "emoji": "1",
+      "varName2": "checkmark",
+      "varName3": "yes",
+      "name": "Add Reaction"
+    },
+    {
+      "storage": "1",
+      "varName": "ta",
+      "emoji": "1",
+      "varName2": "crossmark",
+      "varName3": "nie",
+      "name": "Add Reaction"
+    },
+    {
+      "comment": "## Rawdata wykonana przez: _perf3kcja",
+      "color": "#fff700",
+      "name": "Comment"
+    },
+    {
+      "comment": "## I została ona opublikowana na Github.",
+      "color": "#e1ff00",
+      "name": "Comment"
+    }
+  ],
+  "comType": "3",
+  "description": ""
+}
