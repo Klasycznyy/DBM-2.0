@@ -1,0 +1,390 @@
+{
+  "name": "ban",
+  "permissions": "NONE",
+  "permissions2": "NONE",
+  "restriction": "1",
+  "_id": "LCeoY",
+  "actions": [
+    {
+      "member": "1",
+      "varName": "",
+      "permission": "BAN_MEMBERS",
+      "branch": {
+        "iftrue": "0",
+        "iffalse": "4",
+        "iffalseVal": "uprawnienia"
+      },
+      "name": "Check Member Permissions"
+    },
+    {
+      "member": "5",
+      "varName": "użytkownik",
+      "info": "1",
+      "varName2": "",
+      "branch": {
+        "iftrue": "0",
+        "iffalse": "4",
+        "iffalseVal": "MemberBanned"
+      },
+      "name": "Check If Member"
+    },
+    {
+      "info": "0",
+      "find": "1295058579673579593",
+      "storage": "1",
+      "varName": "powud",
+      "name": "Find Custom Emoji"
+    },
+    {
+      "info": "0",
+      "find": "1302746696442445896",
+      "storage": "1",
+      "varName": "uzytkownik1",
+      "name": "Find Custom Emoji"
+    },
+    {
+      "info": "0",
+      "find": "1287848897149931577",
+      "storage": "1",
+      "varName": "yes_gif",
+      "name": "Find Custom Emoji"
+    },
+    {
+      "info": "0",
+      "find": "1292103625992044596",
+      "storage": "1",
+      "varName": "administrator",
+      "name": "Find Custom Emoji"
+    },
+    {
+      "info": "0",
+      "find": "1287848995246444730",
+      "storage": "1",
+      "varName": "nie_gif",
+      "name": "Find Custom Emoji"
+    },
+    {
+      "user": "5",
+      "varName": "użytkownik",
+      "info": "4",
+      "storage": "1",
+      "varName2": "mention_avatar12",
+      "name": "Store User Info"
+    },
+    {
+      "member": "5",
+      "varName": "użytkownik",
+      "info": "1",
+      "storage": "1",
+      "varName2": "mention_id",
+      "name": "Store Member Info"
+    },
+    {
+      "user": "5",
+      "varName": "użytkownik",
+      "info": "10",
+      "storage": "1",
+      "varName2": "mention_tag",
+      "name": "Store User Info"
+    },
+    {
+      "member": "1",
+      "varName": "U偶ytkownik",
+      "info": "16",
+      "storage": "1",
+      "varName2": "mention_avatar1",
+      "name": "Store Member Info"
+    },
+    {
+      "member": "1",
+      "varName": "U偶ytkownik",
+      "info": "3",
+      "storage": "1",
+      "varName2": "Dname",
+      "name": "Store Member Info"
+    },
+    {
+      "server": "0",
+      "varName": "",
+      "info": "2",
+      "storage": "1",
+      "varName2": "nameserver",
+      "name": "Store Server Info"
+    },
+    {
+      "server": "0",
+      "varName": "",
+      "info": "5",
+      "storage": "1",
+      "varName2": "iconserver",
+      "name": "Store Server Info"
+    },
+    {
+      "channel": "0",
+      "varName": "",
+      "message": "",
+      "buttons": [],
+      "selectMenus": [],
+      "attachments": [],
+      "embeds": [
+        {
+          "title": "${tempVars(\"yes_gif\")} **Pomyślnie zbanowano użytkownika!**",
+          "url": "",
+          "color": "#54f48c",
+          "timestamp": "false",
+          "imageUrl": "",
+          "thumbUrl": "",
+          "description": "",
+          "fields": [
+            {
+              "name": "${tempVars(\"administrator\")} **Administrator:**",
+              "value": "- ${member}",
+              "inline": "false"
+            },
+            {
+              "name": "${tempVars(\"uzytkownik1\")} **Użytkownik:**",
+              "value": "- ${slashParams(\"użytkownik\")}",
+              "inline": "false"
+            },
+            {
+              "name": "${tempVars(\"powud\")} **Powód:**",
+              "value": "- `${slashParams(\"powód\")}`",
+              "inline": "false"
+            }
+          ],
+          "author": "",
+          "authorUrl": "",
+          "authorIcon": "",
+          "footerText": "${tempVars(\"mention_tag\")} / (${tempVars(\"mention_id\")})",
+          "footerIconUrl": "${tempVars(\"mention_avatar12\")}"
+        }
+      ],
+      "reply": true,
+      "ephemeral": true,
+      "tts": false,
+      "overwrite": false,
+      "dontSend": false,
+      "editMessage": "0",
+      "editMessageVarName": "",
+      "storage": "0",
+      "varName2": "",
+      "name": "Send Message"
+    },
+    {
+      "comment": "## V v V / ID Kanału od logów.",
+      "color": "#fff700",
+      "name": "Comment"
+    },
+    {
+      "channel": "103",
+      "varName": "1305585559661449256",
+      "message": "",
+      "buttons": [],
+      "selectMenus": [],
+      "attachments": [],
+      "embeds": [
+        {
+          "title": "${tempVars(\"nie_gif\")} **Zbanowanie!**",
+          "url": "",
+          "color": "RED",
+          "timestamp": "true",
+          "imageUrl": "",
+          "thumbUrl": "",
+          "description": "${slashParams(\"użytkownik\")} *Został zbanowany na ${tempVars(\"nameserver\")}, zbanowany został przez administratora: ${member}*\n\n${tempVars(\"powud\")} **Powód:**\n`${slashParams(\"powód\")}`",
+          "fields": [],
+          "author": "",
+          "authorUrl": "",
+          "authorIcon": "",
+          "footerText": "~ Zbanowanie przez: ${tempVars(\"Dname\")}",
+          "footerIconUrl": "${tempVars(\"mention_avatar1\")}"
+        }
+      ],
+      "reply": true,
+      "ephemeral": false,
+      "tts": false,
+      "overwrite": false,
+      "dontSend": false,
+      "editMessage": "0",
+      "editMessageVarName": "",
+      "storage": "0",
+      "varName2": "",
+      "name": "Send Message"
+    },
+    {
+      "channel": "8",
+      "varName": "Użytkownik",
+      "message": "",
+      "buttons": [],
+      "selectMenus": [],
+      "attachments": [],
+      "embeds": [
+        {
+          "title": "Zostałeś zbanowany!",
+          "url": "",
+          "color": "RED",
+          "timestamp": "true",
+          "imageUrl": "",
+          "thumbUrl": "",
+          "description": "❌ **Zbanowano Ciebie z Serwera `${tempVars(\"nameserver\")}`!**\n\n- **Administrator:** \n*${member}*\n\n- **Powód:**\n *``${slashParams(\"powód\")}``*\n",
+          "fields": [],
+          "author": "",
+          "authorUrl": "",
+          "authorIcon": "",
+          "footerText": "~ Zbanowanie przez: ${tempVars(\"Dname\")}",
+          "footerIconUrl": "${tempVars(\"mention_avatar1\")}"
+        }
+      ],
+      "reply": true,
+      "ephemeral": false,
+      "tts": false,
+      "overwrite": false,
+      "dontSend": false,
+      "editMessage": "0",
+      "editMessageVarName": "",
+      "storage": "0",
+      "varName2": "",
+      "name": "Send Message"
+    },
+    {
+      "member": "5",
+      "varName": "Użytkownik",
+      "reason": "${slashParams(\"Powód\")}",
+      "days": "",
+      "name": "Ban Member"
+    },
+    {
+      "name": "End Action Sequence"
+    },
+    {
+      "anchorName": "MemberBanned",
+      "name": "Action Anchor"
+    },
+    {
+      "info": "0",
+      "find": "1287848995246444730",
+      "storage": "1",
+      "varName": "nie",
+      "name": "Find Custom Emoji"
+    },
+    {
+      "channel": "0",
+      "varName": "",
+      "message": "",
+      "buttons": [],
+      "selectMenus": [],
+      "attachments": [],
+      "embeds": [
+        {
+          "title": "",
+          "url": "",
+          "color": "RED",
+          "timestamp": "false",
+          "imageUrl": "",
+          "thumbUrl": "",
+          "description": "${tempVars(\"nie\")} **Nie możesz zbanować użytkownika, ponieważ użytkownik jest już zbanowany na tym serwerze.**",
+          "fields": [],
+          "author": "",
+          "authorUrl": "",
+          "authorIcon": "",
+          "footerText": "",
+          "footerIconUrl": ""
+        }
+      ],
+      "reply": true,
+      "ephemeral": true,
+      "tts": false,
+      "overwrite": false,
+      "dontSend": false,
+      "editMessage": "0",
+      "editMessageVarName": "",
+      "storage": "0",
+      "varName2": "",
+      "name": "Send Message"
+    },
+    {
+      "name": "End Action Sequence"
+    },
+    {
+      "anchorName": "uprawnienia",
+      "name": "Action Anchor"
+    },
+    {
+      "info": "0",
+      "find": "1287848995246444730",
+      "storage": "1",
+      "varName": "nie_gif",
+      "name": "Find Custom Emoji"
+    },
+    {
+      "server": "0",
+      "varName": "",
+      "info": "5",
+      "storage": "1",
+      "varName2": "url",
+      "name": "Store Server Info"
+    },
+    {
+      "channel": "0",
+      "varName": "",
+      "message": "",
+      "buttons": [],
+      "selectMenus": [],
+      "attachments": [],
+      "embeds": [
+        {
+          "title": "",
+          "url": "",
+          "color": "RED",
+          "timestamp": "false",
+          "imageUrl": "https://i.imgur.com/vMlk4D9.png",
+          "thumbUrl": "",
+          "description": "${tempVars(\"nie_gif\")} **Brak uprawnień do użycia polecenia, abyś mógł użyć wymagane jest uprawnienie do banowania członków.**",
+          "fields": [],
+          "author": "",
+          "authorUrl": "",
+          "authorIcon": "",
+          "footerText": "",
+          "footerIconUrl": ""
+        }
+      ],
+      "reply": true,
+      "ephemeral": true,
+      "tts": false,
+      "overwrite": false,
+      "dontSend": false,
+      "editMessage": "0",
+      "editMessageVarName": "",
+      "storage": "0",
+      "varName2": "",
+      "name": "Send Message"
+    },
+    {
+      "comment": "## Rawdata wykonana przez: _perf3kcja",
+      "color": "#fff700",
+      "name": "Comment"
+    },
+    {
+      "comment": "## I została ona opublikowana na Github.",
+      "color": "#e1ff00",
+      "name": "Comment"
+    }
+  ],
+  "comType": "4",
+  "parameters": [
+    {
+      "name": "Użytkownik",
+      "description": "Użytkownik którego chcesz zbanować!",
+      "type": "USER",
+      "required": true,
+      "choices": null
+    },
+    {
+      "name": "Powód",
+      "description": "Powód zbanowania?",
+      "type": "STRING",
+      "required": true,
+      "choices": null
+    }
+  ],
+  "description": "❌・Banowanie użytkownika."
+}
