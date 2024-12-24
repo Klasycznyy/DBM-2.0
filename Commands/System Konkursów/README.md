@@ -3,7 +3,7 @@
 ## ⚠️ Ważne Informację ⚠️
 Polecenia od konkursów są bazowane na prywatnych modach, użycia rawdaty bez pobierania potrzebnych modów wnioskuje się z tym ze rawdata nie będzie działała.
 
-Aby pobrać mody dla obu tych komend oraz dlal eventów, które są w innej części folderu, należy przejść do działu z [modami...](https://github.com/Klasycznyy/DBM-2.0/tree/main/Mods)
+Aby pobrać mody dla obu tych komend oraz dla eventów, które są w innej części folderu, należy przejść do działu z [modami...](https://github.com/Klasycznyy/DBM-2.0/tree/main/Mods)
 
 [![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/aqua.png)](#Important)
 ## 📝 Informację 📝  
