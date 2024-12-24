@@ -1,0 +1,540 @@
+{
+  "name": "mute",
+  "permissions": "NONE",
+  "permissions2": "NONE",
+  "restriction": "1",
+  "_id": "qRGzL",
+  "actions": [
+    {
+      "member": "1",
+      "varName": "Ilo艣膰",
+      "permission": "MODERATE_MEMBERS",
+      "branch": {
+        "iftrue": "0",
+        "iffalse": "4",
+        "iffalseVal": "uprawnienia"
+      },
+      "name": "Check Member Permissions"
+    },
+    {
+      "condition": "1",
+      "comparison": "1",
+      "value": "1",
+      "branch": {
+        "iftrue": "0",
+        "iffalse": "3",
+        "iffalseVal": "1"
+      },
+      "name": "Check Parameters"
+    },
+    {
+      "name": "End Action Sequence"
+    },
+    {
+      "storage": "4",
+      "varName": "czas1",
+      "comparison": "1",
+      "value": "2",
+      "branch": {
+        "iftrue": "0",
+        "iffalse": "4",
+        "iffalseVal": "hours in seconds"
+      },
+      "name": "Check Variable"
+    },
+    {
+      "comment": "minutes in seconds",
+      "color": "#ff0000",
+      "name": "Comment"
+    },
+    {
+      "FirstNumber": "${slashParams(\"czas\")}",
+      "info": "2",
+      "SecondNumber": "60",
+      "storage": "1",
+      "varName": "czas",
+      "name": "Basic Math Operation"
+    },
+    {
+      "storage": "1",
+      "varName": "czas1",
+      "changeType": "0",
+      "value": "\"min\"",
+      "name": "Control Variable"
+    },
+    {
+      "anchorName": "Next",
+      "name": "Go To Action Anchor"
+    },
+    {
+      "name": "End Action Sequence"
+    },
+    {
+      "anchorName": "hours in seconds",
+      "name": "Action Anchor"
+    },
+    {
+      "storage": "4",
+      "varName": "czas1",
+      "comparison": "1",
+      "value": "3",
+      "branch": {
+        "iftrue": "0",
+        "iffalse": "4",
+        "iffalseVal": "Skip"
+      },
+      "name": "Check Variable"
+    },
+    {
+      "comment": "hours in seconds",
+      "color": "#ff0000",
+      "name": "Comment"
+    },
+    {
+      "FirstNumber": "${slashParams(\"czas\")}",
+      "info": "2",
+      "SecondNumber": "3600",
+      "storage": "1",
+      "varName": "czas",
+      "name": "Basic Math Operation"
+    },
+    {
+      "storage": "1",
+      "varName": "czas1",
+      "changeType": "0",
+      "value": "\"h\"",
+      "name": "Control Variable"
+    },
+    {
+      "anchorName": "Next",
+      "name": "Go To Action Anchor"
+    },
+    {
+      "name": "End Action Sequence"
+    },
+    {
+      "anchorName": "Skip",
+      "name": "Action Anchor"
+    },
+    {
+      "storage": "1",
+      "varName": "czas1",
+      "changeType": "0",
+      "value": "\"sec\"",
+      "name": "Control Variable"
+    },
+    {
+      "anchorName": "Next",
+      "name": "Action Anchor"
+    },
+    {
+      "info": "0",
+      "find": "1292103625992044596",
+      "storage": "1",
+      "varName": "administrator",
+      "name": "Find Custom Emoji"
+    },
+    {
+      "info": "0",
+      "find": "1287848897149931577",
+      "storage": "1",
+      "varName": "yes_gif",
+      "name": "Find Custom Emoji"
+    },
+    {
+      "info": "0",
+      "find": "1302746696442445896",
+      "storage": "1",
+      "varName": "uzytkownik1",
+      "name": "Find Custom Emoji"
+    },
+    {
+      "info": "0",
+      "find": "1295058579673579593",
+      "storage": "1",
+      "varName": "powud",
+      "name": "Find Custom Emoji"
+    },
+    {
+      "member": "5",
+      "varName": "użytkownik",
+      "info": "21",
+      "storage": "1",
+      "varName2": "mention_tag",
+      "name": "Store Member Info"
+    },
+    {
+      "member": "5",
+      "varName": "użytkownik",
+      "info": "1",
+      "storage": "1",
+      "varName2": "mention_id",
+      "name": "Store Member Info"
+    },
+    {
+      "member": "5",
+      "varName": "użytkownik",
+      "info": "16",
+      "storage": "1",
+      "varName2": "mention_avatar",
+      "name": "Store Member Info"
+    },
+    {
+      "member": "1",
+      "varName": "U偶ytkownik",
+      "info": "16",
+      "storage": "1",
+      "varName2": "mention_avatar1",
+      "name": "Store Member Info"
+    },
+    {
+      "member": "1",
+      "varName": "U偶ytkownik",
+      "info": "3",
+      "storage": "1",
+      "varName2": "Dname",
+      "name": "Store Member Info"
+    },
+    {
+      "server": "0",
+      "varName": "",
+      "info": "2",
+      "storage": "1",
+      "varName2": "nameserver",
+      "name": "Store Server Info"
+    },
+    {
+      "server": "0",
+      "varName": "",
+      "info": "5",
+      "storage": "1",
+      "varName2": "iconserver",
+      "name": "Store Server Info"
+    },
+    {
+      "channel": "0",
+      "varName": "",
+      "message": "",
+      "buttons": [],
+      "selectMenus": [],
+      "attachments": [],
+      "embeds": [
+        {
+          "title": "${tempVars(\"yes_gif\")} **Pomyślnie wyciszono użytkownika!**",
+          "url": "",
+          "color": "RED",
+          "timestamp": "false",
+          "imageUrl": "",
+          "thumbUrl": "",
+          "description": "",
+          "fields": [
+            {
+              "name": "${tempVars(\"administrator\")} **Administrator:**",
+              "value": "- ${member}",
+              "inline": "false"
+            },
+            {
+              "name": "${tempVars(\"uzytkownik1\")} **Użytkownik:**",
+              "value": "- ${slashParams(\"użytkownik\")}",
+              "inline": "false"
+            },
+            {
+              "name": "🕑 **Czas wyciszenia:**",
+              "value": "- ${slashParams(\"czas\")}${tempVars(\"czas1\")}",
+              "inline": "false"
+            },
+            {
+              "name": "${tempVars(\"powud\")} **Powód:**",
+              "value": "- `${slashParams(\"powód\")}`",
+              "inline": "false"
+            }
+          ],
+          "author": "",
+          "authorUrl": "",
+          "authorIcon": "",
+          "footerText": "${tempVars(\"mention_tag\")} / (${tempVars(\"mention_id\")})",
+          "footerIconUrl": "${tempVars(\"mention_avatar\")}"
+        }
+      ],
+      "reply": true,
+      "ephemeral": true,
+      "tts": false,
+      "overwrite": false,
+      "dontSend": false,
+      "editMessage": "0",
+      "editMessageVarName": "",
+      "storage": "0",
+      "varName2": "",
+      "name": "Send Message"
+    },
+    {
+      "member": "5",
+      "varName": "użytkownik",
+      "time": "${tempVars(\"czas\")}",
+      "reason": "${slashParams(\"powód\")}",
+      "name": "Timeout Member"
+    },
+    {
+      "comment": "## V v V / ID Kanału od logów.",
+      "color": "#fff700",
+      "name": "Comment"
+    },
+    {
+      "channel": "103",
+      "varName": "1305585559661449256",
+      "message": "",
+      "buttons": [],
+      "selectMenus": [],
+      "attachments": [],
+      "embeds": [
+        {
+          "title": "🔇 **Wyciszenie!**",
+          "url": "",
+          "color": "RED",
+          "timestamp": "true",
+          "imageUrl": "",
+          "thumbUrl": "",
+          "description": "${slashParams(\"użytkownik\")} *Został wyciszony na ${tempVars(\"nameserver\")}, wyciszony został przez administratora: ${member}*\n\n🕑 **Czas wyciszenia:**\n${slashParams(\"czas\")}${tempVars(\"czas1\")}\n\n${tempVars(\"powud\")} **Powód:**\n`${slashParams(\"powód\")}`",
+          "fields": [],
+          "author": "",
+          "authorUrl": "",
+          "authorIcon": "",
+          "footerText": "~ Wyciszony przez: ${tempVars(\"Dname\")}",
+          "footerIconUrl": "${tempVars(\"mention_avatar1\")}"
+        }
+      ],
+      "reply": true,
+      "ephemeral": false,
+      "tts": false,
+      "overwrite": false,
+      "dontSend": false,
+      "editMessage": "0",
+      "editMessageVarName": "",
+      "storage": "0",
+      "varName2": "",
+      "name": "Send Message"
+    },
+    {
+      "channel": "8",
+      "varName": "użytkownik",
+      "message": "",
+      "buttons": [],
+      "selectMenus": [],
+      "attachments": [],
+      "embeds": [
+        {
+          "title": "Zostałeś wyciszony!",
+          "url": "",
+          "color": "RED",
+          "timestamp": "true",
+          "imageUrl": "",
+          "thumbUrl": "",
+          "description": "🔇 **Wyciszono Ciebie na Serwerze `${tempVars(\"nameserver\")}`!**\n\n- **Powód:** \n*``${slashParams(\"powód\")}``*\n\n- **Czas:** \n${slashParams(\"czas\")}${tempVars(\"czas1\")}\n",
+          "fields": [],
+          "author": "",
+          "authorUrl": "",
+          "authorIcon": "",
+          "footerText": "~ Wyciszenie przez: ${tempVars(\"Dname\")}",
+          "footerIconUrl": "${tempVars(\"mention_avatar1\")}"
+        }
+      ],
+      "reply": true,
+      "ephemeral": false,
+      "tts": false,
+      "overwrite": false,
+      "dontSend": false,
+      "editMessage": "0",
+      "editMessageVarName": "",
+      "storage": "0",
+      "varName2": "",
+      "name": "Send Message"
+    },
+    {
+      "time": "${tempVars(\"czas\")}",
+      "measurement": "1",
+      "name": "Wait"
+    },
+    {
+      "channel": "8",
+      "varName": "użytkownik",
+      "message": "",
+      "buttons": [],
+      "selectMenus": [],
+      "attachments": [],
+      "embeds": [
+        {
+          "title": "Zostałeś odciszony!",
+          "url": "",
+          "color": "#54f48c",
+          "timestamp": "true",
+          "imageUrl": "",
+          "thumbUrl": "",
+          "description": "🔊 **Twoje wyciszenie na `${tempVars(\"nameserver\")}` skończyło się.**\n\n- **Powód:** \n*``${slashParams(\"powód\")}``*\n\n- **Czas:** \n${slashParams(\"czas\")}${tempVars(\"czas1\")}\n\n",
+          "fields": [],
+          "author": "",
+          "authorUrl": "",
+          "authorIcon": "",
+          "footerText": "~ Odciszony przez: ${tempVars(\"Dname\")}",
+          "footerIconUrl": "${tempVars(\"mention_avatar1\")}"
+        }
+      ],
+      "reply": true,
+      "ephemeral": false,
+      "tts": false,
+      "overwrite": false,
+      "dontSend": false,
+      "editMessage": "0",
+      "editMessageVarName": "",
+      "storage": "0",
+      "varName2": "",
+      "name": "Send Message"
+    },
+    {
+      "channel": "103",
+      "varName": "1305585559661449256",
+      "message": "",
+      "buttons": [],
+      "selectMenus": [],
+      "attachments": [],
+      "embeds": [
+        {
+          "title": "🔊 **Odciszenie!**",
+          "url": "",
+          "color": "#54f48c",
+          "timestamp": "true",
+          "imageUrl": "",
+          "thumbUrl": "",
+          "description": "${slashParams(\"użytkownik\")} *Został odciszony na ${tempVars(\"nameserver\")}, wyciszenie skończyło się.*\n\n${tempVars(\"powud\")} **Powód:**\n`${slashParams(\"powód\")}`",
+          "fields": [],
+          "author": "",
+          "authorUrl": "",
+          "authorIcon": "",
+          "footerText": "~ Odciszenie przez: ${tempVars(\"Dname\")}",
+          "footerIconUrl": "${tempVars(\"mention_avatar1\")}"
+        }
+      ],
+      "reply": true,
+      "ephemeral": false,
+      "tts": false,
+      "overwrite": false,
+      "dontSend": false,
+      "editMessage": "0",
+      "editMessageVarName": "",
+      "storage": "0",
+      "varName2": "",
+      "name": "Send Message"
+    },
+    {
+      "name": "End Action Sequence"
+    },
+    {
+      "anchorName": "uprawnienia",
+      "name": "Action Anchor"
+    },
+    {
+      "info": "0",
+      "find": "1287848995246444730",
+      "storage": "1",
+      "varName": "nie_gif",
+      "name": "Find Custom Emoji"
+    },
+    {
+      "server": "0",
+      "varName": "",
+      "info": "5",
+      "storage": "1",
+      "varName2": "url",
+      "name": "Store Server Info"
+    },
+    {
+      "channel": "0",
+      "varName": "",
+      "message": "",
+      "buttons": [],
+      "selectMenus": [],
+      "attachments": [],
+      "embeds": [
+        {
+          "title": "",
+          "url": "",
+          "color": "RED",
+          "timestamp": "false",
+          "imageUrl": "https://i.imgur.com/vrmiUzd.png",
+          "thumbUrl": "",
+          "description": "${tempVars(\"nie_gif\")} **Brak uprawnień do użycia polecenia, abyś mógł użyć wymagane jest uprawnienie do nakładania przerwy na członków.**",
+          "fields": [],
+          "author": "",
+          "authorUrl": "",
+          "authorIcon": "",
+          "footerText": "",
+          "footerIconUrl": ""
+        }
+      ],
+      "reply": true,
+      "ephemeral": true,
+      "tts": false,
+      "overwrite": false,
+      "dontSend": false,
+      "editMessage": "0",
+      "editMessageVarName": "",
+      "storage": "0",
+      "varName2": "",
+      "name": "Send Message"
+    },
+    {
+      "comment": "## Rawdata wykonana przez: _perf3kcja",
+      "color": "#fff700",
+      "name": "Comment"
+    },
+    {
+      "comment": "## I została ona opublikowana na Github.",
+      "color": "#e1ff00",
+      "name": "Comment"
+    }
+  ],
+  "comType": "4",
+  "description": "🔇・Wycisza użytkownika na określony czas.",
+  "parameters": [
+    {
+      "name": "użytkownik",
+      "description": "Użytkownik którego chcesz wyciszyć!",
+      "type": "USER",
+      "required": true,
+      "choices": null
+    },
+    {
+      "name": "czas",
+      "description": "Czas wyciszenia!",
+      "type": "INTEGER",
+      "required": true,
+      "choices": null
+    },
+    {
+      "name": "czas1",
+      "description": "Podaj czas w sec, min lub w godzinach!",
+      "type": "INTEGER",
+      "required": true,
+      "choices": [
+        {
+          "name": "seconds",
+          "value": 1
+        },
+        {
+          "name": "minutes",
+          "value": 2
+        },
+        {
+          "name": "hour",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "name": "powód",
+      "description": "Powód wyciszenia?",
+      "type": "STRING",
+      "required": true,
+      "choices": null
+    }
+  ]
+}
