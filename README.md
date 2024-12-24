@@ -1,13 +1,13 @@
-# 🗂️ kZelix Rawdaty do DBM v2.0 🗂️ 
+# 🗂️ Klasyczny Rawdaty do DBM v2.0 🗂️ 
 [![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/aqua.png)](#Important)
 ## ⚠️ Ważne Informację ⚠️
 Wiele nowych komend wymaga teraz nowych intencji. Upewnij się, że przeczytałeś informację na temat polecenia.
 
-Wszelkie błędy i problemy należy zgłaszać bezpośrednio do _Perf3kcja#9921 na Discordzie.
+Wszelkie błędy i problemy należy zgłaszać bezpośrednio do _perf3kcja na Discordzie.
 
 [![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/aqua.png)](#Important)
 ## 📝 Informację 📝  
-Witam na moim profilu GitHub! Tutaj znajduje się wiele komend, które wykonałem. Czuj się swobodnie i rozejrzyj się, a jeśli masz jakieś pytania, nie krępuj się i napisz do mnie DM! _Perf3kcja#9921. Kiedy nie odpowiadam na DM'y, nie krępuj się i napisz do mnie ponownie DM, aby mi przypomnieć. Mogę zapomnieć od czasu do czasu.
+Witam na moim profilu GitHub! Tutaj znajduje się wiele komend, które wykonałem. Czuj się swobodnie i rozejrzyj się, a jeśli masz jakieś pytania, nie krępuj się i napisz do mnie DM! _perf3kcja. Kiedy nie odpowiadam na DM'y, nie krępuj się i napisz do mnie ponownie DM, aby mi przypomnieć. Mogę zapomnieć od czasu do czasu.
 
 Większość komend/events tutaj jest oparta na skryptach, aby ułatwić ich wykonanie w DBM v2.0.
 
@@ -18,6 +18,7 @@ Wszystkie komendy i eventy tutaj mają teraz domyślnie włączony updater, któ
 ## Systemy Bieżące 
   
 - [Commands](https://github.com/Klasycznyy/DBM-2.0/tree/main/Commands) / v2.0 Beta
+- [Events](https://github.com/Klasycznyy/DBM-2.0/tree/main/Events) / v2.0 Beta
   
 [![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/aqua.png)](#Important)
 ## Archiwizowane
