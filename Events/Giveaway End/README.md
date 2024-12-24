@@ -7,7 +7,7 @@ Aby pobrać mody dla tych komend oraz dla eventów, które są w innej części 
 
 [![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/aqua.png)](#Important)
 ## 📝 Informację 📝  
-Witam na moim profilu GitHub! Tutaj znajduje się wiele komend, które wykonałem. Czuj się swobodnie i rozejrzyj się, a jeśli masz jakieś pytania, nie krępuj się i napisz do mnie DM! _perf3kcja. Kiedy nie odpowiadam na DM'y, nie krępuj się i napisz do mnie ponownie DM, aby mi przypomnieć. Mogę zapomnieć od czasu do czasu.
+Witam na moim profilu GitHub! Tutaj znajduje się wiele komend, które wykonałem. Czuj się swobodnie i rozejrzyj się, a jeśli masz jakieś pytania, nie krępuj się i napisz do mnie DM! _perf3kcja. Kiedy nie odpowiadam na DM'y, nie krępuj się i napisz do mnie ponownie DM, aby mi przypomnieć. Mogę zapomnieć od czasu do czasu. A jeśli to  nic nie daje to zapraszam na naszego discorda :) ## **[Discord.](https://discord.gg/4fUfNVDPEd)**
 
 Większość komend/events tutaj jest oparta na skryptach, aby ułatwić ich wykonanie w DBM v2.0.
 
