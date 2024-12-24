@@ -1,0 +1,126 @@
+{
+  "name": "remove afk",
+  "permissions": "NONE",
+  "permissions2": "NONE",
+  "restriction": "1",
+  "_id": "CeAkW",
+  "actions": [
+    {
+      "member": "1",
+      "varName": "",
+      "dataName": "AFKActive",
+      "defaultVal": "0",
+      "storage": "1",
+      "varName2": "GetAFKStatus",
+      "name": "Store Member Data"
+    },
+    {
+      "storage": "1",
+      "varName": "GetAFKStatus",
+      "comparison": "1",
+      "value": "0",
+      "branch": {
+        "iftrue": "1",
+        "iffalse": "0"
+      },
+      "name": "Check Variable"
+    },
+    {
+      "member": "1",
+      "varName": "",
+      "dataName": "AFKActive",
+      "name": "Delete Member Data"
+    },
+    {
+      "member": "1",
+      "varName": "",
+      "dataName": "AFKReason",
+      "name": "Delete Member Data"
+    },
+    {
+      "member": "1",
+      "varName": "",
+      "info": "16",
+      "storage": "1",
+      "varName2": "member_avatar",
+      "name": "Store Member Info"
+    },
+    {
+      "member": "1",
+      "varName": "",
+      "info": "3",
+      "storage": "1",
+      "varName2": "member_name",
+      "name": "Store Member Info"
+    },
+    {
+      "server": "0",
+      "varName": "",
+      "info": "5",
+      "storage": "1",
+      "varName2": "server_icon",
+      "name": "Store Server Info"
+    },
+    {
+      "channel": "0",
+      "varName": "",
+      "message": "",
+      "buttons": [],
+      "selectMenus": [],
+      "attachments": [],
+      "embeds": [
+        {
+          "title": "",
+          "url": "",
+          "color": "#0f0f0f",
+          "timestamp": "true",
+          "imageUrl": "",
+          "thumbUrl": "",
+          "description": "${member} *Nie jesteś już w trybie AFK.*",
+          "fields": [],
+          "author": "${tempVars(\"member_name\")}",
+          "authorUrl": "",
+          "authorIcon": "${tempVars(\"member_avatar\")}",
+          "footerText": "~ AFK System by _Perf3kcja.",
+          "footerIconUrl": "${tempVars(\"server_icon\")}"
+        }
+      ],
+      "reply": true,
+      "ephemeral": false,
+      "tts": false,
+      "overwrite": false,
+      "dontSend": false,
+      "editMessage": "0",
+      "editMessageVarName": "",
+      "storage": "1",
+      "varName2": "afk_ended",
+      "name": "Send Message"
+    },
+    {
+      "time": "10",
+      "measurement": "1",
+      "name": "Wait"
+    },
+    {
+      "storage": "1",
+      "varName": "afk_ended",
+      "reason": "",
+      "name": "Delete Message"
+    },
+    {
+      "name": "End Action Sequence"
+    },
+    {
+      "comment": "## Rawdata wykonana przez: _perf3kcja",
+      "color": "#fff700",
+      "name": "Comment"
+    },
+    {
+      "comment": "## I została ona opublikowana na Github.",
+      "color": "#e1ff00",
+      "name": "Comment"
+    }
+  ],
+  "comType": "3",
+  "parameters": []
+}
