@@ -1,0 +1,179 @@
+{
+  "name": "clear",
+  "permissions": "NONE",
+  "permissions2": "NONE",
+  "restriction": "1",
+  "_id": "hBwQV",
+  "actions": [
+    {
+      "member": "1",
+      "varName": "Ilość",
+      "permission": "MANAGE_MESSAGES",
+      "branch": {
+        "iftrue": "0",
+        "iffalse": "2",
+        "iffalseVal": "11"
+      },
+      "name": "Check Member Permissions"
+    },
+    {
+      "info": "0",
+      "find": "1287848897149931577",
+      "storage": "1",
+      "varName": "yes_gif",
+      "name": "Find Custom Emoji"
+    },
+    {
+      "member": "1",
+      "varName": "",
+      "info": "3",
+      "storage": "1",
+      "varName2": "userna",
+      "name": "Store Member Info"
+    },
+    {
+      "server": "0",
+      "varName": "",
+      "info": "5",
+      "storage": "1",
+      "varName2": "url1",
+      "name": "Store Server Info"
+    },
+    {
+      "member": "1",
+      "varName": "",
+      "info": "16",
+      "storage": "1",
+      "varName2": "userurl",
+      "name": "Store Member Info"
+    },
+    {
+      "channel": "0",
+      "count": "${slashParams(\"ilość\")}",
+      "condition": "0",
+      "custom": "",
+      "varName": "",
+      "name": "Delete Bulk Messages"
+    },
+    {
+      "channel": "0",
+      "varName": "",
+      "message": "",
+      "buttons": [],
+      "selectMenus": [],
+      "attachments": [],
+      "embeds": [
+        {
+          "title": "",
+          "url": "",
+          "color": "#54f48c",
+          "timestamp": "true",
+          "imageUrl": "",
+          "thumbUrl": "",
+          "description": "${tempVars(\"yes_gif\")} **Pomyślnie usunięto `${slashParams(\"ilość\")}` wiadomości!**",
+          "fields": [],
+          "author": "${tempVars(\"userna\")}",
+          "authorUrl": "",
+          "authorIcon": "${tempVars(\"userurl\")}",
+          "footerText": "~ Wyczysczono ${slashParams(\"ilość\")} wiadomości!",
+          "footerIconUrl": "${tempVars(\"url1\")}"
+        }
+      ],
+      "reply": true,
+      "ephemeral": false,
+      "tts": false,
+      "overwrite": false,
+      "dontSend": false,
+      "editMessage": "0",
+      "editMessageVarName": "",
+      "storage": "1",
+      "varName2": "msg",
+      "name": "Send Message"
+    },
+    {
+      "time": "10",
+      "measurement": "1",
+      "name": "Wait"
+    },
+    {
+      "storage": "1",
+      "varName": "msg",
+      "reason": "",
+      "name": "Delete Message"
+    },
+    {
+      "name": "End Action Sequence"
+    },
+    {
+      "info": "0",
+      "find": "1287848995246444730",
+      "storage": "1",
+      "varName": "nie_gif",
+      "name": "Find Custom Emoji"
+    },
+    {
+      "server": "0",
+      "varName": "",
+      "info": "5",
+      "storage": "1",
+      "varName2": "url",
+      "name": "Store Server Info"
+    },
+    {
+      "channel": "0",
+      "varName": "",
+      "message": "",
+      "buttons": [],
+      "selectMenus": [],
+      "attachments": [],
+      "embeds": [
+        {
+          "title": "",
+          "url": "",
+          "color": "RED",
+          "timestamp": "false",
+          "imageUrl": "https://i.imgur.com/5zxSMke.png",
+          "thumbUrl": "",
+          "description": "${tempVars(\"nie_gif\")} **Brak uprawnień do użycia polecenia, abyś mógł użyć wymagane jest uprawnienie do zarządzanie wiadomością.**",
+          "fields": [],
+          "author": "",
+          "authorUrl": "",
+          "authorIcon": "",
+          "footerText": "",
+          "footerIconUrl": ""
+        }
+      ],
+      "reply": true,
+      "ephemeral": true,
+      "tts": false,
+      "overwrite": false,
+      "dontSend": false,
+      "editMessage": "0",
+      "editMessageVarName": "",
+      "storage": "0",
+      "varName2": "",
+      "name": "Send Message"
+    },
+    {
+      "comment": "## Rawdata wykonana przez: _perf3kcja",
+      "color": "#fff700",
+      "name": "Comment"
+    },
+    {
+      "comment": "## I została ona opublikowana na Github.",
+      "color": "#e1ff00",
+      "name": "Comment"
+    }
+  ],
+  "comType": "4",
+  "parameters": [
+    {
+      "name": "ilość",
+      "description": "Ilość wiadomości do usunięcia!",
+      "type": "INTEGER",
+      "required": true,
+      "choices": null
+    }
+  ],
+  "description": "🆓・Czyszczenie wiadomości."
+}
