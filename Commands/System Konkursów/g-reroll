@@ -1,1 +1,150 @@
-hg
+{
+  "name": "g-reroll",
+  "permissions": "NONE",
+  "permissions2": "NONE",
+  "restriction": "1",
+  "_id": "mUAUt",
+  "actions": [
+    {
+      "member": "1",
+      "varName": "",
+      "role": "101",
+      "varName2": "1315433296863432744",
+      "branch": {
+        "iftrue": "0",
+        "iffalse": "4",
+        "iffalseVal": "uprawnienia"
+      },
+      "name": "Check If Member has Role"
+    },
+    {
+      "server": "0",
+      "varName": "",
+      "dataName": "nagroda",
+      "defaultVal": "0",
+      "storage": "1",
+      "varName2": "nagroda1",
+      "name": "Store Server Data"
+    },
+    {
+      "server": "0",
+      "varName": "",
+      "dataName": "channel_msg",
+      "defaultVal": "0",
+      "storage": "1",
+      "varName2": "channel_msg2",
+      "name": "Store Server Data"
+    },
+    {
+      "msgid": "${slashParams(\"msgid\")}",
+      "storage": "1",
+      "varName": "winner",
+      "name": "Giveaway REROLL"
+    },
+    {
+      "channel": "0",
+      "varName": "",
+      "message": "",
+      "buttons": [],
+      "selectMenus": [],
+      "attachments": [],
+      "embeds": [
+        {
+          "title": "🔄 **Losowanie Następnego!**",
+          "url": "",
+          "color": "#5c9aff",
+          "timestamp": "false",
+          "imageUrl": "",
+          "thumbUrl": "",
+          "description": "*Nowym zwycięzcą z konkursu* *[${tempVars(\"nagroda1\")}](${tempVars(\"channel_msg2\")})* *jest* <@${tempVars(\"winner\")}>. *Gratulacje! 🎉*\n",
+          "fields": [],
+          "author": "",
+          "authorUrl": "",
+          "authorIcon": "",
+          "footerText": "",
+          "footerIconUrl": ""
+        }
+      ],
+      "reply": false,
+      "ephemeral": false,
+      "tts": false,
+      "overwrite": false,
+      "dontSend": false,
+      "editMessage": "0",
+      "editMessageVarName": "",
+      "storage": "0",
+      "varName2": "",
+      "name": "Send Message"
+    },
+    {
+      "name": "End Action Sequence"
+    },
+    {
+      "anchorName": "uprawnienia",
+      "name": "Action Anchor"
+    },
+    {
+      "info": "0",
+      "find": "1287848995246444730",
+      "storage": "1",
+      "varName": "nie_gif",
+      "name": "Find Custom Emoji"
+    },
+    {
+      "channel": "0",
+      "varName": "",
+      "message": "",
+      "buttons": [],
+      "selectMenus": [],
+      "attachments": [],
+      "embeds": [
+        {
+          "title": "",
+          "url": "",
+          "color": "RED",
+          "timestamp": "false",
+          "imageUrl": "https://i.imgur.com/ZeeMNE9.png",
+          "thumbUrl": "",
+          "description": "${tempVars(\"nie_gif\")} **Brak uprawnień do użycia polecenia, abyś mógł użyć wymagana jest rola <@&1315433296863432744>**",
+          "fields": [],
+          "author": "",
+          "authorUrl": "",
+          "authorIcon": "",
+          "footerText": "",
+          "footerIconUrl": ""
+        }
+      ],
+      "reply": true,
+      "ephemeral": true,
+      "tts": false,
+      "overwrite": false,
+      "dontSend": false,
+      "editMessage": "0",
+      "editMessageVarName": "",
+      "storage": "0",
+      "varName2": "",
+      "name": "Send Message"
+    },
+    {
+      "comment": "## Rawdata wykonana przez: _perf3kcja",
+      "color": "#fff700",
+      "name": "Comment"
+    },
+    {
+      "comment": "## I została ona opublikowana na Github.",
+      "color": "#e1ff00",
+      "name": "Comment"
+    }
+  ],
+  "comType": "4",
+  "parameters": [
+    {
+      "name": "msgid",
+      "description": "Message id",
+      "type": "STRING",
+      "required": true,
+      "choices": null
+    }
+  ],
+  "description": "🎉・Druga osoba która wygra, reroll."
+}
