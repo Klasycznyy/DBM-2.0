@@ -1,0 +1,666 @@
+{
+  "name": "opinia",
+  "permissions": "NONE",
+  "permissions2": "NONE",
+  "restriction": "1",
+  "_id": "ZnEDw",
+  "actions": [
+    {
+      "member": "1",
+      "varName": "",
+      "info": "2",
+      "storage": "1",
+      "varName2": "command_user",
+      "name": "Store Member Info"
+    },
+    {
+      "server": "0",
+      "varName": "",
+      "info": "2",
+      "storage": "1",
+      "varName2": "nameserver",
+      "name": "Store Server Info"
+    },
+    {
+      "info": "1",
+      "find": "${tempVars(\"command_user\")}",
+      "storage": "1",
+      "varName": "user",
+      "name": "Find Member"
+    },
+    {
+      "info": "1",
+      "find": "${tempVars(\"username\")}",
+      "storage": "1",
+      "varName": "user1",
+      "name": "Find Member"
+    },
+    {
+      "member": "1",
+      "varName": "",
+      "info": "16",
+      "storage": "1",
+      "varName2": "avatar",
+      "name": "Store Member Info"
+    },
+    {
+      "info": "0",
+      "find": "1287848897149931577",
+      "storage": "1",
+      "varName": "yes",
+      "name": "Find Custom Emoji"
+    },
+    {
+      "channel": "0",
+      "varName": "",
+      "message": "",
+      "buttons": [],
+      "selectMenus": [],
+      "attachments": [],
+      "embeds": [
+        {
+          "title": "",
+          "url": "",
+          "color": "GREEN",
+          "timestamp": "false",
+          "imageUrl": "",
+          "thumbUrl": "",
+          "description": "**${tempVars(\"nameserver\")} ×** *Opinia została wystawiona.*",
+          "fields": [],
+          "author": "",
+          "authorUrl": "",
+          "authorIcon": "",
+          "footerText": "",
+          "footerIconUrl": ""
+        }
+      ],
+      "reply": true,
+      "ephemeral": true,
+      "tts": false,
+      "overwrite": false,
+      "dontSend": false,
+      "editMessage": "0",
+      "editMessageVarName": "",
+      "storage": "0",
+      "varName2": "",
+      "name": "Send Message"
+    },
+    {
+      "webhookName": "${tempVars(\"command_user\")}",
+      "webhookIcon": "${tempVars(\"avatar\")}",
+      "storage": "101",
+      "varName": "1317168392477741177",
+      "storage2": "1",
+      "varName2": "Webhook",
+      "name": "Create Webhook"
+    },
+    {
+      "title": "★ **Opinia Serwerowa!**",
+      "author": "",
+      "color": "#0f0f0f",
+      "timestamp": "false",
+      "url": "",
+      "authorIcon": "",
+      "imageUrl": "",
+      "thumbUrl": "${tempVars(\"avatar\")}",
+      "storage": "1",
+      "varName": "Embed",
+      "name": "Create Embed Message"
+    },
+    {
+      "storage": "1",
+      "varName": "Embed",
+      "fieldName": "📃 **Opinia Klienta!:**",
+      "message": "```${slashParams(\"Opinia\")}```",
+      "inline": "1",
+      "name": "Add Embed Field"
+    },
+    {
+      "storage": "1",
+      "varName": "Embed",
+      "fieldName": " **Czas Realizacji:**",
+      "message": "${slashParams(\"Czas_Realizacji\")}",
+      "inline": "1",
+      "name": "Add Embed Field"
+    },
+    {
+      "storage": "1",
+      "varName": "Embed",
+      "fieldName": " **Przebieg Zakupu:**",
+      "message": "${slashParams(\"Przebieg_Zakupu\")}",
+      "inline": "1",
+      "name": "Add Embed Field"
+    },
+    {
+      "storage": "1",
+      "varName": "Embed",
+      "fieldName": "**Obsługa Klienta:**",
+      "message": "${slashParams(\"Obsługa_Klienta\")}",
+      "inline": "1",
+      "name": "Add Embed Field"
+    },
+    {
+      "storage": "1",
+      "varName": "Webhook",
+      "storage2": "1",
+      "varName2": "Embed",
+      "name": "Send Embed to Webhook"
+    },
+    {
+      "comment": "Get Webhook Message ID",
+      "color": "#00ff00",
+      "name": "Comment"
+    },
+    {
+      "behavior": "1",
+      "interpretation": "1",
+      "code": "const channel = client.channels.cache.get(\"1317168392477741177\");\n\nasync function lastMessage() {\n  const messages = await channel.messages.fetch({ limit: 100 });\n\n  const webhookMessage = messages.find(message => message.webhookId);\n\n  if (webhookMessage) {\n    Actions.storeValue(webhookMessage, 1, \"lastMessage\", cache); \n  } else {\n    Actions.storeValue(undefined, 1, \"lastMessage\", cache); \n  }\n  Actions.callNextAction(cache);\n}\n\nlastMessage()",
+      "storage": "0",
+      "varName": "",
+      "name": "Run Script"
+    },
+    {
+      "message": "1",
+      "varName": "lastMessage",
+      "info": "1",
+      "storage": "1",
+      "varName2": "StoreWebhookMessageID",
+      "name": "Store Message Info"
+    },
+    {
+      "comment": "Find Webhook Message Object",
+      "color": "#00ff00",
+      "name": "Comment"
+    },
+    {
+      "channel": "101",
+      "varName": "1317168392477741177",
+      "info": "1",
+      "search": "${tempVars(\"StoreWebhookMessageID\")}",
+      "storage": "1",
+      "varName2": "GetFeedbackMessageObject",
+      "name": "Find Message"
+    },
+    {
+      "storage": "1",
+      "varName": "GetFeedbackMessageObject",
+      "emoji": "0",
+      "varName2": "Yes",
+      "varName3": "",
+      "name": "Add Reaction"
+    },
+    {
+      "storage": "1",
+      "varName": "GetFeedbackMessageObject",
+      "emoji": "0",
+      "varName2": "nie",
+      "varName3": "",
+      "name": "Add Reaction"
+    },
+    {
+      "comment": "Delete Webhook",
+      "color": "#00ff00",
+      "name": "Comment"
+    },
+    {
+      "webhook": "1",
+      "varName": "Webhook",
+      "name": "Delete Webhook"
+    },
+    {
+      "comment": "Copied from opinia any message",
+      "color": "#ff0000",
+      "name": "Comment"
+    },
+    {
+      "channel": "0",
+      "varName": "",
+      "info": "1",
+      "storage": "1",
+      "varName2": "GetCurrentChannelID5543",
+      "name": "Store Channel Info"
+    },
+    {
+      "storage": "1",
+      "varName": "GetCurrentChannelID5543",
+      "comparison": "1",
+      "value": "1317168392477741177",
+      "branch": {
+        "iftrue": "4",
+        "iffalse": "1",
+        "iftrueVal": "Channel15543"
+      },
+      "name": "Check Variable"
+    },
+    {
+      "name": "End Action Sequence"
+    },
+    {
+      "info": "0",
+      "find": "1294957534246866966",
+      "storage": "1",
+      "varName": "emoji",
+      "name": "Find Custom Emoji"
+    },
+    {
+      "info": "0",
+      "find": "1292156458057728081",
+      "storage": "1",
+      "varName": "blik",
+      "name": "Find Custom Emoji"
+    },
+    {
+      "info": "0",
+      "find": "1292157128638726265",
+      "storage": "1",
+      "varName": "paypal",
+      "name": "Find Custom Emoji"
+    },
+    {
+      "info": "0",
+      "find": "1292157096028012607",
+      "storage": "1",
+      "varName": "psc",
+      "name": "Find Custom Emoji"
+    },
+    {
+      "info": "0",
+      "find": "1295396398983938200",
+      "storage": "1",
+      "varName": "bank",
+      "name": "Find Custom Emoji"
+    },
+    {
+      "anchorName": "Channel15543",
+      "name": "Action Anchor"
+    },
+    {
+      "comment": "Channel15543",
+      "actions": [
+        {
+          "server": "0",
+          "varName": "",
+          "info": "5",
+          "storage": "1",
+          "varName2": "icon",
+          "name": "Store Server Info"
+        },
+        {
+          "info": "0",
+          "find": "1302000580079648808",
+          "storage": "1",
+          "varName": "emoji321",
+          "name": "Find Custom Emoji"
+        },
+        {
+          "info": "0",
+          "find": "1287848831676977233",
+          "storage": "1",
+          "varName": "emoji1",
+          "name": "Find Custom Emoji"
+        },
+        {
+          "channel": "0",
+          "varName": "",
+          "info": "1",
+          "storage": "1",
+          "varName2": "StoreChannelID5543",
+          "name": "Store Channel Info"
+        },
+        {
+          "server": "0",
+          "varName": "",
+          "dataName": "${tempVars(\"StoreChannelID5543\")}-BotMessageID5543",
+          "defaultVal": "0",
+          "storage": "1",
+          "varName2": "GetSavedMessageID5543",
+          "name": "Store Server Data"
+        },
+        {
+          "server": "0",
+          "varName": "",
+          "dataName": "${tempVars(\"StoreChannelID5543\")}-BotMessageChannelID5543",
+          "defaultVal": "0",
+          "storage": "1",
+          "varName2": "GetSavedChannelID5543",
+          "name": "Store Server Data"
+        },
+        {
+          "storage": "1",
+          "varName": "GetSavedMessageID5543",
+          "comparison": "1",
+          "value": "0",
+          "branch": {
+            "iftrue": "4",
+            "iffalse": "0",
+            "iftrueVal": "BotMessageNotFound5543"
+          },
+          "name": "Check Variable"
+        },
+        {
+          "storage": "1",
+          "varName": "GetSavedChannelID5543",
+          "comparison": "1",
+          "value": "0",
+          "branch": {
+            "iftrue": "4",
+            "iffalse": "0",
+            "iftrueVal": "BotMessageNotFound5543"
+          },
+          "name": "Check Variable"
+        },
+        {
+          "comment": "Search Last Bot Message",
+          "color": "#00ff00",
+          "name": "Comment"
+        },
+        {
+          "channel": "101",
+          "varName": "${tempVars(\"GetSavedChannelID5543\")}",
+          "info": "1",
+          "search": "${tempVars(\"GetSavedMessageID5543\")}",
+          "storage": "1",
+          "varName2": "FindMessage5543",
+          "name": "Find Message"
+        },
+        {
+          "storage": "1",
+          "varName": "FindMessage5543",
+          "comparison": "1",
+          "value": "undefined",
+          "branch": {
+            "iftrue": "4",
+            "iffalse": "0",
+            "iftrueVal": "BotMessageNotFound5543"
+          },
+          "name": "Check Variable"
+        },
+        {
+          "comment": "Last Bot Message Found",
+          "color": "#ffff00",
+          "name": "Comment"
+        },
+        {
+          "storage": "1",
+          "varName": "FindMessage5543",
+          "reason": "",
+          "name": "Delete Message"
+        },
+        {
+          "time": "5",
+          "measurement": "1",
+          "name": "Wait"
+        },
+        {
+          "channel": "0",
+          "varName": "",
+          "message": "",
+          "buttons": [],
+          "selectMenus": [],
+          "attachments": [],
+          "embeds": [
+            {
+              "title": "",
+              "url": "",
+              "color": "#0f0f0f",
+              "timestamp": "true",
+              "imageUrl": "",
+              "thumbUrl": "",
+              "description": "- **Podziel się Swoją opinią o nas, aby podzielić się Swoją opinią użyj komendy `/opinia`.**",
+              "fields": [],
+              "author": "",
+              "authorUrl": "",
+              "authorIcon": "",
+              "footerText": "~ Automatycznie wygenerowana wiadomość przez bota!",
+              "footerIconUrl": "${tempVars(\"icon\")}"
+            }
+          ],
+          "reply": true,
+          "ephemeral": false,
+          "tts": false,
+          "overwrite": false,
+          "dontSend": false,
+          "editMessage": "0",
+          "editMessageVarName": "",
+          "storage": "1",
+          "varName2": "BotMessage5543",
+          "name": "Send Message"
+        },
+        {
+          "message": "1",
+          "varName": "BotMessage5543",
+          "info": "1",
+          "storage": "1",
+          "varName2": "BotMessageID5543",
+          "name": "Store Message Info"
+        },
+        {
+          "server": "0",
+          "varName": "",
+          "dataName": "${tempVars(\"StoreChannelID5543\")}-BotMessageID5543",
+          "changeType": "0",
+          "value": "tempVars(\"BotMessageID5543\")",
+          "name": "Control Server Data"
+        },
+        {
+          "server": "0",
+          "varName": "",
+          "dataName": "${tempVars(\"StoreChannelID5543\")}-BotMessageChannelID5543",
+          "changeType": "0",
+          "value": "tempVars(\"StoreChannelID5543\")",
+          "name": "Control Server Data"
+        },
+        {
+          "name": "End Action Sequence"
+        },
+        {
+          "comment": "Last Bot Message NOT Found",
+          "color": "#ff0000",
+          "name": "Comment"
+        },
+        {
+          "info": "0",
+          "find": "1302000580079648808",
+          "storage": "1",
+          "varName": "emoji321",
+          "name": "Find Custom Emoji"
+        },
+        {
+          "info": "0",
+          "find": "1287848831676977233",
+          "storage": "1",
+          "varName": "emoji1",
+          "name": "Find Custom Emoji"
+        },
+        {
+          "server": "0",
+          "varName": "",
+          "info": "5",
+          "storage": "1",
+          "varName2": "icon",
+          "name": "Store Server Info"
+        },
+        {
+          "anchorName": "BotMessageNotFound5543",
+          "name": "Action Anchor"
+        },
+        {
+          "time": "5",
+          "measurement": "1",
+          "name": "Wait"
+        },
+        {
+          "channel": "0",
+          "varName": "",
+          "message": "",
+          "buttons": [],
+          "selectMenus": [],
+          "attachments": [],
+          "embeds": [
+            {
+              "title": "",
+              "url": "",
+              "color": "#0f0f0f",
+              "timestamp": "true",
+              "imageUrl": "",
+              "thumbUrl": "",
+              "description": "- **Podziel się Swoją opinią o nas, aby podzielić się Swoją opinią użyj komendy `/opinia`.**",
+              "fields": [],
+              "author": "",
+              "authorUrl": "",
+              "authorIcon": "",
+              "footerText": "~ Automatycznie wygenerowana wiadomość przez bota!",
+              "footerIconUrl": "${tempVars(\"icon\")}"
+            }
+          ],
+          "reply": true,
+          "ephemeral": false,
+          "tts": false,
+          "overwrite": false,
+          "dontSend": false,
+          "editMessage": "0",
+          "editMessageVarName": "",
+          "storage": "1",
+          "varName2": "BotMessage5543",
+          "name": "Send Message"
+        },
+        {
+          "message": "1",
+          "varName": "BotMessage5543",
+          "info": "1",
+          "storage": "1",
+          "varName2": "BotMessageID5543",
+          "name": "Store Message Info"
+        },
+        {
+          "server": "0",
+          "varName": "",
+          "dataName": "${tempVars(\"StoreChannelID5543\")}-BotMessageID5543",
+          "changeType": "0",
+          "value": "tempVars(\"BotMessageID5543\")",
+          "name": "Control Server Data"
+        },
+        {
+          "server": "0",
+          "varName": "",
+          "dataName": "${tempVars(\"StoreChannelID5543\")}-BotMessageChannelID5543",
+          "changeType": "0",
+          "value": "tempVars(\"StoreChannelID5543\")",
+          "name": "Control Server Data"
+        },
+        {
+          "name": "End Action Sequence"
+        }
+      ],
+      "name": "Action Container"
+    },
+    {
+      "name": "End Action Sequence"
+    },
+    {
+      "comment": "## Rawdata wykonana przez: _perf3kcja",
+      "color": "#fff700",
+      "name": "Comment"
+    },
+    {
+      "comment": "## I została ona opublikowana na Github.",
+      "color": "#e1ff00",
+      "name": "Comment"
+    }
+  ],
+  "comType": "4",
+  "parameters": [
+    {
+      "name": "Czas_Realizacji",
+      "description": "Czas Realizacji.",
+      "type": "STRING",
+      "required": true,
+      "choices": [
+        {
+          "name": "⭐",
+          "value": "⭐"
+        },
+        {
+          "name": "⭐⭐",
+          "value": "⭐⭐"
+        },
+        {
+          "name": "⭐⭐⭐",
+          "value": "⭐⭐⭐"
+        },
+        {
+          "name": "⭐⭐⭐⭐",
+          "value": "⭐⭐⭐⭐"
+        },
+        {
+          "name": "⭐⭐⭐⭐⭐",
+          "value": "⭐⭐⭐⭐⭐"
+        }
+      ]
+    },
+    {
+      "name": "Przebieg_Zakupu",
+      "description": "Przebieg Zakupu.",
+      "type": "STRING",
+      "required": true,
+      "choices": [
+        {
+          "name": "⭐",
+          "value": "⭐"
+        },
+        {
+          "name": "⭐⭐",
+          "value": "⭐⭐"
+        },
+        {
+          "name": "⭐⭐⭐",
+          "value": "⭐⭐⭐"
+        },
+        {
+          "name": "⭐⭐⭐⭐",
+          "value": "⭐⭐⭐⭐"
+        },
+        {
+          "name": "⭐⭐⭐⭐⭐",
+          "value": "⭐⭐⭐⭐⭐"
+        }
+      ]
+    },
+    {
+      "name": "Obsługa_Klienta",
+      "description": "Obsługa klienta.",
+      "type": "STRING",
+      "required": true,
+      "choices": [
+        {
+          "name": "⭐",
+          "value": "⭐"
+        },
+        {
+          "name": "⭐⭐",
+          "value": "⭐⭐"
+        },
+        {
+          "name": "⭐⭐⭐",
+          "value": "⭐⭐⭐"
+        },
+        {
+          "name": "⭐⭐⭐⭐",
+          "value": "⭐⭐⭐⭐"
+        },
+        {
+          "name": "⭐⭐⭐⭐⭐",
+          "value": "⭐⭐⭐⭐⭐"
+        }
+      ]
+    },
+    {
+      "name": "Opinia",
+      "description": "Wprowadź opinię.",
+      "type": "STRING",
+      "required": true,
+      "choices": null
+    }
+  ],
+  "description": "⭐・Wystaw opinię dla sprzedającego."
+}
