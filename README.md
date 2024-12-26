@@ -20,6 +20,7 @@ Wszystkie komendy i eventy tutaj mają teraz domyślnie włączony updater, któ
   
 - [Commands](https://github.com/Klasycznyy/DBM-2.0/tree/main/Commands) / v2.0 Beta
 - [Events](https://github.com/Klasycznyy/DBM-2.0/tree/main/Events) / v2.0 Beta
+- [Mods](https://github.com/Klasycznyy/DBM-2.0/tree/main/Mods) / v2.0 Beta
   
 [![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/aqua.png)](#Important)
 ## Archiwizowane
