@@ -1,0 +1,154 @@
+{
+  "name": "remove-user-to-channel",
+  "permissions": "NONE",
+  "permissions2": "NONE",
+  "restriction": "1",
+  "_id": "sWqwQ",
+  "actions": [
+    {
+      "member": "1",
+      "varName": "",
+      "permission": "MOVE_MEMBERS",
+      "branch": {
+        "iftrue": "0",
+        "iffalse": "4",
+        "iffalseVal": "uprawnienia"
+      },
+      "name": "Check Member Permissions"
+    },
+    {
+      "info": "0",
+      "find": "1287848995246444730",
+      "storage": "1",
+      "varName": "nie",
+      "name": "Find Custom Emoji"
+    },
+    {
+      "info": "0",
+      "find": "1287848897149931577",
+      "storage": "1",
+      "varName": "yea",
+      "name": "Find Custom Emoji"
+    },
+    {
+      "info": "0",
+      "find": "1287848897149931577",
+      "storage": "1",
+      "varName": "yes",
+      "name": "Find Custom Emoji"
+    },
+    {
+      "server": "0",
+      "varName": "",
+      "info": "5",
+      "storage": "1",
+      "varName2": "iconurl",
+      "name": "Store Server Info"
+    },
+    {
+      "channel": "0",
+      "varName": "Channel",
+      "member": "5",
+      "varName2": "Użytkownik",
+      "permission": "VIEW_CHANNEL",
+      "state": "2",
+      "reason": "",
+      "name": "Set Member Channel Perms"
+    },
+    {
+      "channel": "0",
+      "varName": "",
+      "message": "",
+      "buttons": [],
+      "selectMenus": [],
+      "attachments": [],
+      "embeds": [
+        {
+          "title": "",
+          "url": "",
+          "color": "RED",
+          "timestamp": "true",
+          "imageUrl": "",
+          "thumbUrl": "",
+          "description": "${tempVars(\"nie\")} ${member} **Pomyślnie usunąłeś użytkownika** ${slashParams(\"Użytkownik\")} **z kanału** ${channel}",
+          "fields": [],
+          "author": "",
+          "authorUrl": "",
+          "authorIcon": "",
+          "footerText": "~ Usunięto użytkownika z kanału!",
+          "footerIconUrl": "${tempVars(\"iconurl\")}"
+        }
+      ],
+      "reply": false,
+      "ephemeral": false,
+      "tts": false,
+      "overwrite": false,
+      "dontSend": false,
+      "editMessage": "0",
+      "editMessageVarName": "",
+      "storage": "0",
+      "varName2": "",
+      "name": "Send Message"
+    },
+    {
+      "name": "End Action Sequence"
+    },
+    {
+      "anchorName": "uprawnienia",
+      "name": "Action Anchor"
+    },
+    {
+      "info": "0",
+      "find": "1287848995246444730",
+      "storage": "1",
+      "varName": "NIE",
+      "name": "Find Custom Emoji"
+    },
+    {
+      "channel": "0",
+      "varName": "",
+      "message": "",
+      "buttons": [],
+      "selectMenus": [],
+      "attachments": [],
+      "embeds": [
+        {
+          "title": "",
+          "url": "",
+          "color": "RED",
+          "timestamp": "false",
+          "imageUrl": "https://i.imgur.com/bkmcZEl.png",
+          "thumbUrl": "",
+          "description": "${tempVars(\"NIE\")} **Brak uprawnień do użycia polecenia, abyś mógł użyć wymagane jest uprawnienie do przenoszenia członków.**",
+          "fields": [],
+          "author": "",
+          "authorUrl": "",
+          "authorIcon": "",
+          "footerText": "",
+          "footerIconUrl": ""
+        }
+      ],
+      "reply": true,
+      "ephemeral": true,
+      "tts": false,
+      "overwrite": false,
+      "dontSend": false,
+      "editMessage": "0",
+      "editMessageVarName": "",
+      "storage": "0",
+      "varName2": "",
+      "name": "Send Message"
+    }
+  ],
+  "comType": "4",
+  "parameters": [
+    {
+      "name": "Użytkownik",
+      "description": "Użytkownik którego chcesz dodać do kanału.",
+      "type": "USER",
+      "required": true,
+      "choices": null
+    }
+  ],
+  "description": "⭕・Usuwanie użytkownika z kanału."
+}
