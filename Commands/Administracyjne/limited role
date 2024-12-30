@@ -1,0 +1,637 @@
+{
+  "name": "limited-role",
+  "permissions": "NONE",
+  "permissions2": "NONE",
+  "restriction": "1",
+  "_id": "zfzhR",
+  "actions": [
+    {
+      "member": "1",
+      "varName": "",
+      "permission": "ADMINISTRATOR",
+      "branch": {
+        "iftrue": "0",
+        "iffalse": "4",
+        "iffalseVal": "uprawnienia"
+      },
+      "name": "Check Member Permissions"
+    },
+    {
+      "storage": "4",
+      "varName": "Akcja",
+      "comparison": "1",
+      "value": "Wigilia2",
+      "branch": {
+        "iftrue": "4",
+        "iffalse": "1",
+        "iftrueVal": "akcja"
+      },
+      "name": "Check Variable"
+    },
+    {
+      "name": "End Action Sequence"
+    },
+    {
+      "anchorName": "akcja",
+      "name": "Action Anchor"
+    },
+    {
+      "info": "0",
+      "find": "1287848897149931577",
+      "storage": "1",
+      "varName": "yes",
+      "name": "Find Custom Emoji"
+    },
+    {
+      "channel": "0",
+      "varName": "",
+      "message": "",
+      "buttons": [],
+      "selectMenus": [],
+      "attachments": [],
+      "embeds": [
+        {
+          "title": "",
+          "url": "",
+          "color": "GREEN",
+          "timestamp": "false",
+          "imageUrl": "",
+          "thumbUrl": "",
+          "description": "${tempVars(\"yea\")} **Poprawnie wykonałeś polecenie!**",
+          "fields": [],
+          "author": "",
+          "authorUrl": "",
+          "authorIcon": "",
+          "footerText": "",
+          "footerIconUrl": ""
+        }
+      ],
+      "reply": true,
+      "ephemeral": true,
+      "tts": false,
+      "overwrite": false,
+      "dontSend": false,
+      "editMessage": "0",
+      "editMessageVarName": "",
+      "storage": "0",
+      "varName2": "",
+      "name": "Send Message"
+    },
+    {
+      "channel": "0",
+      "varName": "",
+      "message": "",
+      "buttons": [
+        {
+          "name": "Otrzymaj rolę Wigilia 2024.",
+          "type": "SUCCESS",
+          "id": "msg-button-62a",
+          "row": "",
+          "url": "",
+          "emoji": "❄️",
+          "mode": "PERSISTENT",
+          "time": "",
+          "actions": [
+            {
+              "member": "1",
+              "varName": "",
+              "role": "101",
+              "varName2": "1319742897826041997",
+              "branch": {
+                "iftrue": "4",
+                "iffalse": "0",
+                "iftrueVal": "YouHaveTicketRole"
+              },
+              "name": "Check If Member has Role"
+            },
+            {
+              "info": "0",
+              "find": "1287848897149931577",
+              "storage": "1",
+              "varName": "yes321",
+              "name": "Find Custom Emoji"
+            },
+            {
+              "comment": "## V v V // ID Roli którą ma dodać osobie",
+              "color": "#fff700",
+              "name": "Comment"
+            },
+            {
+              "member": "1",
+              "varName2": "",
+              "role": "101",
+              "varName": "1319742897826041997",
+              "reason": "",
+              "name": "Add Member Role"
+            },
+            {
+              "role": "101",
+              "varName": "1319742897826041997",
+              "info": "12",
+              "storage": "1",
+              "varName2": "members",
+              "name": "Store Role Info"
+            },
+            {
+              "channel": "0",
+              "varName": "",
+              "message": "",
+              "buttons": [],
+              "selectMenus": [],
+              "attachments": [],
+              "embeds": [
+                {
+                  "title": "",
+                  "url": "",
+                  "color": "GREEN",
+                  "timestamp": "false",
+                  "imageUrl": "",
+                  "thumbUrl": "",
+                  "description": "${tempVars(\"yes321\")} **Pomyślnie odebrano limitowaną role ``❄️ Wigilia 2024``**",
+                  "fields": [],
+                  "author": "",
+                  "authorUrl": "",
+                  "authorIcon": "",
+                  "footerText": "",
+                  "footerIconUrl": ""
+                }
+              ],
+              "reply": true,
+              "ephemeral": true,
+              "tts": false,
+              "overwrite": false,
+              "dontSend": false,
+              "editMessage": "0",
+              "editMessageVarName": "",
+              "storage": "0",
+              "varName2": "hello",
+              "name": "Send Message"
+            },
+            {
+              "server": "0",
+              "varName": "",
+              "dataName": "Regulamin-MessageID1",
+              "defaultVal": "0",
+              "storage": "1",
+              "varName2": "GetMessageID1",
+              "name": "Store Server Data"
+            },
+            {
+              "server": "0",
+              "varName": "",
+              "dataName": "Regulamin-ChannelID1",
+              "defaultVal": "0",
+              "storage": "1",
+              "varName2": "GetChannelID1",
+              "name": "Store Server Data"
+            },
+            {
+              "channel": "101",
+              "varName": "${tempVars(\"GetChannelID1\")}",
+              "info": "1",
+              "search": "${tempVars(\"GetMessageID1\")}",
+              "storage": "1",
+              "varName2": "FindMessage1",
+              "name": "Find Message"
+            },
+            {
+              "channel": "0",
+              "varName": "",
+              "message": "",
+              "buttons": [
+                {
+                  "name": "Otrzymaj rolę Wigilia 2024.",
+                  "type": "SUCCESS",
+                  "id": "msg-button-62a",
+                  "row": "",
+                  "url": "",
+                  "emoji": "❄️",
+                  "mode": "PERSISTENT",
+                  "time": "",
+                  "actions": []
+                },
+                {
+                  "name": "${tempVars(\"members\")}",
+                  "type": "SECONDARY",
+                  "id": "123",
+                  "row": "",
+                  "url": "",
+                  "emoji": "1295081614958657617",
+                  "mode": "PERSISTENT",
+                  "time": "",
+                  "actions": [
+                    {
+                      "member": "1",
+                      "varName": "",
+                      "permission": "ADMINISTRATOR",
+                      "branch": {
+                        "iftrue": "0",
+                        "iffalse": "4",
+                        "iffalseVal": "123"
+                      },
+                      "name": "Check Member Permissions"
+                    },
+                    {
+                      "channel": "0",
+                      "varName": "",
+                      "message": "xd",
+                      "buttons": [],
+                      "selectMenus": [],
+                      "attachments": [],
+                      "embeds": [],
+                      "reply": true,
+                      "ephemeral": true,
+                      "tts": false,
+                      "overwrite": false,
+                      "dontSend": false,
+                      "editMessage": "0",
+                      "editMessageVarName": "",
+                      "storage": "0",
+                      "varName2": "",
+                      "name": "Send Message"
+                    },
+                    {
+                      "name": "End Action Sequence"
+                    },
+                    {
+                      "anchorName": "123",
+                      "name": "Action Anchor"
+                    },
+                    {
+                      "info": "0",
+                      "find": "1287848995246444730",
+                      "storage": "1",
+                      "varName": "NIE",
+                      "name": "Find Custom Emoji"
+                    },
+                    {
+                      "channel": "0",
+                      "varName": "",
+                      "message": "",
+                      "buttons": [],
+                      "selectMenus": [],
+                      "attachments": [],
+                      "embeds": [
+                        {
+                          "title": "",
+                          "url": "",
+                          "color": "RED",
+                          "timestamp": "false",
+                          "imageUrl": "",
+                          "thumbUrl": "",
+                          "description": "${tempVars(\"NIE\")} **Brak uprawnień do użycia przycisku.**",
+                          "fields": [],
+                          "author": "",
+                          "authorUrl": "",
+                          "authorIcon": "",
+                          "footerText": "",
+                          "footerIconUrl": ""
+                        }
+                      ],
+                      "reply": true,
+                      "ephemeral": true,
+                      "tts": false,
+                      "overwrite": false,
+                      "dontSend": false,
+                      "editMessage": "0",
+                      "editMessageVarName": "",
+                      "storage": "0",
+                      "varName2": "",
+                      "name": "Send Message"
+                    }
+                  ]
+                }
+              ],
+              "selectMenus": [],
+              "attachments": [],
+              "embeds": [
+                {
+                  "title": "❄️ **Limitowana świąteczna rola `(Wigilia 2024)`**",
+                  "url": "",
+                  "color": "ffffff",
+                  "timestamp": "false",
+                  "imageUrl": "",
+                  "thumbUrl": "",
+                  "description": "",
+                  "fields": [],
+                  "author": "",
+                  "authorUrl": "",
+                  "authorIcon": "",
+                  "footerText": "",
+                  "footerIconUrl": ""
+                }
+              ],
+              "reply": false,
+              "ephemeral": false,
+              "tts": false,
+              "overwrite": false,
+              "dontSend": false,
+              "editMessage": "1",
+              "editMessageVarName": "FindMessage1",
+              "storage": "0",
+              "varName2": "hello",
+              "name": "Send Message"
+            },
+            {
+              "storage": "0",
+              "varName": "",
+              "type": "findButton",
+              "disable": "disable",
+              "searchValue": "123",
+              "name": "Disable Buttons and Selects"
+            },
+            {
+              "name": "End Action Sequence"
+            },
+            {
+              "anchorName": "YouHaveTicketRole",
+              "name": "Action Anchor"
+            },
+            {
+              "info": "0",
+              "find": "1287848995246444730",
+              "storage": "1",
+              "varName": "nie",
+              "name": "Find Custom Emoji"
+            },
+            {
+              "channel": "0",
+              "varName": "",
+              "message": "",
+              "buttons": [],
+              "selectMenus": [],
+              "attachments": [],
+              "embeds": [
+                {
+                  "title": "",
+                  "url": "",
+                  "color": "RED",
+                  "timestamp": "false",
+                  "imageUrl": "",
+                  "thumbUrl": "",
+                  "description": "${tempVars(\"nie\")} **Nie możesz odebrać 2 raz tą samą role ``❄️ Wigilia 2024``.**",
+                  "fields": [],
+                  "author": "",
+                  "authorUrl": "",
+                  "authorIcon": "",
+                  "footerText": "",
+                  "footerIconUrl": ""
+                }
+              ],
+              "reply": true,
+              "ephemeral": true,
+              "tts": false,
+              "overwrite": false,
+              "dontSend": false,
+              "editMessage": "0",
+              "editMessageVarName": "",
+              "storage": "0",
+              "varName2": "",
+              "name": "Send Message"
+            }
+          ]
+        },
+        {
+          "name": "${tempVars(\"members\")}",
+          "type": "SECONDARY",
+          "id": "123",
+          "row": "",
+          "url": "",
+          "emoji": "1295081614958657617",
+          "mode": "PERSISTENT",
+          "time": "",
+          "actions": [
+            {
+              "member": "1",
+              "varName": "",
+              "permission": "ADMINISTRATOR",
+              "branch": {
+                "iftrue": "0",
+                "iffalse": "4",
+                "iffalseVal": "123"
+              },
+              "name": "Check Member Permissions"
+            },
+            {
+              "channel": "0",
+              "varName": "",
+              "message": "xd",
+              "buttons": [],
+              "selectMenus": [],
+              "attachments": [],
+              "embeds": [],
+              "reply": true,
+              "ephemeral": true,
+              "tts": false,
+              "overwrite": false,
+              "dontSend": false,
+              "editMessage": "0",
+              "editMessageVarName": "",
+              "storage": "0",
+              "varName2": "",
+              "name": "Send Message"
+            },
+            {
+              "name": "End Action Sequence"
+            },
+            {
+              "anchorName": "123",
+              "name": "Action Anchor"
+            },
+            {
+              "info": "0",
+              "find": "1287848995246444730",
+              "storage": "1",
+              "varName": "NIE",
+              "name": "Find Custom Emoji"
+            },
+            {
+              "channel": "0",
+              "varName": "",
+              "message": "",
+              "buttons": [],
+              "selectMenus": [],
+              "attachments": [],
+              "embeds": [
+                {
+                  "title": "",
+                  "url": "",
+                  "color": "RED",
+                  "timestamp": "false",
+                  "imageUrl": "",
+                  "thumbUrl": "",
+                  "description": "${tempVars(\"NIE\")} **Brak uprawnień do użycia przycisku.**",
+                  "fields": [],
+                  "author": "",
+                  "authorUrl": "",
+                  "authorIcon": "",
+                  "footerText": "",
+                  "footerIconUrl": ""
+                }
+              ],
+              "reply": true,
+              "ephemeral": true,
+              "tts": false,
+              "overwrite": false,
+              "dontSend": false,
+              "editMessage": "0",
+              "editMessageVarName": "",
+              "storage": "0",
+              "varName2": "",
+              "name": "Send Message"
+            }
+          ]
+        }
+      ],
+      "selectMenus": [],
+      "attachments": [],
+      "embeds": [
+        {
+          "title": "❄️ **Limitowana świąteczna rola `(Wigilia 2024)`**",
+          "url": "",
+          "color": "ffffff",
+          "timestamp": "false",
+          "imageUrl": "",
+          "thumbUrl": "",
+          "description": "",
+          "fields": [],
+          "author": "",
+          "authorUrl": "",
+          "authorIcon": "",
+          "footerText": "",
+          "footerIconUrl": ""
+        }
+      ],
+      "reply": false,
+      "ephemeral": false,
+      "tts": false,
+      "overwrite": false,
+      "dontSend": false,
+      "editMessage": "0",
+      "editMessageVarName": "123",
+      "storage": "1",
+      "varName2": "hello",
+      "name": "Send Message"
+    },
+    {
+      "comment": "## V v V // ID Roli którą ma liczyc",
+      "color": "#fff700",
+      "name": "Comment"
+    },
+    {
+      "role": "101",
+      "varName": "1319742897826041997",
+      "info": "12",
+      "storage": "1",
+      "varName2": "members",
+      "name": "Store Role Info"
+    },
+    {
+      "message": "1",
+      "varName": "hello",
+      "info": "1",
+      "storage": "1",
+      "varName2": "messageid1",
+      "name": "Store Message Info"
+    },
+    {
+      "channel": "0",
+      "varName": "",
+      "info": "1",
+      "storage": "1",
+      "varName2": "channelid1",
+      "name": "Store Channel Info"
+    },
+    {
+      "server": "0",
+      "varName": "",
+      "dataName": "Regulamin-MessageID1",
+      "changeType": "0",
+      "value": "tempVars(\"messageid1\")",
+      "name": "Control Server Data"
+    },
+    {
+      "server": "0",
+      "varName": "",
+      "dataName": "Regulamin-ChannelID1",
+      "changeType": "0",
+      "value": "tempVars(\"channelid1\")",
+      "name": "Control Server Data"
+    },
+    {
+      "name": "End Action Sequence"
+    },
+    {
+      "anchorName": "uprawnienia",
+      "name": "Action Anchor"
+    },
+    {
+      "info": "0",
+      "find": "1287848995246444730",
+      "storage": "1",
+      "varName": "nie_gif",
+      "name": "Find Custom Emoji"
+    },
+    {
+      "channel": "0",
+      "varName": "",
+      "message": "",
+      "buttons": [],
+      "selectMenus": [],
+      "attachments": [],
+      "embeds": [
+        {
+          "title": "",
+          "url": "",
+          "color": "RED",
+          "timestamp": "false",
+          "imageUrl": "https://i.imgur.com/u1wZR9M.png",
+          "thumbUrl": "",
+          "description": "${tempVars(\"nie_gif\")} **Brak uprawnień do użycia polecenia, abyś mógł użyć wymagane jest uprawnienie do administratora.**",
+          "fields": [],
+          "author": "",
+          "authorUrl": "",
+          "authorIcon": "",
+          "footerText": "",
+          "footerIconUrl": ""
+        }
+      ],
+      "reply": true,
+      "ephemeral": true,
+      "tts": false,
+      "overwrite": false,
+      "dontSend": false,
+      "editMessage": "0",
+      "editMessageVarName": "",
+      "storage": "0",
+      "varName2": "",
+      "name": "Send Message"
+    },
+    {
+      "comment": "## Rawdata wykonana przez: _perf3kcja",
+      "color": "#fff700",
+      "name": "Comment"
+    },
+    {
+      "comment": "## I została ona opublikowana na Github.",
+      "color": "#e1ff00",
+      "name": "Comment"
+    }
+  ],
+  "comType": "4",
+  "description": "❄️・Limitowana świąteczna rola Wigilia 2024.",
+  "parameters": [
+    {
+      "name": "Akcja",
+      "description": "Wybierz jaką limitowaną role chcesz dostarczyć dla użytkownika.",
+      "type": "STRING",
+      "required": true,
+      "choices": [
+        {
+          "name": "Wigilia 2024",
+          "value": "Wigilia2"
+        }
+      ]
+    }
+  ]
+}
