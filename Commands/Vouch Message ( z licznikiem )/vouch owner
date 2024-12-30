@@ -1,0 +1,351 @@
+{
+  "name": "Vouch-Owner",
+  "permissions": "NONE",
+  "permissions2": "NONE",
+  "restriction": "1",
+  "_id": "jRwll",
+  "actions": [
+    {
+      "channel": "0",
+      "varName": "",
+      "info": "1",
+      "storage": "1",
+      "varName2": "GetCurrentChannelID345",
+      "name": "Store Channel Info"
+    },
+    {
+      "storage": "1",
+      "varName": "GetCurrentChannelID345",
+      "comparison": "1",
+      "value": "1281951981816254578",
+      "branch": {
+        "iftrue": "4",
+        "iffalse": "1",
+        "iftrueVal": "Channel345"
+      },
+      "name": "Check Variable"
+    },
+    {
+      "name": "End Action Sequence"
+    },
+    {
+      "anchorName": "Channel345",
+      "name": "Action Anchor"
+    },
+    {
+      "comment": "Channel345",
+      "actions": [
+        {
+          "server": "0",
+          "varName": "",
+          "info": "5",
+          "storage": "1",
+          "varName2": "icon",
+          "name": "Store Server Info"
+        },
+        {
+          "info": "0",
+          "find": "1287848897149931577",
+          "storage": "1",
+          "varName": "emoji",
+          "name": "Find Custom Emoji"
+        },
+        {
+          "channel": "0",
+          "varName": "",
+          "info": "1",
+          "storage": "1",
+          "varName2": "StoreChannelID345",
+          "name": "Store Channel Info"
+        },
+        {
+          "server": "0",
+          "varName": "",
+          "dataName": "${tempVars(\"StoreChannelID345\")}-BotMessageID345",
+          "defaultVal": "0",
+          "storage": "1",
+          "varName2": "GetSavedMessageID345",
+          "name": "Store Server Data"
+        },
+        {
+          "server": "0",
+          "varName": "",
+          "dataName": "${tempVars(\"StoreChannelID345\")}-BotMessageChannelID345",
+          "defaultVal": "0",
+          "storage": "1",
+          "varName2": "GetSavedChannelID345",
+          "name": "Store Server Data"
+        },
+        {
+          "storage": "1",
+          "varName": "GetSavedMessageID345",
+          "comparison": "1",
+          "value": "0",
+          "branch": {
+            "iftrue": "4",
+            "iffalse": "0",
+            "iftrueVal": "BotMessageNotFound345"
+          },
+          "name": "Check Variable"
+        },
+        {
+          "storage": "1",
+          "varName": "GetSavedChannelID345",
+          "comparison": "1",
+          "value": "0",
+          "branch": {
+            "iftrue": "4",
+            "iffalse": "0",
+            "iftrueVal": "BotMessageNotFound345"
+          },
+          "name": "Check Variable"
+        },
+        {
+          "comment": "Search Last Bot Message",
+          "color": "#00ff00",
+          "name": "Comment"
+        },
+        {
+          "channel": "101",
+          "varName": "${tempVars(\"GetSavedChannelID345\")}",
+          "info": "1",
+          "search": "${tempVars(\"GetSavedMessageID345\")}",
+          "storage": "1",
+          "varName2": "FindMessage345",
+          "name": "Find Message"
+        },
+        {
+          "storage": "1",
+          "varName": "FindMessage345",
+          "comparison": "1",
+          "value": "undefined",
+          "branch": {
+            "iftrue": "4",
+            "iffalse": "0",
+            "iftrueVal": "BotMessageNotFound345"
+          },
+          "name": "Check Variable"
+        },
+        {
+          "comment": "Last Bot Message Found",
+          "color": "#ffff00",
+          "name": "Comment"
+        },
+        {
+          "storage": "1",
+          "varName": "FindMessage345",
+          "reason": "",
+          "name": "Delete Message"
+        },
+        {
+          "channel": "0",
+          "varName": "",
+          "message": "",
+          "buttons": [],
+          "selectMenus": [],
+          "attachments": [],
+          "embeds": [
+            {
+              "title": "${tempVars(\"emoji\")} **Jak poprawnie napisać legit check?**",
+              "url": "",
+              "color": "#0f0f0f",
+              "timestamp": "true",
+              "imageUrl": "",
+              "thumbUrl": "",
+              "description": "**•** ``Vouch @Sprzedawca [co sprzedał] [za ile]``\n\n**WZÓR LEGIT CHECKA!**\n\n**•** ``Vouch @_perf3kcja 6b gemów 350zł``",
+              "fields": [],
+              "author": "",
+              "authorUrl": "",
+              "authorIcon": "",
+              "footerText": "~ Automatycznie wygenerowana wiadomość przez bota!",
+              "footerIconUrl": "${tempVars(\"icon\")}"
+            }
+          ],
+          "reply": true,
+          "ephemeral": false,
+          "tts": false,
+          "overwrite": false,
+          "dontSend": false,
+          "editMessage": "0",
+          "editMessageVarName": "",
+          "storage": "1",
+          "varName2": "BotMessage345",
+          "name": "Send Message"
+        },
+        {
+          "message": "1",
+          "varName": "BotMessage345",
+          "info": "1",
+          "storage": "1",
+          "varName2": "BotMessageID345",
+          "name": "Store Message Info"
+        },
+        {
+          "server": "0",
+          "varName": "",
+          "dataName": "${tempVars(\"StoreChannelID345\")}-BotMessageID345",
+          "changeType": "0",
+          "value": "tempVars(\"BotMessageID345\")",
+          "name": "Control Server Data"
+        },
+        {
+          "server": "0",
+          "varName": "",
+          "dataName": "${tempVars(\"StoreChannelID345\")}-BotMessageChannelID345",
+          "changeType": "0",
+          "value": "tempVars(\"StoreChannelID345\")",
+          "name": "Control Server Data"
+        },
+        {
+          "name": "End Action Sequence"
+        },
+        {
+          "comment": "Last Bot Message NOT Found",
+          "color": "#ff0000",
+          "name": "Comment"
+        },
+        {
+          "server": "0",
+          "varName": "",
+          "info": "5",
+          "storage": "1",
+          "varName2": "icon",
+          "name": "Store Server Info"
+        },
+        {
+          "info": "0",
+          "find": "1287848897149931577",
+          "storage": "1",
+          "varName": "emoji",
+          "name": "Find Custom Emoji"
+        },
+        {
+          "anchorName": "BotMessageNotFound345",
+          "name": "Action Anchor"
+        },
+        {
+          "channel": "0",
+          "varName": "",
+          "message": "",
+          "buttons": [],
+          "selectMenus": [],
+          "attachments": [],
+          "embeds": [
+            {
+              "title": "${tempVars(\"emoji\")} **Jak poprawnie napisać legit check?**",
+              "url": "",
+              "color": "#0f0f0f",
+              "timestamp": "true",
+              "imageUrl": "",
+              "thumbUrl": "",
+              "description": "**•** ``Vouch @Sprzedawca [co sprzedał] [za ile]``\n\n**WZÓR LEGIT CHECKA!**\n\n**•** ``Vouch @_perf3kcja 6b gemów 350zł``",
+              "fields": [],
+              "author": "",
+              "authorUrl": "",
+              "authorIcon": "",
+              "footerText": "~ Automatycznie wygenerowana wiadomość przez bota!",
+              "footerIconUrl": "${tempVars(\"icon\")}"
+            }
+          ],
+          "reply": true,
+          "ephemeral": false,
+          "tts": false,
+          "overwrite": false,
+          "dontSend": false,
+          "editMessage": "0",
+          "editMessageVarName": "",
+          "storage": "1",
+          "varName2": "BotMessage345",
+          "name": "Send Message"
+        },
+        {
+          "message": "1",
+          "varName": "BotMessage345",
+          "info": "1",
+          "storage": "1",
+          "varName2": "BotMessageID345",
+          "name": "Store Message Info"
+        },
+        {
+          "server": "0",
+          "varName": "",
+          "dataName": "${tempVars(\"StoreChannelID345\")}-BotMessageID345",
+          "changeType": "0",
+          "value": "tempVars(\"BotMessageID345\")",
+          "name": "Control Server Data"
+        },
+        {
+          "server": "0",
+          "varName": "",
+          "dataName": "${tempVars(\"StoreChannelID345\")}-BotMessageChannelID345",
+          "changeType": "0",
+          "value": "tempVars(\"StoreChannelID345\")",
+          "name": "Control Server Data"
+        },
+        {
+          "name": "End Action Sequence"
+        }
+      ],
+      "name": "Action Container"
+    },
+    {
+      "anchorName": "ChangeStats345",
+      "name": "Go To Action Anchor"
+    },
+    {
+      "name": "End Action Sequence"
+    },
+    {
+      "anchorName": "ChangeStats345",
+      "name": "Action Anchor"
+    },
+    {
+      "server": "0",
+      "varName": "",
+      "dataName": "VouchCounter345",
+      "changeType": "1",
+      "value": "1",
+      "name": "Control Server Data"
+    },
+    {
+      "measurement": "1",
+      "value": "3",
+      "save": "0",
+      "restrict": "0",
+      "iftrue": "1",
+      "iftrueVal": "",
+      "iffalse": "0",
+      "iffalseVal": "",
+      "storage": "0",
+      "varName": "",
+      "name": "Set Time Restriction"
+    },
+    {
+      "server": "0",
+      "varName": "",
+      "dataName": "VouchCounter345",
+      "defaultVal": "0",
+      "storage": "1",
+      "varName2": "GetVouchCounter345",
+      "name": "Store Server Data"
+    },
+    {
+      "channel": "101",
+      "channelVarName": "1281951981816254578",
+      "channelName": "📃・𝐎wnerˑ𝐕ouch ${tempVars(\"GetVouchCounter345\")}",
+      "reason": "",
+      "channelEdits": {
+        "_index": 0,
+        "topic": "",
+        "categoryID": "",
+        "slowmode": "",
+        "position": ""
+      },
+      "name": "Edit Any Channel"
+    },
+    {
+      "name": "End Action Sequence"
+    }
+  ],
+  "comType": "3"
+}
