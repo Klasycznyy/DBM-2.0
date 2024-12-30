@@ -1,0 +1,417 @@
+{
+  "name": "blacklista",
+  "permissions": "NONE",
+  "permissions2": "NONE",
+  "restriction": "1",
+  "_id": "MQGhy",
+  "actions": [
+    {
+      "member": "1",
+      "varName": "",
+      "permission": "ADMINISTRATOR",
+      "branch": {
+        "iftrue": "0",
+        "iffalse": "4",
+        "iffalseVal": "uprawnienia"
+      },
+      "name": "Check Member Permissions"
+    },
+    {
+      "storage": "4",
+      "varName": "Akcja",
+      "comparison": "1",
+      "value": "dodaj",
+      "branch": {
+        "iftrue": "4",
+        "iffalse": "0",
+        "iftrueVal": "Dodaj"
+      },
+      "name": "Check Variable"
+    },
+    {
+      "storage": "4",
+      "varName": "Akcja",
+      "comparison": "1",
+      "value": "usuń",
+      "branch": {
+        "iftrue": "4",
+        "iffalse": "1",
+        "iftrueVal": "Usun"
+      },
+      "name": "Check Variable"
+    },
+    {
+      "name": "End Action Sequence"
+    },
+    {
+      "anchorName": "Dodaj",
+      "name": "Action Anchor"
+    },
+    {
+      "member": "5",
+      "varName": "Użytkownik",
+      "role": "101",
+      "varName2": "1281297048456527914",
+      "branch": {
+        "iftrue": "4",
+        "iffalse": "0",
+        "iftrueVal": "YouHaveTicketRole3"
+      },
+      "name": "Check If Member has Role"
+    },
+    {
+      "info": "0",
+      "find": "1287848897149931577",
+      "storage": "1",
+      "varName": "yes",
+      "name": "Find Custom Emoji"
+    },
+    {
+      "member": "5",
+      "varName": "Użytkownik",
+      "info": "3",
+      "storage": "1",
+      "varName2": "dname1",
+      "name": "Store Member Info"
+    },
+    {
+      "member": "5",
+      "varName": "Użytkownik",
+      "info": "16",
+      "storage": "1",
+      "varName2": "iconurl1",
+      "name": "Store Member Info"
+    },
+    {
+      "comment": "V v V // ID Roli która ma byc nadana",
+      "color": "#fff700",
+      "name": "Comment"
+    },
+    {
+      "member": "5",
+      "varName2": "Użytkownik",
+      "role": "101",
+      "varName": "1281297048456527914",
+      "reason": "",
+      "name": "Add Member Role"
+    },
+    {
+      "channel": "0",
+      "varName": "",
+      "message": "",
+      "buttons": [],
+      "selectMenus": [],
+      "attachments": [],
+      "embeds": [
+        {
+          "title": "${tempVars(\"yes\")} **Zarządzanie Blacklistą!**",
+          "url": "",
+          "color": "#54f48c",
+          "timestamp": "true",
+          "imageUrl": "",
+          "thumbUrl": "",
+          "description": "${member} **Pomyślnie nadałeś użytkownikowi** ${slashParams(\"Użytkownik\")} **blackliste na tworzenie middlemana.**",
+          "fields": [],
+          "author": "",
+          "authorUrl": "",
+          "authorIcon": "",
+          "footerText": "~ Dodano blackliste dla użytkownika: ${tempVars(\"dname1\")}",
+          "footerIconUrl": "${tempVars(\"iconurl1\")}"
+        }
+      ],
+      "reply": true,
+      "ephemeral": true,
+      "tts": false,
+      "overwrite": false,
+      "dontSend": false,
+      "editMessage": "0",
+      "editMessageVarName": "",
+      "storage": "0",
+      "varName2": "",
+      "name": "Send Message"
+    },
+    {
+      "channel": "8",
+      "varName": "Użytkownik",
+      "message": "",
+      "buttons": [],
+      "selectMenus": [],
+      "attachments": [],
+      "embeds": [
+        {
+          "title": "${tempVars(\"yes\")} **Pomyślnie nadano tobie blackliste!**",
+          "url": "",
+          "color": "#54f48c",
+          "timestamp": "false",
+          "imageUrl": "",
+          "thumbUrl": "",
+          "description": "*Administrator ${member} nadał tobie blackliste za nie wystawienie nam voucha na kanale do tego przeznaczonym, od teraz nie możesz tworzyć ticketu na middlemana!*\n\n\n",
+          "fields": [],
+          "author": "",
+          "authorUrl": "",
+          "authorIcon": "",
+          "footerText": "",
+          "footerIconUrl": ""
+        }
+      ],
+      "reply": true,
+      "ephemeral": false,
+      "tts": false,
+      "overwrite": false,
+      "dontSend": false,
+      "editMessage": "0",
+      "editMessageVarName": "",
+      "storage": "0",
+      "varName2": "",
+      "name": "Send Message"
+    },
+    {
+      "name": "End Action Sequence"
+    },
+    {
+      "anchorName": "Usun",
+      "name": "Action Anchor"
+    },
+    {
+      "member": "5",
+      "varName": "Użytkownik",
+      "info": "16",
+      "storage": "1",
+      "varName2": "iconurl2",
+      "name": "Store Member Info"
+    },
+    {
+      "member": "5",
+      "varName": "Użytkownik",
+      "info": "3",
+      "storage": "1",
+      "varName2": "dname2",
+      "name": "Store Member Info"
+    },
+    {
+      "info": "0",
+      "find": "1287848995246444730",
+      "storage": "1",
+      "varName": "NIE",
+      "name": "Find Custom Emoji"
+    },
+    {
+      "comment": "V v V // ID Roli która ma byc usunieta",
+      "color": "#fff700",
+      "name": "Comment"
+    },
+    {
+      "member": "5",
+      "varName2": "Użytkownik",
+      "role": "101",
+      "varName": "1281297048456527914",
+      "reason": "",
+      "name": "Remove Member Role"
+    },
+    {
+      "channel": "0",
+      "varName": "",
+      "message": "",
+      "buttons": [],
+      "selectMenus": [],
+      "attachments": [],
+      "embeds": [
+        {
+          "title": "${tempVars(\"NIE\")} **Zarządzanie Blacklistą!**",
+          "url": "",
+          "color": "RED",
+          "timestamp": "true",
+          "imageUrl": "",
+          "thumbUrl": "",
+          "description": "${member} **Pomyślnie usunąłeś użytkownikowi** ${slashParams(\"Użytkownik\")} **blackliste, od teraz może on tworzyć ticket na middlemana.**",
+          "fields": [],
+          "author": "",
+          "authorUrl": "",
+          "authorIcon": "",
+          "footerText": "~ Usunięto blackliste dla użytkownika: ${tempVars(\"dname2\")}",
+          "footerIconUrl": "${tempVars(\"iconurl2\")}"
+        }
+      ],
+      "reply": true,
+      "ephemeral": true,
+      "tts": false,
+      "overwrite": false,
+      "dontSend": false,
+      "editMessage": "0",
+      "editMessageVarName": "",
+      "storage": "0",
+      "varName2": "",
+      "name": "Send Message"
+    },
+    {
+      "channel": "8",
+      "varName": "Użytkownik",
+      "message": "",
+      "buttons": [],
+      "selectMenus": [],
+      "attachments": [],
+      "embeds": [
+        {
+          "title": "${tempVars(\"NIE\")} **Pomyślnie usunięto tobie blackliste!**",
+          "url": "",
+          "color": "RED",
+          "timestamp": "false",
+          "imageUrl": "",
+          "thumbUrl": "",
+          "description": "*Administrator ${member} zdjął z ciebie blackliste, od teraz możesz tworzyć tickety związane z middlemanem!*\n\n\n",
+          "fields": [],
+          "author": "",
+          "authorUrl": "",
+          "authorIcon": "",
+          "footerText": "",
+          "footerIconUrl": ""
+        }
+      ],
+      "reply": true,
+      "ephemeral": false,
+      "tts": false,
+      "overwrite": false,
+      "dontSend": false,
+      "editMessage": "0",
+      "editMessageVarName": "",
+      "storage": "0",
+      "varName2": "",
+      "name": "Send Message"
+    },
+    {
+      "name": "End Action Sequence"
+    },
+    {
+      "anchorName": "uprawnienia",
+      "name": "Action Anchor"
+    },
+    {
+      "info": "0",
+      "find": "1287848995246444730",
+      "storage": "1",
+      "varName": "NIE",
+      "name": "Find Custom Emoji"
+    },
+    {
+      "channel": "0",
+      "varName": "",
+      "message": "",
+      "buttons": [],
+      "selectMenus": [],
+      "attachments": [],
+      "embeds": [
+        {
+          "title": "",
+          "url": "",
+          "color": "RED",
+          "timestamp": "false",
+          "imageUrl": "https://i.imgur.com/Rav4FMh.png",
+          "thumbUrl": "",
+          "description": "${tempVars(\"NIE\")} **Brak uprawnień do użycia polecenia, abyś mógł użyć wymagane jest uprawnienie do administratora.**",
+          "fields": [],
+          "author": "",
+          "authorUrl": "",
+          "authorIcon": "",
+          "footerText": "",
+          "footerIconUrl": ""
+        }
+      ],
+      "reply": true,
+      "ephemeral": true,
+      "tts": false,
+      "overwrite": false,
+      "dontSend": false,
+      "editMessage": "0",
+      "editMessageVarName": "",
+      "storage": "0",
+      "varName2": "",
+      "name": "Send Message"
+    },
+    {
+      "name": "End Action Sequence"
+    },
+    {
+      "anchorName": "YouHaveTicketRole3",
+      "name": "Action Anchor"
+    },
+    {
+      "info": "0",
+      "find": "1287848995246444730",
+      "storage": "1",
+      "varName": "nie",
+      "name": "Find Custom Emoji"
+    },
+    {
+      "channel": "0",
+      "varName": "",
+      "message": "",
+      "buttons": [],
+      "selectMenus": [],
+      "attachments": [],
+      "embeds": [
+        {
+          "title": "",
+          "url": "",
+          "color": "RED",
+          "timestamp": "false",
+          "imageUrl": "",
+          "thumbUrl": "",
+          "description": "${tempVars(\"nie\")} **Nie możesz nadać blacklisty, ponieważ użytkownik posiada już role ``❌ Blacklist Middleman!``.**",
+          "fields": [],
+          "author": "",
+          "authorUrl": "",
+          "authorIcon": "",
+          "footerText": "",
+          "footerIconUrl": ""
+        }
+      ],
+      "reply": true,
+      "ephemeral": true,
+      "tts": false,
+      "overwrite": false,
+      "dontSend": false,
+      "editMessage": "0",
+      "editMessageVarName": "",
+      "storage": "0",
+      "varName2": "",
+      "name": "Send Message"
+    },
+    {
+      "comment": "## Rawdata wykonana przez: _perf3kcja",
+      "color": "#fff700",
+      "name": "Comment"
+    },
+    {
+      "comment": "## I została ona opublikowana na Github.",
+      "color": "#e1ff00",
+      "name": "Comment"
+    }
+  ],
+  "comType": "4",
+  "description": "💣・Zarządzanie blacklistą na middlemana dla użytkownika.",
+  "parameters": [
+    {
+      "name": "Akcja",
+      "description": "Dodać czy zdjąć blackliste na middlemana?",
+      "type": "STRING",
+      "required": true,
+      "choices": [
+        {
+          "name": "dodaj",
+          "value": "dodaj"
+        },
+        {
+          "name": "usuń",
+          "value": "usuń"
+        }
+      ]
+    },
+    {
+      "name": "Użytkownik",
+      "description": "Użytkownik który ma dostać blackliste.",
+      "type": "USER",
+      "required": true,
+      "choices": null
+    }
+  ]
+}
