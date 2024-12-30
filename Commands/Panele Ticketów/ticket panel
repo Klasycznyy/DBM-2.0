@@ -3,7 +3,7 @@
   "permissions": "NONE",
   "permissions2": "NONE",
   "restriction": "1",
-  "_id": "MCFdE",
+  "_id": "HhtpF",
   "actions": [
     {
       "member": "1",
@@ -36,6 +36,48 @@
       "storage": "1",
       "varName": "koszyk",
       "name": "Find Custom Emoji"
+    },
+    {
+      "info": "0",
+      "find": "1287848897149931577",
+      "storage": "1",
+      "varName": "yea",
+      "name": "Find Custom Emoji"
+    },
+    {
+      "channel": "0",
+      "varName": "",
+      "message": "",
+      "buttons": [],
+      "selectMenus": [],
+      "attachments": [],
+      "embeds": [
+        {
+          "title": "",
+          "url": "",
+          "color": "GREEN",
+          "timestamp": "false",
+          "imageUrl": "",
+          "thumbUrl": "",
+          "description": "${tempVars(\"yea\")} **Poprawnie wykonałeś polecenie!**",
+          "fields": [],
+          "author": "",
+          "authorUrl": "",
+          "authorIcon": "",
+          "footerText": "",
+          "footerIconUrl": ""
+        }
+      ],
+      "reply": true,
+      "ephemeral": true,
+      "tts": false,
+      "overwrite": false,
+      "dontSend": false,
+      "editMessage": "0",
+      "editMessageVarName": "",
+      "storage": "0",
+      "varName2": "",
+      "name": "Send Message"
     },
     {
       "channel": "0",
@@ -77,10 +119,6 @@
           ],
           "actions": [
             {
-              "ephemeral": true,
-              "name": "Start Thinking"
-            },
-            {
               "server": "0",
               "varName": "",
               "dataName": "ID",
@@ -101,18 +139,6 @@
               "storage": "1",
               "varName": "var",
               "comparison": "1",
-              "value": "zakup-ps99",
-              "branch": {
-                "iftrue": "4",
-                "iffalse": "0",
-                "iftrueVal": "zakup_z_oferty"
-              },
-              "name": "Check Variable"
-            },
-            {
-              "storage": "1",
-              "varName": "var",
-              "comparison": "1",
               "value": "pytanie",
               "branch": {
                 "iftrue": "4",
@@ -128,8 +154,20 @@
               "value": "slot",
               "branch": {
                 "iftrue": "4",
-                "iffalse": "1",
+                "iffalse": "0",
                 "iftrueVal": "zakup_slotu"
+              },
+              "name": "Check Variable"
+            },
+            {
+              "storage": "1",
+              "varName": "var",
+              "comparison": "1",
+              "value": "zakup-ps99",
+              "branch": {
+                "iftrue": "4",
+                "iffalse": "1",
+                "iftrueVal": "zakup_z_oferty"
               },
               "name": "Check Variable"
             },
@@ -139,6 +177,136 @@
             {
               "anchorName": "zakup_z_oferty",
               "name": "Action Anchor"
+            },
+            {
+              "title": "Formularz do Zakupu z Naszej Oferty.",
+              "textInputs": [
+                {
+                  "name": "Co chcesz kupić?:",
+                  "placeholder": "Np. ( 50 Huge w PS99 ), ( 50m Gemów w Pets GO).",
+                  "minLength": "0",
+                  "maxLength": "100",
+                  "id": "zakup1",
+                  "row": "",
+                  "style": "SHORT",
+                  "required": "true"
+                },
+                {
+                  "name": "Czym płacisz?:",
+                  "placeholder": "Np. Blik, Paypal itp.",
+                  "minLength": "0",
+                  "maxLength": "1000",
+                  "id": "platnosc1",
+                  "row": "",
+                  "style": "SHORT",
+                  "required": "true"
+                },
+                {
+                  "name": "Dodatkowe informacje:",
+                  "placeholder": "Wpisz tutaj jak masz jakieś informację dot. Zakupu.",
+                  "minLength": "0",
+                  "maxLength": "200",
+                  "id": "informacje",
+                  "row": "",
+                  "style": "SHORT",
+                  "required": "false"
+                }
+              ],
+              "name": "Show Modal"
+            },
+            {
+              "server": "0",
+              "varName": "",
+              "info": "5",
+              "storage": "1",
+              "varName2": "serviconurl",
+              "name": "Store Server Info"
+            },
+            {
+              "info": "0",
+              "find": "1287848995246444730",
+              "storage": "1",
+              "varName": "nołpe",
+              "name": "Find Custom Emoji"
+            },
+            {
+              "info": "0",
+              "find": "1295134066751967252",
+              "storage": "1",
+              "varName": "xd1",
+              "name": "Find Custom Emoji"
+            },
+            {
+              "info": "0",
+              "find": "1302000580079648808",
+              "storage": "1",
+              "varName": "info321",
+              "name": "Find Custom Emoji"
+            },
+            {
+              "storage": "1",
+              "varName": "platnosc1",
+              "changeType": "0",
+              "value": "tempVars(\"platnosc1\").toLowerCase()",
+              "name": "Control Variable"
+            },
+            {
+              "storage": "1",
+              "varName": "platnosc1",
+              "comparison": "6",
+              "value": "(blik|psc|paysafecard|paypal|karta|przelew|przelew bankowy)",
+              "branch": {
+                "iftrue": "4",
+                "iffalse": "0",
+                "iftrueVal": "zakupzoferty"
+              },
+              "name": "Check Variable"
+            },
+            {
+              "channel": "0",
+              "varName": "",
+              "message": "",
+              "buttons": [],
+              "selectMenus": [],
+              "attachments": [],
+              "embeds": [
+                {
+                  "title": "${tempVars(\"nołpe\")} **Wpisano nie prawidłową wartość płatności!**",
+                  "url": "",
+                  "color": "RED",
+                  "timestamp": "true",
+                  "imageUrl": "",
+                  "thumbUrl": "",
+                  "description": "- ${tempVars(\"xd1\")} **Podano nie prawidłową metodę płatności:**\n*${tempVars(\"platnosc1\")}*\n\n- ${tempVars(\"info321\")} **Aby poprawnie dodać metodę płatności, pamiętaj ze my tylko obsługujemy takie jak;** *Blik, Kod PaySafeCard, Paypal oraz Przelew Bankowy,*\n- **Nasz system modal ma zarejestrowaną, zapisane wartości jak poniżej:**\n\n> *Blik*\n> *Paysafecard , Psc*\n> *Paypal*\n> *Karta , Przelew bankowy*\n",
+                  "fields": [],
+                  "author": "",
+                  "authorUrl": "",
+                  "authorIcon": "",
+                  "footerText": "~ Prawdopodobnie wpisano nie poprawną metodę płatności!",
+                  "footerIconUrl": "${tempVars(\"serviconurl\")}"
+                }
+              ],
+              "reply": true,
+              "ephemeral": true,
+              "tts": false,
+              "overwrite": false,
+              "dontSend": false,
+              "editMessage": "0",
+              "editMessageVarName": "",
+              "storage": "0",
+              "varName2": "",
+              "name": "Send Message"
+            },
+            {
+              "name": "End Action Sequence"
+            },
+            {
+              "anchorName": "zakupzoferty",
+              "name": "Action Anchor"
+            },
+            {
+              "ephemeral": true,
+              "name": "Start Thinking"
             },
             {
               "member": "1",
@@ -161,22 +329,12 @@
               "name": "Check If Member has Role"
             },
             {
-              "comment": "## V v V / Ustaw role nadawaną po utworzeniu ticketa",
-              "color": "#fff700",
-              "name": "Comment"
-            },
-            {
               "member": "1",
               "varName2": "",
               "role": "101",
               "varName": "1300575339075866664",
               "reason": "",
               "name": "Add Member Role"
-            },
-            {
-              "comment": "## V v V / Ustaw kategorie gdzie ma kanał być tworzony",
-              "color": "#fff700",
-              "name": "Comment"
             },
             {
               "channelName": "zakup-z-oferty-${tempVars(\"username\")}",
@@ -261,11 +419,6 @@
               "name": "Set Member Channel Perms"
             },
             {
-              "comment": "## V v V / Ustaw role dla uprawnień kanału",
-              "color": "#fff700",
-              "name": "Comment"
-            },
-            {
               "channel": "3",
               "varName": "channel1",
               "role": "101",
@@ -323,12 +476,68 @@
               "name": "Find Custom Emoji"
             },
             {
+              "info": "0",
+              "find": "1292156544393150505",
+              "storage": "1",
+              "varName": "sklepik",
+              "name": "Find Custom Emoji"
+            },
+            {
+              "info": "0",
+              "find": "1302000580079648808",
+              "storage": "1",
+              "varName": "info54",
+              "name": "Find Custom Emoji"
+            },
+            {
+              "info": "0",
+              "find": "1294957534246866966",
+              "storage": "1",
+              "varName": "platnosc",
+              "name": "Find Custom Emoji"
+            },
+            {
               "server": "0",
               "varName": "",
               "info": "2",
               "storage": "1",
               "varName2": "iconurl1",
               "name": "Store Server Info"
+            },
+            {
+              "channel": "0",
+              "varName": "",
+              "message": "",
+              "buttons": [],
+              "selectMenus": [],
+              "attachments": [],
+              "embeds": [
+                {
+                  "title": "${tempVars(\"yes123\")} **Zgłoszenie!**",
+                  "url": "",
+                  "color": "#54f48c",
+                  "timestamp": "false",
+                  "imageUrl": "",
+                  "thumbUrl": "",
+                  "description": "**${tempVars(\"iconurl1\")} ×** Twoje zgłoszenie zostało otwarte. - ${tempVars(\"channel1\")}",
+                  "fields": [],
+                  "author": "",
+                  "authorUrl": "",
+                  "authorIcon": "",
+                  "footerText": "",
+                  "footerIconUrl": ""
+                }
+              ],
+              "reply": true,
+              "ephemeral": true,
+              "tts": false,
+              "overwrite": false,
+              "dontSend": false,
+              "editMessage": "0",
+              "editMessageVarName": "",
+              "storage": "0",
+              "varName2": "",
+              "name": "Send Message"
             },
             {
               "channel": "5",
@@ -424,11 +633,6 @@
                               "name": "Find Member"
                             },
                             {
-                              "comment": "## V v V / Ustaw role która ma być usunięta tak jak tworzyłeś ticket",
-                              "color": "#fff700",
-                              "name": "Comment"
-                            },
-                            {
                               "member": "2",
                               "varName2": "FindTicketOwner",
                               "role": "101",
@@ -507,11 +711,6 @@
                               "input2": "",
                               "togglestatus": "no",
                               "name": "File Control"
-                            },
-                            {
-                              "comment": "## V v V / Ustaw kanał z transcriptami (logami)",
-                              "color": "#fff700",
-                              "name": "Comment"
                             },
                             {
                               "channel": "103",
@@ -743,7 +942,7 @@
                   "timestamp": "false",
                   "imageUrl": "",
                   "thumbUrl": "",
-                  "description": "> **・ Napisz co chcesz od nas zakupić ``(huge/serwery discord/, itp.)`` a my postaramy odpowiedzieć jak najszybciej.**",
+                  "description": "**Co chcesz Od nas Zakupić:**\n- ${tempVars(\"sklepik\")} **Zakup?:** ${tempVars(\"zakup1\")}\n\n**Płatność jaką Wykonujesz:**\n- ${tempVars(\"platnosc\")} **Płatność?:** ${tempVars(\"platnosc1\")}\n\n${tempVars(\"info54\")} **Dodatkowe Informacje:**\n- **Opis:** ${tempVars(\"informacje\")}",
                   "fields": [],
                   "author": "",
                   "authorUrl": "",
@@ -754,41 +953,6 @@
               ],
               "reply": true,
               "ephemeral": false,
-              "tts": false,
-              "overwrite": false,
-              "dontSend": false,
-              "editMessage": "0",
-              "editMessageVarName": "",
-              "storage": "0",
-              "varName2": "",
-              "name": "Send Message"
-            },
-            {
-              "channel": "0",
-              "varName": "",
-              "message": "",
-              "buttons": [],
-              "selectMenus": [],
-              "attachments": [],
-              "embeds": [
-                {
-                  "title": "${tempVars(\"yes123\")} **Zgłoszenie!**",
-                  "url": "",
-                  "color": "#54f48c",
-                  "timestamp": "false",
-                  "imageUrl": "",
-                  "thumbUrl": "",
-                  "description": "**${tempVars(\"iconurl1\")} ×** Twoje zgłoszenie zostało otwarte. - ${tempVars(\"channel1\")}",
-                  "fields": [],
-                  "author": "",
-                  "authorUrl": "",
-                  "authorIcon": "",
-                  "footerText": "",
-                  "footerIconUrl": ""
-                }
-              ],
-              "reply": true,
-              "ephemeral": true,
               "tts": false,
               "overwrite": false,
               "dontSend": false,
@@ -908,6 +1072,10 @@
               "name": "Action Anchor"
             },
             {
+              "ephemeral": true,
+              "name": "Start Thinking"
+            },
+            {
               "member": "1",
               "varName": "",
               "info": "2",
@@ -928,22 +1096,12 @@
               "name": "Check If Member has Role"
             },
             {
-              "comment": "## V v V / Ustaw role nadawaną po utworzeniu ticketa",
-              "color": "#fff700",
-              "name": "Comment"
-            },
-            {
               "member": "1",
               "varName2": "",
               "role": "101",
               "varName": "1300575339075866664",
               "reason": "",
               "name": "Add Member Role"
-            },
-            {
-              "comment": "## V v V / Ustaw kategorie gdzie ma kanał być tworzony",
-              "color": "#fff700",
-              "name": "Comment"
             },
             {
               "channelName": "pytanie-${tempVars(\"username\")}",
@@ -1026,11 +1184,6 @@
               "state": "0",
               "reason": "",
               "name": "Set Member Channel Perms"
-            },
-            {
-              "comment": "## V v V / Ustaw role dla uprawnień kanału",
-              "color": "#fff700",
-              "name": "Comment"
             },
             {
               "channel": "3",
@@ -1248,11 +1401,6 @@
                               "name": "Find Member"
                             },
                             {
-                              "comment": "## V v V / Ustaw role która ma być usunięta tak jak tworzyłeś ticket",
-                              "color": "#fff700",
-                              "name": "Comment"
-                            },
-                            {
                               "member": "2",
                               "varName2": "FindTicketOwner",
                               "role": "101",
@@ -1331,11 +1479,6 @@
                               "input2": "",
                               "togglestatus": "no",
                               "name": "File Control"
-                            },
-                            {
-                              "comment": "## V v V / Ustaw kanał z transcriptami (logami)",
-                              "color": "#fff700",
-                              "name": "Comment"
                             },
                             {
                               "channel": "103",
@@ -1710,6 +1853,10 @@
               "name": "Action Anchor"
             },
             {
+              "ephemeral": true,
+              "name": "Start Thinking"
+            },
+            {
               "member": "1",
               "varName": "",
               "info": "2",
@@ -1730,22 +1877,12 @@
               "name": "Check If Member has Role"
             },
             {
-              "comment": "## V v V / Ustaw role nadawaną po utworzeniu ticketa",
-              "color": "#fff700",
-              "name": "Comment"
-            },
-            {
               "member": "1",
               "varName2": "",
               "role": "101",
               "varName": "1300575339075866664",
               "reason": "",
               "name": "Add Member Role"
-            },
-            {
-              "comment": "## V v V / Ustaw kategorie gdzie ma kanał być tworzony",
-              "color": "#fff700",
-              "name": "Comment"
             },
             {
               "channelName": "zakup-slotu-${tempVars(\"username\")}",
@@ -1828,11 +1965,6 @@
               "state": "0",
               "reason": "",
               "name": "Set Member Channel Perms"
-            },
-            {
-              "comment": "## V v V / Ustaw role dla uprawnień kanału",
-              "color": "#fff700",
-              "name": "Comment"
             },
             {
               "channel": "3",
@@ -2037,11 +2169,6 @@
                               "name": "Find Member"
                             },
                             {
-                              "comment": "## V v V / Ustaw role która ma być usunięta tak jak tworzyłeś ticket",
-                              "color": "#fff700",
-                              "name": "Comment"
-                            },
-                            {
                               "member": "2",
                               "varName2": "FindTicketOwner",
                               "role": "101",
@@ -2120,11 +2247,6 @@
                               "input2": "",
                               "togglestatus": "no",
                               "name": "File Control"
-                            },
-                            {
-                              "comment": "## V v V / Ustaw kanał z transcriptami (logami)",
-                              "color": "#fff700",
-                              "name": "Comment"
                             },
                             {
                               "channel": "103",
@@ -2626,16 +2748,6 @@
             },
             {
               "name": "End Action Sequence"
-            },
-            {
-              "comment": "## Rawdata wykonana przez: _perf3kcja",
-              "color": "#fff700",
-              "name": "Comment"
-            },
-            {
-              "comment": "## I została ona opublikowana na Github.",
-              "color": "#e1ff00",
-              "name": "Comment"
             }
           ]
         }
@@ -2717,16 +2829,6 @@
       "storage": "0",
       "varName2": "",
       "name": "Send Message"
-    },
-    {
-      "comment": "## Rawdata wykonana przez: _perf3kcja",
-      "color": "#fff700",
-      "name": "Comment"
-    },
-    {
-      "comment": "## I została ona opublikowana na Github.",
-      "color": "#e1ff00",
-      "name": "Comment"
     }
   ],
   "comType": "4",
