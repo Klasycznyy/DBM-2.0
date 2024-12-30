@@ -1,0 +1,355 @@
+{
+  "name": "wymiany - any mess.",
+  "permissions": "NONE",
+  "permissions2": "NONE",
+  "restriction": "1",
+  "_id": "OZSEn",
+  "actions": [
+    {
+      "channel": "0",
+      "varName": "",
+      "info": "1",
+      "storage": "1",
+      "varName2": "GetCurrentChannelID654321",
+      "name": "Store Channel Info"
+    },
+    {
+      "storage": "1",
+      "varName": "GetCurrentChannelID654321",
+      "comparison": "1",
+      "value": "1279879680698355752",
+      "branch": {
+        "iftrue": "4",
+        "iffalse": "1",
+        "iftrueVal": "Channel1654321"
+      },
+      "name": "Check Variable"
+    },
+    {
+      "name": "End Action Sequence"
+    },
+    {
+      "info": "0",
+      "find": "1294957534246866966",
+      "storage": "1",
+      "varName": "emoji",
+      "name": "Find Custom Emoji"
+    },
+    {
+      "info": "0",
+      "find": "1292156458057728081",
+      "storage": "1",
+      "varName": "blik",
+      "name": "Find Custom Emoji"
+    },
+    {
+      "info": "0",
+      "find": "1292157128638726265",
+      "storage": "1",
+      "varName": "paypal",
+      "name": "Find Custom Emoji"
+    },
+    {
+      "info": "0",
+      "find": "1292157096028012607",
+      "storage": "1",
+      "varName": "psc",
+      "name": "Find Custom Emoji"
+    },
+    {
+      "info": "0",
+      "find": "1295396398983938200",
+      "storage": "1",
+      "varName": "bank",
+      "name": "Find Custom Emoji"
+    },
+    {
+      "anchorName": "Channel1654321",
+      "name": "Action Anchor"
+    },
+    {
+      "comment": "Channel1654321",
+      "actions": [
+        {
+          "server": "0",
+          "varName": "",
+          "info": "5",
+          "storage": "1",
+          "varName2": "icon",
+          "name": "Store Server Info"
+        },
+        {
+          "info": "0",
+          "find": "1302000580079648808",
+          "storage": "1",
+          "varName": "emoji",
+          "name": "Find Custom Emoji"
+        },
+        {
+          "info": "0",
+          "find": "1287848831676977233",
+          "storage": "1",
+          "varName": "emoji1",
+          "name": "Find Custom Emoji"
+        },
+        {
+          "channel": "0",
+          "varName": "",
+          "info": "1",
+          "storage": "1",
+          "varName2": "StoreChannelID654321",
+          "name": "Store Channel Info"
+        },
+        {
+          "server": "0",
+          "varName": "",
+          "dataName": "${tempVars(\"StoreChannelID654321\")}-BotMessageID654321",
+          "defaultVal": "0",
+          "storage": "1",
+          "varName2": "GetSavedMessageID654321",
+          "name": "Store Server Data"
+        },
+        {
+          "server": "0",
+          "varName": "",
+          "dataName": "${tempVars(\"StoreChannelID654321\")}-BotMessageChannelID654321",
+          "defaultVal": "0",
+          "storage": "1",
+          "varName2": "GetSavedChannelID654321",
+          "name": "Store Server Data"
+        },
+        {
+          "storage": "1",
+          "varName": "GetSavedMessageID654321",
+          "comparison": "1",
+          "value": "0",
+          "branch": {
+            "iftrue": "4",
+            "iffalse": "0",
+            "iftrueVal": "BotMessageNotFound654321"
+          },
+          "name": "Check Variable"
+        },
+        {
+          "storage": "1",
+          "varName": "GetSavedChannelID654321",
+          "comparison": "1",
+          "value": "0",
+          "branch": {
+            "iftrue": "4",
+            "iffalse": "0",
+            "iftrueVal": "BotMessageNotFound654321"
+          },
+          "name": "Check Variable"
+        },
+        {
+          "comment": "Search Last Bot Message",
+          "color": "#00ff00",
+          "name": "Comment"
+        },
+        {
+          "channel": "101",
+          "varName": "${tempVars(\"GetSavedChannelID654321\")}",
+          "info": "1",
+          "search": "${tempVars(\"GetSavedMessageID654321\")}",
+          "storage": "1",
+          "varName2": "FindMessage654321",
+          "name": "Find Message"
+        },
+        {
+          "storage": "1",
+          "varName": "FindMessage654321",
+          "comparison": "1",
+          "value": "undefined",
+          "branch": {
+            "iftrue": "4",
+            "iffalse": "0",
+            "iftrueVal": "BotMessageNotFound654321"
+          },
+          "name": "Check Variable"
+        },
+        {
+          "comment": "Last Bot Message Found",
+          "color": "#ffff00",
+          "name": "Comment"
+        },
+        {
+          "storage": "1",
+          "varName": "FindMessage654321",
+          "reason": "",
+          "name": "Delete Message"
+        },
+        {
+          "time": "4",
+          "measurement": "1",
+          "name": "Wait"
+        },
+        {
+          "channel": "0",
+          "varName": "",
+          "message": "",
+          "buttons": [],
+          "selectMenus": [],
+          "attachments": [],
+          "embeds": [
+            {
+              "title": "",
+              "url": "",
+              "color": "#0f0f0f",
+              "timestamp": "true",
+              "imageUrl": "",
+              "thumbUrl": "",
+              "description": "${tempVars(\"emoji\")} **Pamiętajcie o używaniu middlemana, w przypadku nie użycia a zostaniecie oszukani nie ponosimy za to konsekwencji.** ${tempVars(\"emoji\")}\n\n- *Wyjaśnienie co to middleman, itp jest na kanale <#1301999410070159370>*",
+              "fields": [],
+              "author": "",
+              "authorUrl": "",
+              "authorIcon": "",
+              "footerText": "~ Automatycznie wygenerowana wiadomość przez bota!",
+              "footerIconUrl": "${tempVars(\"icon\")}"
+            }
+          ],
+          "reply": true,
+          "ephemeral": false,
+          "tts": false,
+          "overwrite": false,
+          "dontSend": false,
+          "editMessage": "0",
+          "editMessageVarName": "",
+          "storage": "1",
+          "varName2": "BotMessage654321",
+          "name": "Send Message"
+        },
+        {
+          "message": "1",
+          "varName": "BotMessage654321",
+          "info": "1",
+          "storage": "1",
+          "varName2": "BotMessageID654321",
+          "name": "Store Message Info"
+        },
+        {
+          "server": "0",
+          "varName": "",
+          "dataName": "${tempVars(\"StoreChannelID654321\")}-BotMessageID654321",
+          "changeType": "0",
+          "value": "tempVars(\"BotMessageID654321\")",
+          "name": "Control Server Data"
+        },
+        {
+          "server": "0",
+          "varName": "",
+          "dataName": "${tempVars(\"StoreChannelID654321\")}-BotMessageChannelID654321",
+          "changeType": "0",
+          "value": "tempVars(\"StoreChannelID654321\")",
+          "name": "Control Server Data"
+        },
+        {
+          "name": "End Action Sequence"
+        },
+        {
+          "comment": "Last Bot Message NOT Found",
+          "color": "#ff0000",
+          "name": "Comment"
+        },
+        {
+          "info": "0",
+          "find": "1302000580079648808",
+          "storage": "1",
+          "varName": "emoji",
+          "name": "Find Custom Emoji"
+        },
+        {
+          "info": "0",
+          "find": "1287848831676977233",
+          "storage": "1",
+          "varName": "emoji1",
+          "name": "Find Custom Emoji"
+        },
+        {
+          "server": "0",
+          "varName": "",
+          "info": "5",
+          "storage": "1",
+          "varName2": "icon",
+          "name": "Store Server Info"
+        },
+        {
+          "anchorName": "BotMessageNotFound654321",
+          "name": "Action Anchor"
+        },
+        {
+          "time": "4",
+          "measurement": "1",
+          "name": "Wait"
+        },
+        {
+          "channel": "0",
+          "varName": "",
+          "message": "",
+          "buttons": [],
+          "selectMenus": [],
+          "attachments": [],
+          "embeds": [
+            {
+              "title": "",
+              "url": "",
+              "color": "#0f0f0f",
+              "timestamp": "true",
+              "imageUrl": "",
+              "thumbUrl": "",
+              "description": "${tempVars(\"emoji\")} **Pamiętajcie o używaniu middlemana, w przypadku nie użycia a zostaniecie oszukani nie ponosimy za to konsekwencji.** ${tempVars(\"emoji\")}\n\n- *Wyjaśnienie co to middleman, itp jest na kanale <#1301999410070159370>*",
+              "fields": [],
+              "author": "",
+              "authorUrl": "",
+              "authorIcon": "",
+              "footerText": "~ Automatycznie wygenerowana wiadomość przez bota!",
+              "footerIconUrl": "${tempVars(\"icon\")}"
+            }
+          ],
+          "reply": true,
+          "ephemeral": false,
+          "tts": false,
+          "overwrite": false,
+          "dontSend": false,
+          "editMessage": "0",
+          "editMessageVarName": "",
+          "storage": "1",
+          "varName2": "BotMessage654321",
+          "name": "Send Message"
+        },
+        {
+          "message": "1",
+          "varName": "BotMessage654321",
+          "info": "1",
+          "storage": "1",
+          "varName2": "BotMessageID654321",
+          "name": "Store Message Info"
+        },
+        {
+          "server": "0",
+          "varName": "",
+          "dataName": "${tempVars(\"StoreChannelID654321\")}-BotMessageID654321",
+          "changeType": "0",
+          "value": "tempVars(\"BotMessageID654321\")",
+          "name": "Control Server Data"
+        },
+        {
+          "server": "0",
+          "varName": "",
+          "dataName": "${tempVars(\"StoreChannelID654321\")}-BotMessageChannelID654321",
+          "changeType": "0",
+          "value": "tempVars(\"StoreChannelID654321\")",
+          "name": "Control Server Data"
+        },
+        {
+          "name": "End Action Sequence"
+        }
+      ],
+      "name": "Action Container"
+    },
+    {
+      "name": "End Action Sequence"
+    }
+  ],
+  "comType": "3"
+}
