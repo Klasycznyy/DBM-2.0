@@ -1,0 +1,59 @@
+{
+  "name": "co to middleman?",
+  "permissions": "NONE",
+  "permissions2": "NONE",
+  "restriction": "1",
+  "_id": "pmVof",
+  "actions": [
+    {
+      "info": "0",
+      "find": "1295081614958657617",
+      "storage": "1",
+      "varName": "osoba",
+      "name": "Find Custom Emoji"
+    },
+    {
+      "info": "0",
+      "find": "1302000580079648808",
+      "storage": "1",
+      "varName": "info",
+      "name": "Find Custom Emoji"
+    },
+    {
+      "channel": "0",
+      "varName": "channel",
+      "message": "",
+      "buttons": [],
+      "selectMenus": [],
+      "attachments": [],
+      "embeds": [
+        {
+          "title": "**CO TO MIDDLEMAN?** ${tempVars(\"osoba\")}",
+          "url": "",
+          "color": "#0f0f0f",
+          "timestamp": "false",
+          "imageUrl": "",
+          "thumbUrl": "",
+          "description": "${tempVars(\"info\")} *Middleman jest to osoba która przeprowadzi twoja wymianę legitnie i nie zostaniesz oszukanym w żadnym stopniu.*\n*Na przyklad osoba która sprzedaje huge daje go middlemanowi i gdy osoba sprzedająca uzyska zapłatę to osoba kupująca dostaje tego huge od middlemana.*\n\n**__ODMOWA MIDDLEMANA JEST TRAKTOWANA JAKO PRÓBA SCAMU I KARANA BANEM!__**",
+          "fields": [],
+          "author": "",
+          "authorUrl": "",
+          "authorIcon": "",
+          "footerText": "",
+          "footerIconUrl": ""
+        }
+      ],
+      "reply": true,
+      "ephemeral": false,
+      "tts": false,
+      "overwrite": false,
+      "dontSend": false,
+      "editMessage": "0",
+      "editMessageVarName": "channel",
+      "storage": "0",
+      "varName2": "",
+      "name": "Send Message"
+    }
+  ],
+  "comType": "1"
+}
