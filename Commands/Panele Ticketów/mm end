@@ -1,0 +1,697 @@
+{
+  "name": "mm-end",
+  "permissions": "NONE",
+  "permissions2": "NONE",
+  "restriction": "1",
+  "_id": "Ynmmr",
+  "actions": [
+    {
+      "member": "1",
+      "varName": "",
+      "permission": "MOVE_MEMBERS",
+      "branch": {
+        "iftrue": "0",
+        "iffalse": "4",
+        "iffalseVal": "uprawnienia"
+      },
+      "name": "Check Member Permissions"
+    },
+    {
+      "comment": "NEW",
+      "color": "#ff0000",
+      "name": "Comment"
+    },
+    {
+      "channel": "0",
+      "varName": "",
+      "info": "2",
+      "storage": "1",
+      "varName2": "GetChannelName",
+      "name": "Store Channel Info"
+    },
+    {
+      "storage": "1",
+      "varName": "GetChannelName",
+      "comparison": "5",
+      "value": "middleman",
+      "branch": {
+        "iftrue": "3",
+        "iffalse": "0",
+        "iftrueVal": "3"
+      },
+      "name": "Check Variable"
+    },
+    {
+      "storage": "1",
+      "varName": "GetChannelName",
+      "comparison": "5",
+      "value": "mm",
+      "branch": {
+        "iftrue": "3",
+        "iffalse": "0",
+        "iftrueVal": "3"
+      },
+      "name": "Check Variable"
+    },
+    {
+      "info": "0",
+      "find": "1287848995246444730",
+      "storage": "1",
+      "varName": "NIE",
+      "name": "Find Custom Emoji"
+    },
+    {
+      "channel": "0",
+      "varName": "",
+      "message": "",
+      "buttons": [],
+      "selectMenus": [],
+      "attachments": [],
+      "embeds": [
+        {
+          "title": "",
+          "url": "",
+          "color": "RED",
+          "timestamp": "false",
+          "imageUrl": "",
+          "thumbUrl": "",
+          "description": "${tempVars(\"NIE\")} **Ten kanał nie jest ticketem middlemana.**",
+          "fields": [],
+          "author": "",
+          "authorUrl": "",
+          "authorIcon": "",
+          "footerText": "",
+          "footerIconUrl": ""
+        }
+      ],
+      "reply": true,
+      "ephemeral": true,
+      "tts": false,
+      "overwrite": false,
+      "dontSend": false,
+      "editMessage": "0",
+      "editMessageVarName": "",
+      "storage": "0",
+      "varName2": "",
+      "name": "Send Message"
+    },
+    {
+      "name": "End Action Sequence"
+    },
+    {
+      "info": "0",
+      "find": "1287848995246444730",
+      "storage": "1",
+      "varName": "nie",
+      "name": "Find Custom Emoji"
+    },
+    {
+      "member": "1",
+      "varName": "",
+      "info": "16",
+      "storage": "1",
+      "varName2": "avatarurl",
+      "name": "Store Member Info"
+    },
+    {
+      "member": "1",
+      "varName": "",
+      "info": "3",
+      "storage": "1",
+      "varName2": "dname",
+      "name": "Store Member Info"
+    },
+    {
+      "channel": "0",
+      "varName": "",
+      "message": "${slashParams(\"user1\")} i ${slashParams(\"user2\")}",
+      "buttons": [],
+      "selectMenus": [],
+      "attachments": [],
+      "embeds": [
+        {
+          "title": "**Dziękujemy za skorzystanie z naszej usługi!**",
+          "url": "",
+          "color": "#54f48c",
+          "timestamp": "false",
+          "imageUrl": "",
+          "thumbUrl": "",
+          "description": "*Zostaw Voucha na kanale do tego przeznaczonym:* <#1287846997474279537>",
+          "fields": [],
+          "author": "",
+          "authorUrl": "",
+          "authorIcon": "",
+          "footerText": "~ Zakończenie middlemana przez: ${tempVars(\"dname\")}",
+          "footerIconUrl": "${tempVars(\"avatarurl\")}"
+        }
+      ],
+      "reply": true,
+      "ephemeral": false,
+      "tts": false,
+      "overwrite": false,
+      "dontSend": false,
+      "editMessage": "0",
+      "editMessageVarName": "",
+      "storage": "1",
+      "varName2": "54321",
+      "name": "Send Message"
+    },
+    {
+      "time": "2",
+      "measurement": "1",
+      "name": "Wait"
+    },
+    {
+      "channel": "0",
+      "varName": "",
+      "message": "",
+      "buttons": [
+        {
+          "name": "Tak, zamknij",
+          "type": "SUCCESS",
+          "id": "msg-button-b18bb10",
+          "row": "",
+          "url": "",
+          "emoji": "1287848897149931577",
+          "mode": "PERSISTENT",
+          "time": "",
+          "actions": [
+            {
+              "member": "1",
+              "varName": "",
+              "permission": "MOVE_MEMBERS",
+              "branch": {
+                "iftrue": "0",
+                "iffalse": "2",
+                "iffalseVal": "19"
+              },
+              "name": "Check Member Permissions"
+            },
+            {
+              "info": "0",
+              "find": "1287848897149931577",
+              "storage": "1",
+              "varName": "tak",
+              "name": "Find Custom Emoji"
+            },
+            {
+              "storage": "0",
+              "varName": "",
+              "permission": "SEND_MESSAGES",
+              "state": "1",
+              "reason": "",
+              "name": "Set Channel Permissions"
+            },
+            {
+              "channel": "0",
+              "varName": "",
+              "message": "",
+              "buttons": [],
+              "selectMenus": [],
+              "attachments": [],
+              "embeds": [
+                {
+                  "title": "${tempVars(\"tak\")} **Transakcja została zakończona pomyślnie!**",
+                  "url": "",
+                  "color": "#54f48c",
+                  "timestamp": "false",
+                  "imageUrl": "",
+                  "thumbUrl": "",
+                  "description": "",
+                  "fields": [],
+                  "author": "",
+                  "authorUrl": "",
+                  "authorIcon": "",
+                  "footerText": "",
+                  "footerIconUrl": ""
+                }
+              ],
+              "reply": true,
+              "ephemeral": false,
+              "tts": false,
+              "overwrite": false,
+              "dontSend": false,
+              "editMessage": "0",
+              "editMessageVarName": "",
+              "storage": "0",
+              "varName2": "",
+              "name": "Send Message"
+            },
+            {
+              "channel": "0",
+              "varName": "",
+              "info": "1",
+              "storage": "1",
+              "varName2": "GetTicketChannelID",
+              "name": "Store Channel Info"
+            },
+            {
+              "server": "0",
+              "varName": "",
+              "dataName": "${tempVars(\"GetTicketChannelID\")}-Owner",
+              "defaultVal": "0",
+              "storage": "1",
+              "varName2": "GetTicketOwnerMemberID",
+              "name": "Store Server Data"
+            },
+            {
+              "server": "0",
+              "varName": "",
+              "dataName": "${tempVars(\"GetChannelID\")}-ID",
+              "defaultVal": "0",
+              "storage": "1",
+              "varName2": "GetTicketID",
+              "name": "Store Server Data"
+            },
+            {
+              "info": "0",
+              "find": "${tempVars(\"GetTicketOwnerMemberID\")}",
+              "storage": "1",
+              "varName": "FindTicketOwner",
+              "name": "Find Member"
+            },
+            {
+              "member": "2",
+              "varName2": "FindTicketOwner",
+              "role": "101",
+              "varName": "1300575339075866664",
+              "reason": "",
+              "name": "Remove Member Role"
+            },
+            {
+              "channel": "0",
+              "varName": "",
+              "message": "",
+              "buttons": [],
+              "selectMenus": [],
+              "attachments": [],
+              "embeds": [
+                {
+                  "title": "${tempVars(\"tak\")} **Trwa zamykanie..**",
+                  "url": "",
+                  "color": "RED",
+                  "timestamp": "false",
+                  "imageUrl": "https://i.imgur.com/YuYgLuF.png",
+                  "thumbUrl": "",
+                  "description": "- ***Proszę poczekać, trwa zamykanie ticketu...***",
+                  "fields": [],
+                  "author": "",
+                  "authorUrl": "",
+                  "authorIcon": "",
+                  "footerText": "",
+                  "footerIconUrl": ""
+                }
+              ],
+              "reply": true,
+              "ephemeral": false,
+              "tts": false,
+              "overwrite": false,
+              "dontSend": false,
+              "editMessage": "1",
+              "editMessageVarName": "edit",
+              "storage": "0",
+              "varName2": "",
+              "name": "Send Message"
+            },
+            {
+              "channel": "0",
+              "varName": "",
+              "info": "0",
+              "storage": "1",
+              "varName2": "object",
+              "name": "Store Channel Info"
+            },
+            {
+              "channel": "0",
+              "varName": "",
+              "info": "2",
+              "storage": "1",
+              "varName2": "name",
+              "name": "Store Channel Info"
+            },
+            {
+              "useMinify": "1",
+              "saveImages": "1",
+              "useCDN": "1",
+              "channelObj": "1",
+              "channelID": "object",
+              "storage": "1",
+              "varName": "transcript",
+              "name": "Transcript"
+            },
+            {
+              "input": "${tempVars(\"transcript\")}",
+              "format": "",
+              "filename": "${tempVars(\"name\")}-${tempVars(\"GetTicketID\")}.html",
+              "filepath": "./",
+              "filepath2": "",
+              "filetask": "1",
+              "input2": "",
+              "togglestatus": "no",
+              "name": "File Control"
+            },
+            {
+              "channel": "103",
+              "varName": "1280895535775092787",
+              "message": "",
+              "buttons": [],
+              "selectMenus": [],
+              "attachments": [
+                {
+                  "url": "./${tempVars(\"name\")}-${tempVars(\"GetTicketID\")}.html",
+                  "name": "",
+                  "spoiler": false
+                }
+              ],
+              "embeds": [],
+              "reply": true,
+              "ephemeral": false,
+              "tts": false,
+              "overwrite": false,
+              "dontSend": false,
+              "editMessage": "0",
+              "editMessageVarName": "",
+              "storage": "0",
+              "varName2": "",
+              "name": "Send Message"
+            },
+            {
+              "time": "3",
+              "measurement": "1",
+              "name": "Wait"
+            },
+            {
+              "storage": "0",
+              "varName": "",
+              "reason": "",
+              "name": "Delete Channel"
+            },
+            {
+              "name": "End Action Sequence"
+            },
+            {
+              "info": "0",
+              "find": "1287848995246444730",
+              "storage": "1",
+              "varName": "NIE",
+              "name": "Find Custom Emoji"
+            },
+            {
+              "channel": "0",
+              "varName": "",
+              "message": "",
+              "buttons": [],
+              "selectMenus": [],
+              "attachments": [],
+              "embeds": [
+                {
+                  "title": "",
+                  "url": "",
+                  "color": "RED",
+                  "timestamp": "false",
+                  "imageUrl": "",
+                  "thumbUrl": "",
+                  "description": "${tempVars(\"NIE\")} **Brak uprawnień do użycia przycisku.**",
+                  "fields": [],
+                  "author": "",
+                  "authorUrl": "",
+                  "authorIcon": "",
+                  "footerText": "",
+                  "footerIconUrl": ""
+                }
+              ],
+              "reply": true,
+              "ephemeral": true,
+              "tts": false,
+              "overwrite": false,
+              "dontSend": false,
+              "editMessage": "0",
+              "editMessageVarName": "",
+              "storage": "0",
+              "varName2": "",
+              "name": "Send Message"
+            }
+          ]
+        },
+        {
+          "name": "Nie",
+          "type": "SECONDARY",
+          "id": "msg-button-09e1509",
+          "row": "",
+          "url": "",
+          "emoji": "1287848995246444730",
+          "mode": "PERSISTENT",
+          "time": "",
+          "actions": [
+            {
+              "member": "1",
+              "varName": "",
+              "permission": "MOVE_MEMBERS",
+              "branch": {
+                "iftrue": "0",
+                "iffalse": "2",
+                "iffalseVal": "10"
+              },
+              "name": "Check Member Permissions"
+            },
+            {
+              "info": "0",
+              "find": "1287848897149931577",
+              "storage": "1",
+              "varName": "yea",
+              "name": "Find Custom Emoji"
+            },
+            {
+              "info": "0",
+              "find": "1287848995246444730",
+              "storage": "1",
+              "varName": "nie",
+              "name": "Find Custom Emoji"
+            },
+            {
+              "channel": "0",
+              "varName": "",
+              "message": "",
+              "buttons": [],
+              "selectMenus": [],
+              "attachments": [],
+              "embeds": [
+                {
+                  "title": "${tempVars(\"nie\")} **Transakcja nie została zakończona!**",
+                  "url": "",
+                  "color": "RED",
+                  "timestamp": "false",
+                  "imageUrl": "",
+                  "thumbUrl": "",
+                  "description": "",
+                  "fields": [],
+                  "author": "",
+                  "authorUrl": "",
+                  "authorIcon": "",
+                  "footerText": "~ Wznowienie middlemana przez: ${tempVars(\"dname\")}",
+                  "footerIconUrl": "${tempVars(\"avatarurl\")}"
+                }
+              ],
+              "reply": true,
+              "ephemeral": false,
+              "tts": false,
+              "overwrite": false,
+              "dontSend": false,
+              "editMessage": "0",
+              "editMessageVarName": "",
+              "storage": "0",
+              "varName2": "321",
+              "name": "Send Message"
+            },
+            {
+              "channel": "1",
+              "channelVarName": "",
+              "channelName": "mm-${tempVars(\"dname\")}",
+              "reason": "",
+              "channelEdits": {
+                "_index": 0,
+                "topic": "",
+                "categoryID": "1295082929285890098",
+                "slowmode": "",
+                "position": ""
+              },
+              "name": "Edit Any Channel"
+            },
+            {
+              "time": "5",
+              "measurement": "1",
+              "name": "Wait"
+            },
+            {
+              "storage": "1",
+              "varName": "54321",
+              "reason": "",
+              "name": "Delete Message"
+            },
+            {
+              "storage": "1",
+              "varName": "11",
+              "reason": "",
+              "name": "Delete Message"
+            },
+            {
+              "name": "End Action Sequence"
+            },
+            {
+              "info": "0",
+              "find": "1287848995246444730",
+              "storage": "1",
+              "varName": "NIE",
+              "name": "Find Custom Emoji"
+            },
+            {
+              "channel": "0",
+              "varName": "",
+              "message": "",
+              "buttons": [],
+              "selectMenus": [],
+              "attachments": [],
+              "embeds": [
+                {
+                  "title": "",
+                  "url": "",
+                  "color": "RED",
+                  "timestamp": "false",
+                  "imageUrl": "",
+                  "thumbUrl": "",
+                  "description": "${tempVars(\"NIE\")} **Brak uprawnień do użycia przycisku.**",
+                  "fields": [],
+                  "author": "",
+                  "authorUrl": "",
+                  "authorIcon": "",
+                  "footerText": "",
+                  "footerIconUrl": ""
+                }
+              ],
+              "reply": true,
+              "ephemeral": true,
+              "tts": false,
+              "overwrite": false,
+              "dontSend": false,
+              "editMessage": "0",
+              "editMessageVarName": "",
+              "storage": "0",
+              "varName2": "",
+              "name": "Send Message"
+            }
+          ]
+        }
+      ],
+      "selectMenus": [],
+      "attachments": [],
+      "embeds": [
+        {
+          "title": "**Czy transakcja została pomyślnie zakończona?**",
+          "url": "",
+          "color": "#0f0f0f",
+          "timestamp": "false",
+          "imageUrl": "",
+          "thumbUrl": "",
+          "description": "*Wybierz jedną z poniższych opcji, aby zakończyć transakcje middlemana.*",
+          "fields": [],
+          "author": "",
+          "authorUrl": "",
+          "authorIcon": "",
+          "footerText": "~ Zakończenie middlemana przez: ${tempVars(\"dname\")}",
+          "footerIconUrl": "${tempVars(\"avatarurl\")}"
+        }
+      ],
+      "reply": true,
+      "ephemeral": false,
+      "tts": false,
+      "overwrite": false,
+      "dontSend": false,
+      "editMessage": "0",
+      "editMessageVarName": "",
+      "storage": "1",
+      "varName2": "11",
+      "name": "Send Message"
+    },
+    {
+      "channel": "0",
+      "channelVarName": "",
+      "channelName": "pending-mm-${tempVars(\"dname\")}",
+      "reason": "",
+      "channelEdits": {
+        "_index": 0,
+        "topic": "",
+        "categoryID": "1305119800128962580",
+        "slowmode": "",
+        "position": ""
+      },
+      "name": "Edit Any Channel"
+    },
+    {
+      "name": "End Action Sequence"
+    },
+    {
+      "anchorName": "uprawnienia",
+      "name": "Action Anchor"
+    },
+    {
+      "info": "0",
+      "find": "1287848995246444730",
+      "storage": "1",
+      "varName": "NIE",
+      "name": "Find Custom Emoji"
+    },
+    {
+      "channel": "0",
+      "varName": "",
+      "message": "",
+      "buttons": [],
+      "selectMenus": [],
+      "attachments": [],
+      "embeds": [
+        {
+          "title": "",
+          "url": "",
+          "color": "RED",
+          "timestamp": "false",
+          "imageUrl": "https://i.imgur.com/iwuJe1j.png",
+          "thumbUrl": "",
+          "description": "${tempVars(\"NIE\")} **Brak uprawnień do użycia polecenia, abyś mógł użyć wymagane jest posiadanie roli <@&1301553029719261274>.**",
+          "fields": [],
+          "author": "",
+          "authorUrl": "",
+          "authorIcon": "",
+          "footerText": "",
+          "footerIconUrl": ""
+        }
+      ],
+      "reply": true,
+      "ephemeral": true,
+      "tts": false,
+      "overwrite": false,
+      "dontSend": false,
+      "editMessage": "0",
+      "editMessageVarName": "",
+      "storage": "0",
+      "varName2": "",
+      "name": "Send Message"
+    }
+  ],
+  "comType": "4",
+  "parameters": [
+    {
+      "name": "user1",
+      "description": "Użytkownik 1 Middlemana.",
+      "type": "USER",
+      "required": true,
+      "choices": null
+    },
+    {
+      "name": "user2",
+      "description": "Użytkownik 2 Middlemana.",
+      "type": "USER",
+      "required": true,
+      "choices": null
+    }
+  ],
+  "description": "🔑・Zakończenie middlemana."
+}
