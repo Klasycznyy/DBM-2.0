@@ -1,1 +1,1029 @@
-greg
+{
+  "name": "stwórz-slot",
+  "permissions": "NONE",
+  "permissions2": "NONE",
+  "restriction": "1",
+  "_id": "BqPPP",
+  "actions": [
+    {
+      "member": "1",
+      "varName": "Ilo艣膰",
+      "permission": "ADMINISTRATOR",
+      "branch": {
+        "iftrue": "0",
+        "iffalse": "4",
+        "iffalseVal": "uprawnienia"
+      },
+      "name": "Check Member Permissions"
+    },
+    {
+      "storage": "4",
+      "varName": "type",
+      "branches": [
+        {
+          "comparison": "1",
+          "value": "1",
+          "actions": [
+            {
+              "storage": "1",
+              "varName": "unix",
+              "name": "Store Unix Timestamp"
+            },
+            {
+              "FirstNumber": "${slashParams(\"Czas1\")}",
+              "info": "2",
+              "SecondNumber": "86400",
+              "storage": "1",
+              "varName": "timer.days",
+              "name": "Basic Math Operation"
+            },
+            {
+              "FirstNumber": "${tempVars(\"timer.days\")}",
+              "info": "0",
+              "SecondNumber": "${tempVars(\"unix\")}",
+              "storage": "1",
+              "varName": "timer",
+              "name": "Basic Math Operation"
+            },
+            {
+              "channel": "5",
+              "varName": "Channel",
+              "message": "${slashParams(\"Slot_Owner\")}",
+              "buttons": [],
+              "selectMenus": [],
+              "attachments": [],
+              "embeds": [
+                {
+                  "title": "🛒 **Informacje o Slocie!:**",
+                  "url": "",
+                  "color": "#0f0f0f",
+                  "timestamp": "true",
+                  "imageUrl": "",
+                  "thumbUrl": "${tempVars(\"MemberAvatarURL\")}",
+                  "description": "",
+                  "fields": [
+                    {
+                      "name": "${tempVars(\"EmojiMembers\")} **Właściciel Slotu:**",
+                      "value": "${slashParams(\"Slot_Owner\")}",
+                      "inline": "false"
+                    },
+                    {
+                      "name": "${tempVars(\"EmojiKoszyk\")} **Slot Utworzony:**",
+                      "value": "${tempVars(\"time\")}",
+                      "inline": "false"
+                    },
+                    {
+                      "name": "⏱ **Czas trwania Slotu:**",
+                      "value": "${slashParams(\"Czas2\")}",
+                      "inline": "false"
+                    },
+                    {
+                      "name": "⌛ **Koniec Slotu:**",
+                      "value": "<t:${tempVars(\"timer\")}:R>",
+                      "inline": "false"
+                    },
+                    {
+                      "name": "**Limit Pingów:** ``@here``",
+                      "value": "0",
+                      "inline": "false"
+                    },
+                    {
+                      "name": "**Limit Pingów:** ``@sklepu``",
+                      "value": "${slashParams(\"Ping\")}",
+                      "inline": "false"
+                    }
+                  ],
+                  "author": "",
+                  "authorUrl": "",
+                  "authorIcon": "",
+                  "footerText": "~ Slot użytkownika ${tempVars(\"MemberDisplayName\")}",
+                  "footerIconUrl": "${tempVars(\"ServerIconURL\")}"
+                }
+              ],
+              "reply": false,
+              "ephemeral": false,
+              "tts": false,
+              "overwrite": false,
+              "dontSend": false,
+              "editMessage": "1",
+              "editMessageVarName": "smsg1",
+              "storage": "0",
+              "varName2": "channel",
+              "name": "Send Message"
+            }
+          ]
+        },
+        {
+          "comparison": "1",
+          "value": "2",
+          "actions": [
+            {
+              "storage": "1",
+              "varName": "unix",
+              "name": "Store Unix Timestamp"
+            },
+            {
+              "FirstNumber": "${slashParams(\"Czas1\")}",
+              "info": "2",
+              "SecondNumber": "2592000",
+              "storage": "1",
+              "varName": "timer.days",
+              "name": "Basic Math Operation"
+            },
+            {
+              "FirstNumber": "${tempVars(\"timer.days\")}",
+              "info": "0",
+              "SecondNumber": "${tempVars(\"unix\")}",
+              "storage": "1",
+              "varName": "timer",
+              "name": "Basic Math Operation"
+            },
+            {
+              "channel": "5",
+              "varName": "Channel",
+              "message": "${slashParams(\"Slot_Owner\")}",
+              "buttons": [],
+              "selectMenus": [],
+              "attachments": [],
+              "embeds": [
+                {
+                  "title": "🛒 **Informacje o Slocie!:**",
+                  "url": "",
+                  "color": "#0f0f0f",
+                  "timestamp": "true",
+                  "imageUrl": "",
+                  "thumbUrl": "${tempVars(\"MemberAvatarURL\")}",
+                  "description": "",
+                  "fields": [
+                    {
+                      "name": "${tempVars(\"EmojiMembers\")} **Właściciel Slotu:**",
+                      "value": "${slashParams(\"Slot_Owner\")}",
+                      "inline": "false"
+                    },
+                    {
+                      "name": "${tempVars(\"EmojiKoszyk\")} **Slot Utworzony:**",
+                      "value": "${tempVars(\"time\")}",
+                      "inline": "false"
+                    },
+                    {
+                      "name": "⏱ **Czas trwania Slotu:**",
+                      "value": "${slashParams(\"Czas2\")}",
+                      "inline": "false"
+                    },
+                    {
+                      "name": "⌛ **Koniec Slotu:**",
+                      "value": "<t:${tempVars(\"timer\")}:R>",
+                      "inline": "false"
+                    },
+                    {
+                      "name": "**Limit Pingów:** ``@here``",
+                      "value": "0",
+                      "inline": "false"
+                    },
+                    {
+                      "name": "**Limit Pingów:** ``@sklepu``",
+                      "value": "${slashParams(\"Ping\")}",
+                      "inline": "false"
+                    }
+                  ],
+                  "author": "",
+                  "authorUrl": "",
+                  "authorIcon": "",
+                  "footerText": "~ Slot użytkownika ${tempVars(\"MemberDisplayName\")}",
+                  "footerIconUrl": "${tempVars(\"ServerIconURL\")}"
+                }
+              ],
+              "reply": false,
+              "ephemeral": false,
+              "tts": false,
+              "overwrite": false,
+              "dontSend": false,
+              "editMessage": "1",
+              "editMessageVarName": "smsg1",
+              "storage": "0",
+              "varName2": "channel",
+              "name": "Send Message"
+            }
+          ]
+        },
+        {
+          "comparison": "1",
+          "value": "3",
+          "actions": [
+            {
+              "storage": "1",
+              "varName": "unix",
+              "name": "Store Unix Timestamp"
+            },
+            {
+              "FirstNumber": "${slashParams(\"Czas1\")}",
+              "info": "2",
+              "SecondNumber": "60",
+              "storage": "1",
+              "varName": "timer.days",
+              "name": "Basic Math Operation"
+            },
+            {
+              "FirstNumber": "${tempVars(\"timer.days\")}",
+              "info": "0",
+              "SecondNumber": "${tempVars(\"unix\")}",
+              "storage": "1",
+              "varName": "timer",
+              "name": "Basic Math Operation"
+            },
+            {
+              "channel": "5",
+              "varName": "Channel",
+              "message": "${slashParams(\"Slot_Owner\")}",
+              "buttons": [],
+              "selectMenus": [],
+              "attachments": [],
+              "embeds": [
+                {
+                  "title": "🛒 **Informacje o Slocie!:**",
+                  "url": "",
+                  "color": "#0f0f0f",
+                  "timestamp": "true",
+                  "imageUrl": "",
+                  "thumbUrl": "${tempVars(\"MemberAvatarURL\")}",
+                  "description": "",
+                  "fields": [
+                    {
+                      "name": "${tempVars(\"EmojiMembers\")} **Właściciel Slotu:**",
+                      "value": "${slashParams(\"Slot_Owner\")}",
+                      "inline": "false"
+                    },
+                    {
+                      "name": "${tempVars(\"EmojiKoszyk\")} **Slot Utworzony:**",
+                      "value": "${tempVars(\"time\")}",
+                      "inline": "false"
+                    },
+                    {
+                      "name": "⏱ **Czas trwania Slotu:**",
+                      "value": "${slashParams(\"Czas2\")}",
+                      "inline": "false"
+                    },
+                    {
+                      "name": "⌛ **Koniec Slotu:**",
+                      "value": "<t:${tempVars(\"timer\")}:R>",
+                      "inline": "false"
+                    },
+                    {
+                      "name": "**Limit Pingów:** ``@here``",
+                      "value": "0",
+                      "inline": "false"
+                    },
+                    {
+                      "name": "**Limit Pingów:** ``@sklepu``",
+                      "value": "${slashParams(\"Ping\")}",
+                      "inline": "false"
+                    }
+                  ],
+                  "author": "",
+                  "authorUrl": "",
+                  "authorIcon": "",
+                  "footerText": "~ Slot użytkownika ${tempVars(\"MemberDisplayName\")}",
+                  "footerIconUrl": "${tempVars(\"ServerIconURL\")}"
+                }
+              ],
+              "reply": false,
+              "ephemeral": false,
+              "tts": false,
+              "overwrite": false,
+              "dontSend": false,
+              "editMessage": "1",
+              "editMessageVarName": "smsg1",
+              "storage": "0",
+              "varName2": "channel",
+              "name": "Send Message"
+            }
+          ]
+        }
+      ],
+      "name": "Multi-Check Variable"
+    },
+    {
+      "member": "5",
+      "varName": "Slot_Owner",
+      "info": "16",
+      "storage": "1",
+      "varName2": "MemberAvatarURL",
+      "name": "Store Member Info"
+    },
+    {
+      "member": "5",
+      "varName": "Slot_Owner",
+      "info": "3",
+      "storage": "1",
+      "varName2": "MemberDisplayName",
+      "name": "Store Member Info"
+    },
+    {
+      "channelName": "🛒・${tempVars(\"MemberDisplayName\")}",
+      "topic": "",
+      "position": "",
+      "storage": "1",
+      "varName": "Channel",
+      "categoryID": "1281290711051800617",
+      "reason": "",
+      "name": "Create Text Channel"
+    },
+    {
+      "storage": "3",
+      "varName": "Channel",
+      "permission": "VIEW_CHANNEL",
+      "state": "0",
+      "reason": "",
+      "name": "Set Channel Permissions"
+    },
+    {
+      "storage": "3",
+      "varName": "Channel",
+      "permission": "SEND_MESSAGES",
+      "state": "1",
+      "reason": "",
+      "name": "Set Channel Permissions"
+    },
+    {
+      "member": "5",
+      "varName2": "Slot_Owner",
+      "role": "101",
+      "varName": "1252361964001300665",
+      "reason": "",
+      "name": "Add Member Role"
+    },
+    {
+      "channel": "3",
+      "varName": "Channel",
+      "member": "5",
+      "varName2": "Slot_Owner",
+      "permission": "SEND_MESSAGES",
+      "state": "0",
+      "reason": "",
+      "name": "Set Member Channel Perms"
+    },
+    {
+      "channel": "3",
+      "varName": "Channel",
+      "member": "5",
+      "varName2": "Slot_Owner",
+      "permission": "VIEW_CHANNEL",
+      "state": "0",
+      "reason": "",
+      "name": "Set Member Channel Perms"
+    },
+    {
+      "info": "0",
+      "find": "1295081614958657617",
+      "storage": "1",
+      "varName": "EmojiMembers",
+      "name": "Find Custom Emoji"
+    },
+    {
+      "info": "0",
+      "find": "1292156544393150505",
+      "storage": "1",
+      "varName": "EmojiKoszyk",
+      "name": "Find Custom Emoji"
+    },
+    {
+      "info": "0",
+      "find": "1287848897149931577",
+      "storage": "1",
+      "varName": "yes",
+      "name": "Find Custom Emoji"
+    },
+    {
+      "info": "0",
+      "find": "1287848897149931577",
+      "storage": "1",
+      "varName": "EmojiYes",
+      "name": "Find Custom Emoji"
+    },
+    {
+      "info": "0",
+      "find": "1287848995246444730",
+      "storage": "1",
+      "varName": "EmojiNIE",
+      "name": "Find Custom Emoji"
+    },
+    {
+      "server": "0",
+      "varName": "",
+      "info": "5",
+      "storage": "1",
+      "varName2": "ServerIconURL",
+      "name": "Store Server Info"
+    },
+    {
+      "server": "0",
+      "varName": "",
+      "info": "2",
+      "storage": "1",
+      "varName2": "ServerNAME",
+      "name": "Store Server Info"
+    },
+    {
+      "resultType": "7",
+      "storage": "1",
+      "varName": "time",
+      "name": "Get Current Timestamp"
+    },
+    {
+      "channel": "0",
+      "varName": "Channel",
+      "message": "",
+      "buttons": [],
+      "selectMenus": [],
+      "attachments": [],
+      "embeds": [
+        {
+          "title": "",
+          "url": "",
+          "color": "GREEN",
+          "timestamp": "true",
+          "imageUrl": "",
+          "thumbUrl": "",
+          "description": "${tempVars(\"yes\")} **Pomyślnie utworzono slot dla użytkownika** ${slashParams(\"Slot_Owner\")}",
+          "fields": [],
+          "author": "",
+          "authorUrl": "",
+          "authorIcon": "",
+          "footerText": "~ System Slotów: ${tempVars(\"ServerNAME\")}",
+          "footerIconUrl": "${tempVars(\"ServerIconURL\")}"
+        }
+      ],
+      "reply": true,
+      "ephemeral": true,
+      "tts": false,
+      "overwrite": false,
+      "dontSend": false,
+      "editMessage": "0",
+      "editMessageVarName": "smsg1",
+      "storage": "0",
+      "varName2": "smsg1",
+      "name": "Send Message"
+    },
+    {
+      "channel": "5",
+      "varName": "Channel",
+      "message": "${slashParams(\"Slot_Owner\")}",
+      "buttons": [],
+      "selectMenus": [],
+      "attachments": [],
+      "embeds": [
+        {
+          "title": "🛒 **Informacje o Slocie!:**",
+          "url": "",
+          "color": "#0f0f0f",
+          "timestamp": "true",
+          "imageUrl": "",
+          "thumbUrl": "${tempVars(\"MemberAvatarURL\")}",
+          "description": "",
+          "fields": [
+            {
+              "name": "${tempVars(\"EmojiMembers\")} **Właściciel Slotu:**",
+              "value": "${slashParams(\"Slot_Owner\")}",
+              "inline": "false"
+            },
+            {
+              "name": "${tempVars(\"EmojiKoszyk\")} **Slot Utworzony:**",
+              "value": "${tempVars(\"time\")}",
+              "inline": "false"
+            },
+            {
+              "name": "⏱ **Czas trwania Slotu:**",
+              "value": "${slashParams(\"Czas2\")}",
+              "inline": "false"
+            },
+            {
+              "name": "⌛ **Koniec Slotu:**",
+              "value": "<t:${tempVars(\"timer\")}:R>",
+              "inline": "false"
+            },
+            {
+              "name": "**Limit Pingów:** ``@here``",
+              "value": "0",
+              "inline": "false"
+            },
+            {
+              "name": "**Limit Pingów:** ``@sklepu``",
+              "value": "${slashParams(\"Ping\")}",
+              "inline": "false"
+            }
+          ],
+          "author": "",
+          "authorUrl": "",
+          "authorIcon": "",
+          "footerText": "~ System Slotów: ${tempVars(\"ServerNAME\")}",
+          "footerIconUrl": "${tempVars(\"ServerIconURL\")}"
+        }
+      ],
+      "reply": false,
+      "ephemeral": false,
+      "tts": false,
+      "overwrite": false,
+      "dontSend": false,
+      "editMessage": "1",
+      "editMessageVarName": "smsg1",
+      "storage": "0",
+      "varName2": "channel",
+      "name": "Send Message"
+    },
+    {
+      "channel": "8",
+      "varName": "Slot_Owner",
+      "message": "",
+      "buttons": [],
+      "selectMenus": [],
+      "attachments": [],
+      "embeds": [
+        {
+          "title": "${tempVars(\"EmojiYes\")} **Pomyślnie przyznano tobie slot!**",
+          "url": "",
+          "color": "GREEN",
+          "timestamp": "true",
+          "imageUrl": "",
+          "thumbUrl": "",
+          "description": "${slashParams(\"Slot_Owner\")} *Przyznano tobie slot przez administratora <@531488957452648458>, od teraz możesz sprzedawać swoje rzeczy tam.*",
+          "fields": [],
+          "author": "",
+          "authorUrl": "",
+          "authorIcon": "",
+          "footerText": "~ System Slotów: ${tempVars(\"ServerNAME\")}",
+          "footerIconUrl": "${tempVars(\"ServerIconURL\")}"
+        }
+      ],
+      "reply": false,
+      "ephemeral": false,
+      "tts": false,
+      "overwrite": false,
+      "dontSend": false,
+      "editMessage": "0",
+      "editMessageVarName": "",
+      "storage": "0",
+      "varName2": "",
+      "name": "Send Message"
+    },
+    {
+      "channel": "103",
+      "varName": "1323674792217284638",
+      "message": "<@531488957452648458>",
+      "buttons": [],
+      "selectMenus": [],
+      "attachments": [],
+      "embeds": [
+        {
+          "title": "${tempVars(\"EmojiYes\")} **Nadanie slotu dla użytkownika!**",
+          "url": "",
+          "color": "GREEN",
+          "timestamp": "true",
+          "imageUrl": "",
+          "thumbUrl": "",
+          "description": "*Slot użytkownika ${slashParams(\"Slot_Owner\")} się rozpoczął.*",
+          "fields": [],
+          "author": "",
+          "authorUrl": "",
+          "authorIcon": "",
+          "footerText": "~ System Slotów: ${tempVars(\"ServerNAME\")}",
+          "footerIconUrl": "${tempVars(\"ServerIconURL\")}"
+        }
+      ],
+      "reply": false,
+      "ephemeral": false,
+      "tts": false,
+      "overwrite": false,
+      "dontSend": false,
+      "editMessage": "0",
+      "editMessageVarName": "",
+      "storage": "0",
+      "varName2": "",
+      "name": "Send Message"
+    },
+    {
+      "time": "${tempVars(\"timer.days\")}",
+      "measurement": "1",
+      "name": "Wait"
+    },
+    {
+      "member": "5",
+      "varName": "Slot_Owner",
+      "info": "1",
+      "storage": "1",
+      "varName2": "member.id",
+      "name": "Store Member Info"
+    },
+    {
+      "channel": "8",
+      "varName": "Slot_Owner",
+      "message": "",
+      "buttons": [],
+      "selectMenus": [],
+      "attachments": [],
+      "embeds": [
+        {
+          "title": "${tempVars(\"EmojiNIE\")}  **Twój czas slotu się zakończył!**",
+          "url": "",
+          "color": "RED",
+          "timestamp": "true",
+          "imageUrl": "",
+          "thumbUrl": "",
+          "description": "${slashParams(\"Slot_Owner\")} *Twój czas slotu wygasł..*\n*Aby zakupić następny slot napisz do <@531488957452648458>*",
+          "fields": [],
+          "author": "",
+          "authorUrl": "",
+          "authorIcon": "",
+          "footerText": "~ System Slotów: ${tempVars(\"ServerNAME\")}",
+          "footerIconUrl": "${tempVars(\"ServerIconURL\")}"
+        }
+      ],
+      "reply": false,
+      "ephemeral": false,
+      "tts": false,
+      "overwrite": false,
+      "dontSend": false,
+      "editMessage": "0",
+      "editMessageVarName": "",
+      "storage": "0",
+      "varName2": "",
+      "name": "Send Message"
+    },
+    {
+      "channel": "103",
+      "varName": "1323674792217284638",
+      "message": "<@531488957452648458>",
+      "buttons": [],
+      "selectMenus": [],
+      "attachments": [],
+      "embeds": [
+        {
+          "title": "${tempVars(\"EmojiNIE\")}  **Zakończenie slotu użytkownika!**",
+          "url": "",
+          "color": "RED",
+          "timestamp": "true",
+          "imageUrl": "",
+          "thumbUrl": "",
+          "description": "*Slot użytkownika ${slashParams(\"Slot_Owner\")} się zakończył.*",
+          "fields": [],
+          "author": "",
+          "authorUrl": "",
+          "authorIcon": "",
+          "footerText": "~ System Slotów: ${tempVars(\"ServerNAME\")}",
+          "footerIconUrl": "${tempVars(\"ServerIconURL\")}"
+        }
+      ],
+      "reply": false,
+      "ephemeral": false,
+      "tts": false,
+      "overwrite": false,
+      "dontSend": false,
+      "editMessage": "0",
+      "editMessageVarName": "",
+      "storage": "0",
+      "varName2": "",
+      "name": "Send Message"
+    },
+    {
+      "channel": "5",
+      "varName": "Channel",
+      "message": "",
+      "buttons": [
+        {
+          "name": "Usuń Slot.",
+          "type": "DANGER",
+          "id": "msg-button-c004a33",
+          "row": "",
+          "url": "",
+          "emoji": "1287848995246444730",
+          "mode": "PERSISTENT",
+          "time": "",
+          "actions": [
+            {
+              "member": "1",
+              "varName": "",
+              "permission": "ADMINISTRATOR",
+              "branch": {
+                "iftrue": "0",
+                "iffalse": "4",
+                "iffalseVal": "uprawnienia"
+              },
+              "name": "Check Member Permissions"
+            },
+            {
+              "server": "0",
+              "varName": "",
+              "dataName": "creator",
+              "defaultVal": "0",
+              "storage": "1",
+              "varName2": "mem",
+              "name": "Store Server Data"
+            },
+            {
+              "info": "0",
+              "find": "${tempVars(\"mem\")}",
+              "storage": "1",
+              "varName": "id_mem",
+              "name": "Find Member"
+            },
+            {
+              "info": "0",
+              "find": "1287848995246444730",
+              "storage": "1",
+              "varName": "EmojiNIE1",
+              "name": "Find Custom Emoji"
+            },
+            {
+              "channel": "0",
+              "varName": "",
+              "message": "",
+              "buttons": [],
+              "selectMenus": [],
+              "attachments": [],
+              "embeds": [
+                {
+                  "title": "",
+                  "url": "",
+                  "color": "RED",
+                  "timestamp": "false",
+                  "imageUrl": "",
+                  "thumbUrl": "",
+                  "description": "${tempVars(\"EmojiNIE1\")} **Slot zostanie usunięty w ciągu 10 sekund.**",
+                  "fields": [],
+                  "author": "",
+                  "authorUrl": "",
+                  "authorIcon": "",
+                  "footerText": "",
+                  "footerIconUrl": ""
+                }
+              ],
+              "reply": true,
+              "ephemeral": true,
+              "tts": false,
+              "overwrite": false,
+              "dontSend": false,
+              "editMessage": "0",
+              "editMessageVarName": "",
+              "storage": "0",
+              "varName2": "",
+              "name": "Send Message"
+            },
+            {
+              "time": "10",
+              "measurement": "1",
+              "name": "Wait"
+            },
+            {
+              "member": "2",
+              "varName2": "id_mem",
+              "role": "101",
+              "varName": "1252361964001300665",
+              "reason": "",
+              "name": "Remove Member Role"
+            },
+            {
+              "storage": "0",
+              "varName": "Channel",
+              "reason": "",
+              "name": "Delete Channel"
+            },
+            {
+              "name": "End Action Sequence"
+            },
+            {
+              "anchorName": "uprawnienia",
+              "name": "Action Anchor"
+            },
+            {
+              "info": "0",
+              "find": "1287848995246444730",
+              "storage": "1",
+              "varName": "NIE",
+              "name": "Find Custom Emoji"
+            },
+            {
+              "channel": "0",
+              "varName": "",
+              "message": "",
+              "buttons": [],
+              "selectMenus": [],
+              "attachments": [],
+              "embeds": [
+                {
+                  "title": "",
+                  "url": "",
+                  "color": "RED",
+                  "timestamp": "false",
+                  "imageUrl": "",
+                  "thumbUrl": "",
+                  "description": "${tempVars(\"NIE\")} **Brak uprawnień do użycia przycisku.**",
+                  "fields": [],
+                  "author": "",
+                  "authorUrl": "",
+                  "authorIcon": "",
+                  "footerText": "",
+                  "footerIconUrl": ""
+                }
+              ],
+              "reply": true,
+              "ephemeral": true,
+              "tts": false,
+              "overwrite": false,
+              "dontSend": false,
+              "editMessage": "0",
+              "editMessageVarName": "",
+              "storage": "0",
+              "varName2": "",
+              "name": "Send Message"
+            }
+          ]
+        }
+      ],
+      "selectMenus": [],
+      "attachments": [],
+      "embeds": [
+        {
+          "title": "${tempVars(\"EmojiNIE\")}  **Slot się zakończył!**",
+          "url": "",
+          "color": "RED",
+          "timestamp": "true",
+          "imageUrl": "",
+          "thumbUrl": "",
+          "description": "${slashParams(\"Slot_Owner\")} *Twój czas slotu wygasł.*",
+          "fields": [],
+          "author": "",
+          "authorUrl": "",
+          "authorIcon": "",
+          "footerText": "~ System Slotów: ${tempVars(\"ServerNAME\")}",
+          "footerIconUrl": "${tempVars(\"ServerIconURL\")}"
+        }
+      ],
+      "reply": false,
+      "ephemeral": false,
+      "tts": false,
+      "overwrite": false,
+      "dontSend": false,
+      "editMessage": "0",
+      "editMessageVarName": "123",
+      "storage": "1",
+      "varName2": "123",
+      "name": "Send Message"
+    },
+    {
+      "member": "5",
+      "varName": "Slot_Owner",
+      "info": "1",
+      "storage": "1",
+      "varName2": "mem_id",
+      "name": "Store Member Info"
+    },
+    {
+      "server": "0",
+      "varName": "",
+      "dataName": "creator",
+      "changeType": "0",
+      "value": "tempVars(\"mem_id\")",
+      "name": "Control Server Data"
+    },
+    {
+      "channel": "3",
+      "varName": "Channel",
+      "member": "5",
+      "varName2": "Slot_Owner",
+      "permission": "SEND_MESSAGES",
+      "state": "2",
+      "reason": "",
+      "name": "Set Member Channel Perms"
+    },
+    {
+      "name": "End Action Sequence"
+    },
+    {
+      "anchorName": "uprawnienia",
+      "name": "Action Anchor"
+    },
+    {
+      "info": "0",
+      "find": "1287848995246444730",
+      "storage": "1",
+      "varName": "NIE",
+      "name": "Find Custom Emoji"
+    },
+    {
+      "channel": "0",
+      "varName": "",
+      "message": "",
+      "buttons": [],
+      "selectMenus": [],
+      "attachments": [],
+      "embeds": [
+        {
+          "title": "",
+          "url": "",
+          "color": "RED",
+          "timestamp": "false",
+          "imageUrl": "https://i.imgur.com/Rav4FMh.png",
+          "thumbUrl": "",
+          "description": "${tempVars(\"NIE\")} **Brak uprawnień do użycia polecenia, abyś mógł użyć wymagane jest uprawnienie do administratora.**",
+          "fields": [],
+          "author": "",
+          "authorUrl": "",
+          "authorIcon": "",
+          "footerText": "",
+          "footerIconUrl": ""
+        }
+      ],
+      "reply": true,
+      "ephemeral": true,
+      "tts": false,
+      "overwrite": false,
+      "dontSend": false,
+      "editMessage": "0",
+      "editMessageVarName": "",
+      "storage": "0",
+      "varName2": "",
+      "name": "Send Message"
+    }
+  ],
+  "comType": "4",
+  "description": "🛒・Tworzenie slotu dla użytkownika.",
+  "parameters": [
+    {
+      "name": "Slot_Owner",
+      "description": "Użytkownik slotu.",
+      "type": "USER",
+      "required": true,
+      "choices": null
+    },
+    {
+      "name": "Czas1",
+      "description": "Czas trwania slotu?",
+      "type": "INTEGER",
+      "required": true,
+      "choices": null
+    },
+    {
+      "name": "type",
+      "description": "Typ trwania slotu? (np. Dzień)",
+      "type": "STRING",
+      "required": true,
+      "choices": [
+        {
+          "name": "minutes",
+          "value": "3"
+        },
+        {
+          "name": "days",
+          "value": "1"
+        },
+        {
+          "name": "monthly",
+          "value": "2"
+        }
+      ]
+    },
+    {
+      "name": "Czas2",
+      "description": "Czas trwania slotu.",
+      "type": "STRING",
+      "required": true,
+      "choices": [
+        {
+          "name": "7 dni",
+          "value": "7 dni"
+        },
+        {
+          "name": "15 dni",
+          "value": "15 dni"
+        },
+        {
+          "name": "30 dni",
+          "value": "30 dni"
+        },
+        {
+          "name": "life time",
+          "value": "Life Time"
+        }
+      ]
+    },
+    {
+      "name": "Ping",
+      "description": "Ping slotu.",
+      "type": "INTEGER",
+      "required": true,
+      "choices": [
+        {
+          "name": "0",
+          "value": 0
+        },
+        {
+          "name": "1",
+          "value": 1
+        },
+        {
+          "name": "2",
+          "value": 2
+        }
+      ]
+    }
+  ]
+}
