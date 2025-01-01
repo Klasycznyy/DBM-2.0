@@ -23,6 +23,7 @@ Wszystkie komendy i eventy tutaj mają teraz domyślnie włączony updater, któ
 - [Panele Ticketów](https://github.com/Klasycznyy/DBM-2.0/tree/main/Commands/Panele%20Ticket%C3%B3w) / v2.0 Beta
 - [Propozycja](https://github.com/Klasycznyy/DBM-2.0/tree/main/Commands/Propozycja) / v2.0 Beta
 - [System Konkursów](https://github.com/Klasycznyy/DBM-2.0/tree/main/Commands/System%20Konkurs%C3%B3w) / v2.0 Beta
+- [System Slotów](https://github.com/Klasycznyy/DBM-2.0/tree/Discord-Bot-Maker-/-Raw/Commands/System%20Slotów) / v2.0 Beta
 - [Vouch Message ( z licznikiem)](https://github.com/Klasycznyy/DBM-2.0/tree/main/Commands/Vouch%20Message%20(%20z%20licznikiem%20)) / v2.0 Beta
   
 [![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/aqua.png)](#Important)
