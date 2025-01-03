@@ -102,33 +102,33 @@
                   "required": "true"
                 },
                 {
-                  "name": "Czy znasz polecenia do moderowania?",
-                  "placeholder": "np. Tak / Nie, jak tak to jakie?",
+                  "name": "Jesteś aktywny(-a) na czacie?",
+                  "placeholder": "np. Tak / Nie.",
                   "minLength": "0",
                   "maxLength": "100",
-                  "id": "polecenia_moderowanie",
+                  "id": "aktywnosc",
                   "row": "",
                   "style": "SHORT",
                   "required": "true"
                 },
                 {
-                  "name": "Podstawowe polecenia do moderowania?",
+                  "name": "Polecenia do moderowania? (nazwa i użycie)",
                   "placeholder": "Opisz tutaj polecenia...",
                   "minLength": "0",
                   "maxLength": "1000",
                   "id": "podstawowe_polecenia",
                   "row": "",
-                  "style": "SHORT",
+                  "style": "PARAGRAPH",
                   "required": "true"
                 },
                 {
                   "name": "Opisz nam Dlaczego akurat ty?",
                   "placeholder": "Opisz Dlaczego akurat ty chcesz do administracji...",
                   "minLength": "0",
-                  "maxLength": "200",
+                  "maxLength": "500",
                   "id": "dlaczego_ty",
                   "row": "",
-                  "style": "SHORT",
+                  "style": "PARAGRAPH",
                   "required": "true"
                 },
                 {
@@ -138,7 +138,7 @@
                   "maxLength": "2000",
                   "id": "opisz_siebie",
                   "row": "",
-                  "style": "SHORT",
+                  "style": "PARAGRAPH",
                   "required": "true"
                 }
               ],
@@ -213,7 +213,7 @@
                   "timestamp": "false",
                   "imageUrl": "",
                   "thumbUrl": "",
-                  "description": "${tempVars(\"yes\")} **Twoje podanie wygląda następująco:**\n\n**W jakim wieku jesteś?**\n- *${tempVars(\"wiek\")}*\n\n**Czy znasz polecenia do moderowania?**\n- *${tempVars(\"polecenia_moderowanie\")}*\n\n**Podstawowe polecenia do moderowania?**\n- *${tempVars(\"podstawowe_polecenia\")}*\n\n**Opisz nam dlaczego akurat ty?**\n- *${tempVars(\"dlaczego_ty\")}*\n\n**Opisz coś o sobie.**\n- *${tempVars(\"opisz_siebie\")}*",
+                  "description": "${tempVars(\"yes\")} **Twoje podanie wygląda następująco:**\n\n**W jakim wieku jesteś?**\n- *${tempVars(\"wiek\")}*\n\n**Jesteś aktywny(-a) na czacie?**\n- *${tempVars(\"aktywnosc\")}*\n\n**Polecenia do moderowania? (nazwa i użycie)**\n- *${tempVars(\"podstawowe_polecenia\")}*\n\n**Opisz nam dlaczego akurat ty?**\n- *${tempVars(\"dlaczego_ty\")}*\n\n**Opisz coś o sobie.**\n- *${tempVars(\"opisz_siebie\")}*",
                   "fields": [],
                   "author": "",
                   "authorUrl": "",
@@ -234,11 +234,6 @@
               "name": "Send Message"
             },
             {
-              "comment": "V v V // Tutaj ustaw id kanału gdzie mają być wysyłane podania",
-              "color": "#fff700",
-              "name": "Comment"
-            },
-            {
               "channel": "103",
               "varName": "1322715946833412196",
               "message": "${member}",
@@ -253,7 +248,7 @@
                   "timestamp": "false",
                   "imageUrl": "",
                   "thumbUrl": "${tempVars(\"avatar\")}",
-                  "description": "${tempVars(\"yes\")} **Podanie ${member} wygląda następująco:**\n\n**W jakim wieku jesteś?**\n- *${tempVars(\"wiek\")}*\n\n**Czy znasz polecenia do moderowania?**\n- *${tempVars(\"polecenia_moderowanie\")}*\n\n**Podstawowe polecenia do moderowania?**\n- *${tempVars(\"podstawowe_polecenia\")}*\n\n**Opisz nam dlaczego akurat ty?**\n- *${tempVars(\"dlaczego_ty\")}*\n\n**Opisz coś o sobie.**\n- *${tempVars(\"opisz_siebie\")}*",
+                  "description": "${tempVars(\"yes\")} **Podanie ${member} wygląda następująco:**\n\n**W jakim wieku jesteś?**\n- *${tempVars(\"wiek\")}*\n\n**Jesteś aktywny(-a) na czacie?**\n- *${tempVars(\"aktywnosc\")}*\n\n**Polecenia do moderowania? (nazwa i użycie)**\n- *${tempVars(\"podstawowe_polecenia\")}*\n\n**Opisz nam dlaczego akurat ty?**\n- *${tempVars(\"dlaczego_ty\")}*\n\n**Opisz coś o sobie.**\n- *${tempVars(\"opisz_siebie\")}*",
                   "fields": [],
                   "author": "",
                   "authorUrl": "",
@@ -305,8 +300,8 @@
                   "url": "",
                   "color": "#0f0f0f",
                   "timestamp": "false",
-                  "imageUrl": "",
-                  "thumbUrl": "",
+                  "imageUrl": "https://i.imgur.com/SjLJviV.png",
+                  "thumbUrl": "https://i.imgur.com/rlMlBjY.png",
                   "description": "- *Żadynch wymagań nie ma,*\n- *Robienie podania bez celu lub celowe zaśmiecanie kanałów = timeout na okres 7 dni,*\n- *Podania piszecie na własną odpowiedzialność.*\n",
                   "fields": [],
                   "author": "",
@@ -338,11 +333,11 @@
           "url": "",
           "color": "#0f0f0f",
           "timestamp": "false",
-          "imageUrl": "",
-          "thumbUrl": "",
-          "description": "*Skorzystaj z poniższego __przycisku__, aby otworzyc menu rekrutacji.* \n*Twoje zgłosznie zostanie rozpatrzone w ciagu 72 godzin.*\n\n**Kliknij w __Przycisk poniżej__, aby rozpocząć swoją rekrutacje!**",
+          "imageUrl": "https://i.imgur.com/p3ct9rx.png",
+          "thumbUrl": "https://i.imgur.com/aUcpC2J.png",
+          "description": "*Wybierz odpowiedni* **__przycisk__** *i napisz swoje podanie na stanowisko* **pomocnika.**\n",
           "fields": [],
-          "author": "ZahNN! SHOP.",
+          "author": "ZahNN! SHOP. ~ Rekrutacja.",
           "authorUrl": "https://discord.com/users/531488957452648458",
           "authorIcon": "${tempVars(\"icon_urol\")}",
           "footerText": "",
@@ -408,16 +403,6 @@
       "storage": "0",
       "varName2": "",
       "name": "Send Message"
-    },
-    {
-      "comment": "## Rawdata wykonana przez: _perf3kcja",
-      "color": "#fff700",
-      "name": "Comment"
-    },
-    {
-      "comment": "## I została ona opublikowana na Github.",
-      "color": "#e1ff00",
-      "name": "Comment"
     }
   ],
   "comType": "4",
