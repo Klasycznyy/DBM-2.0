@@ -1,0 +1,246 @@
+{
+  "name": "delete-slot",
+  "permissions": "NONE",
+  "permissions2": "NONE",
+  "restriction": "1",
+  "_id": "noyTm",
+  "actions": [
+    {
+      "member": "1",
+      "varName": "Ilo艣膰",
+      "permission": "ADMINISTRATOR",
+      "branch": {
+        "iftrue": "0",
+        "iffalse": "4",
+        "iffalseVal": "uprawnienia"
+      },
+      "name": "Check Member Permissions"
+    },
+    {
+      "member": "5",
+      "varName": "Slot_Owner",
+      "dataName": "channel1",
+      "defaultVal": "0",
+      "storage": "1",
+      "varName2": "delet",
+      "name": "Store Member Data"
+    },
+    {
+      "member": "5",
+      "varName": "Slot_Owner",
+      "role": "101",
+      "varName2": "1252361964001300665",
+      "branch": {
+        "iftrue": "4",
+        "iffalse": "0",
+        "iftrueVal": "slot"
+      },
+      "name": "Check If Member has Role"
+    },
+    {
+      "info": "0",
+      "find": "1287848995246444730",
+      "storage": "1",
+      "varName": "NIE",
+      "name": "Find Custom Emoji"
+    },
+    {
+      "channel": "0",
+      "varName": "",
+      "message": "",
+      "buttons": [],
+      "selectMenus": [],
+      "attachments": [],
+      "embeds": [
+        {
+          "title": "",
+          "url": "",
+          "color": "RED",
+          "timestamp": "false",
+          "imageUrl": "",
+          "thumbUrl": "",
+          "description": "${tempVars(\"NIE\")} **Ten użytkownik nie posiada aktualnie slotu.**",
+          "fields": [],
+          "author": "",
+          "authorUrl": "",
+          "authorIcon": "",
+          "footerText": "",
+          "footerIconUrl": ""
+        }
+      ],
+      "reply": true,
+      "ephemeral": true,
+      "tts": false,
+      "overwrite": false,
+      "dontSend": false,
+      "editMessage": "0",
+      "editMessageVarName": "",
+      "storage": "0",
+      "varName2": "",
+      "name": "Send Message"
+    },
+    {
+      "name": "End Action Sequence"
+    },
+    {
+      "anchorName": "slot",
+      "name": "Action Anchor"
+    },
+    {
+      "info": "0",
+      "find": "1287848995246444730",
+      "storage": "1",
+      "varName": "EmojiNIE1",
+      "name": "Find Custom Emoji"
+    },
+    {
+      "channel": "103",
+      "varName": "1323674792217284638",
+      "message": "<@&1324367889456824435>",
+      "buttons": [],
+      "selectMenus": [],
+      "attachments": [],
+      "embeds": [
+        {
+          "title": "${tempVars(\"EmojiNIE1\")} **Usunięto slot użytkownika!**",
+          "url": "",
+          "color": "RED",
+          "timestamp": "false",
+          "imageUrl": "",
+          "thumbUrl": "",
+          "description": "*Slot użytkownika ${slashParams(\"Slot_Owner\")} został usunięty.*\n\n- **Administrator usuwający slot:** ${member}",
+          "fields": [],
+          "author": "",
+          "authorUrl": "",
+          "authorIcon": "",
+          "footerText": "",
+          "footerIconUrl": ""
+        }
+      ],
+      "reply": false,
+      "ephemeral": false,
+      "tts": false,
+      "overwrite": false,
+      "dontSend": false,
+      "editMessage": "0",
+      "editMessageVarName": "",
+      "storage": "0",
+      "varName2": "",
+      "name": "Send Message"
+    },
+    {
+      "channel": "0",
+      "varName": "",
+      "message": "",
+      "buttons": [],
+      "selectMenus": [],
+      "attachments": [],
+      "embeds": [
+        {
+          "title": "",
+          "url": "",
+          "color": "RED",
+          "timestamp": "false",
+          "imageUrl": "",
+          "thumbUrl": "",
+          "description": "${tempVars(\"EmojiNIE1\")} **Slot użytkownika ${slashParams(\"Slot_Owner\")} zostanie usunięty w ciągu 10 sekund.**",
+          "fields": [],
+          "author": "",
+          "authorUrl": "",
+          "authorIcon": "",
+          "footerText": "",
+          "footerIconUrl": ""
+        }
+      ],
+      "reply": true,
+      "ephemeral": true,
+      "tts": false,
+      "overwrite": false,
+      "dontSend": false,
+      "editMessage": "0",
+      "editMessageVarName": "",
+      "storage": "0",
+      "varName2": "",
+      "name": "Send Message"
+    },
+    {
+      "time": "10",
+      "measurement": "1",
+      "name": "Wait"
+    },
+    {
+      "storage": "101",
+      "varName": "${tempVars(\"delet\")}",
+      "reason": "",
+      "name": "Delete Channel"
+    },
+    {
+      "member": "5",
+      "varName2": "Slot_Owner",
+      "role": "101",
+      "varName": "1252361964001300665",
+      "reason": "",
+      "name": "Remove Member Role"
+    },
+    {
+      "name": "End Action Sequence"
+    },
+    {
+      "anchorName": "uprawnienia",
+      "name": "Action Anchor"
+    },
+    {
+      "info": "0",
+      "find": "1287848995246444730",
+      "storage": "1",
+      "varName": "NIE",
+      "name": "Find Custom Emoji"
+    },
+    {
+      "channel": "0",
+      "varName": "",
+      "message": "",
+      "buttons": [],
+      "selectMenus": [],
+      "attachments": [],
+      "embeds": [
+        {
+          "title": "",
+          "url": "",
+          "color": "RED",
+          "timestamp": "false",
+          "imageUrl": "https://i.imgur.com/Rav4FMh.png",
+          "thumbUrl": "",
+          "description": "${tempVars(\"NIE\")} **Brak uprawnień do użycia polecenia, abyś mógł użyć wymagane jest uprawnienie do administratora.**",
+          "fields": [],
+          "author": "",
+          "authorUrl": "",
+          "authorIcon": "",
+          "footerText": "",
+          "footerIconUrl": ""
+        }
+      ],
+      "reply": true,
+      "ephemeral": true,
+      "tts": false,
+      "overwrite": false,
+      "dontSend": false,
+      "editMessage": "0",
+      "editMessageVarName": "",
+      "storage": "0",
+      "varName2": "",
+      "name": "Send Message"
+    }
+  ],
+  "comType": "4",
+  "description": "🛒・Usuwanie slotu użytkownika.",
+  "parameters": [
+    {
+      "name": "Slot_Owner",
+      "description": "Użytkownik slotu.",
+      "type": "USER",
+      "required": true,
+      "choices": null
+    }
+  ]
+}
