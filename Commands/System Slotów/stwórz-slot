@@ -424,10 +424,81 @@
       "name": "Store Server Info"
     },
     {
+      "channel": "3",
+      "varName": "Channel",
+      "info": "1",
+      "storage": "1",
+      "varName2": "channel_id11",
+      "name": "Store Channel Info"
+    },
+    {
+      "member": "5",
+      "varName": "Slot_Owner",
+      "info": "3",
+      "storage": "1",
+      "varName2": "member_dname123",
+      "name": "Store Member Info"
+    },
+    {
+      "member": "5",
+      "varName": "Slot_Owner",
+      "dataName": "channel1",
+      "changeType": "0",
+      "value": "tempVars(\"channel_id11\")",
+      "name": "Control Member Data"
+    },
+    {
+      "server": "0",
+      "varName": "",
+      "dataName": "memberslot",
+      "changeType": "0",
+      "value": "tempVars(\"member_dname123\")",
+      "name": "Control Server Data"
+    },
+    {
+      "member": "5",
+      "varName": "Slot_Owner",
+      "dataName": "ping4",
+      "changeType": "0",
+      "value": "slashParams(\"Ping\")",
+      "name": "Control Member Data"
+    },
+    {
       "resultType": "7",
       "storage": "1",
       "varName": "time",
       "name": "Get Current Timestamp"
+    },
+    {
+      "info": "0",
+      "find": "${tempVars(\"member_id123\")}",
+      "storage": "1",
+      "varName": "memberID1",
+      "name": "Find Member"
+    },
+    {
+      "member": "5",
+      "varName": "Slot_Owner",
+      "dataName": "time1",
+      "changeType": "0",
+      "value": "tempVars(\"time\")",
+      "name": "Control Member Data"
+    },
+    {
+      "member": "5",
+      "varName": "Slot_Owner",
+      "dataName": "czas2",
+      "changeType": "0",
+      "value": "slashParams(\"Czas2\")",
+      "name": "Control Member Data"
+    },
+    {
+      "member": "5",
+      "varName": "Slot_Owner",
+      "dataName": "timer3",
+      "changeType": "0",
+      "value": "tempVars(\"timer\")",
+      "name": "Control Member Data"
     },
     {
       "channel": "0",
@@ -568,7 +639,7 @@
     {
       "channel": "103",
       "varName": "1323674792217284638",
-      "message": "<@531488957452648458>",
+      "message": "<@&1324367889456824435>",
       "buttons": [],
       "selectMenus": [],
       "attachments": [],
@@ -580,7 +651,7 @@
           "timestamp": "true",
           "imageUrl": "",
           "thumbUrl": "",
-          "description": "*Slot użytkownika ${slashParams(\"Slot_Owner\")} się rozpoczął.*",
+          "description": "*Slot użytkownika ${slashParams(\"Slot_Owner\")} się rozpoczął.*\n\n- **Administrator tworzący slot:** ${member}",
           "fields": [],
           "author": "",
           "authorUrl": "",
@@ -651,7 +722,7 @@
     {
       "channel": "103",
       "varName": "1323674792217284638",
-      "message": "<@531488957452648458>",
+      "message": "<@&1324367889456824435>",
       "buttons": [],
       "selectMenus": [],
       "attachments": [],
@@ -782,7 +853,7 @@
             },
             {
               "storage": "0",
-              "varName": "Channel",
+              "varName": "${tempVars(\"delet\")}",
               "reason": "",
               "name": "Delete Channel"
             },
