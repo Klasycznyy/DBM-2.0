@@ -225,6 +225,14 @@
       "name": "Remove Member Role"
     },
     {
+      "member": "5",
+      "varName2": "Slot_Owner",
+      "role": "101",
+      "varName": "1325142776366633000",
+      "reason": "",
+      "name": "Add Member Role"
+    },
+    {
       "name": "End Action Sequence"
     },
     {
