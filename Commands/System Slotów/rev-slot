@@ -1,0 +1,295 @@
+{
+  "name": "rev-slot",
+  "permissions": "NONE",
+  "permissions2": "NONE",
+  "restriction": "1",
+  "_id": "Ubxfi",
+  "actions": [
+    {
+      "member": "1",
+      "varName": "Ilo艣膰",
+      "permission": "ADMINISTRATOR",
+      "branch": {
+        "iftrue": "0",
+        "iffalse": "4",
+        "iffalseVal": "uprawnienia"
+      },
+      "name": "Check Member Permissions"
+    },
+    {
+      "member": "5",
+      "varName": "Slot_Owner",
+      "dataName": "channel1",
+      "defaultVal": "0",
+      "storage": "1",
+      "varName2": "delet",
+      "name": "Store Member Data"
+    },
+    {
+      "member": "5",
+      "varName": "Slot_Owner",
+      "role": "101",
+      "varName2": "1252361964001300665",
+      "branch": {
+        "iftrue": "4",
+        "iffalse": "0",
+        "iftrueVal": "slot"
+      },
+      "name": "Check If Member has Role"
+    },
+    {
+      "info": "0",
+      "find": "1287848995246444730",
+      "storage": "1",
+      "varName": "NIE",
+      "name": "Find Custom Emoji"
+    },
+    {
+      "channel": "0",
+      "varName": "",
+      "message": "",
+      "buttons": [],
+      "selectMenus": [],
+      "attachments": [],
+      "embeds": [
+        {
+          "title": "",
+          "url": "",
+          "color": "RED",
+          "timestamp": "false",
+          "imageUrl": "",
+          "thumbUrl": "",
+          "description": "${tempVars(\"NIE\")} **Ten użytkownik nie posiada aktualnie slotu.**",
+          "fields": [],
+          "author": "",
+          "authorUrl": "",
+          "authorIcon": "",
+          "footerText": "",
+          "footerIconUrl": ""
+        }
+      ],
+      "reply": true,
+      "ephemeral": true,
+      "tts": false,
+      "overwrite": false,
+      "dontSend": false,
+      "editMessage": "0",
+      "editMessageVarName": "",
+      "storage": "0",
+      "varName2": "",
+      "name": "Send Message"
+    },
+    {
+      "name": "End Action Sequence"
+    },
+    {
+      "anchorName": "slot",
+      "name": "Action Anchor"
+    },
+    {
+      "info": "0",
+      "find": "1287848995246444730",
+      "storage": "1",
+      "varName": "nie",
+      "name": "Find Custom Emoji"
+    },
+    {
+      "channel": "103",
+      "varName": "1323674792217284638",
+      "message": "<@&1324367889456824435>",
+      "buttons": [],
+      "selectMenus": [],
+      "attachments": [],
+      "embeds": [
+        {
+          "title": "${tempVars(\"nie\")} **Zablokowano slot użytkownika!**",
+          "url": "",
+          "color": "RED",
+          "timestamp": "false",
+          "imageUrl": "",
+          "thumbUrl": "",
+          "description": "*Slot użytkownika ${slashParams(\"Slot_Owner\")} został zablokowany.*\n\n- **Administrator blokujący slot:** ${member}\n- **Powód zablokowania slotu:** ${slashParams(\"Powód\")}",
+          "fields": [],
+          "author": "",
+          "authorUrl": "",
+          "authorIcon": "",
+          "footerText": "",
+          "footerIconUrl": ""
+        }
+      ],
+      "reply": false,
+      "ephemeral": false,
+      "tts": false,
+      "overwrite": false,
+      "dontSend": false,
+      "editMessage": "0",
+      "editMessageVarName": "",
+      "storage": "0",
+      "varName2": "",
+      "name": "Send Message"
+    },
+    {
+      "channel": "0",
+      "varName": "",
+      "message": "",
+      "buttons": [],
+      "selectMenus": [],
+      "attachments": [],
+      "embeds": [
+        {
+          "title": "",
+          "url": "",
+          "color": "RED",
+          "timestamp": "false",
+          "imageUrl": "",
+          "thumbUrl": "",
+          "description": "${tempVars(\"nie\")} **Zablokowano kanał <#${tempVars(\"delet\")}>, od teraz nikt nie widzi tego kanału.**",
+          "fields": [],
+          "author": "",
+          "authorUrl": "",
+          "authorIcon": "",
+          "footerText": "",
+          "footerIconUrl": ""
+        }
+      ],
+      "reply": true,
+      "ephemeral": true,
+      "tts": false,
+      "overwrite": false,
+      "dontSend": false,
+      "editMessage": "0",
+      "editMessageVarName": "",
+      "storage": "0",
+      "varName2": "",
+      "name": "Send Message"
+    },
+    {
+      "channel": "8",
+      "varName": "Slot_Owner",
+      "message": "",
+      "buttons": [],
+      "selectMenus": [],
+      "attachments": [],
+      "embeds": [
+        {
+          "title": "${tempVars(\"nie\")} **Zablokowano kanał**",
+          "url": "",
+          "color": "RED",
+          "timestamp": "false",
+          "imageUrl": "",
+          "thumbUrl": "",
+          "description": "*Administrator ${member}, zabrał tobie dostęp do kanału slotu z* **powodu:** ${slashParams(\"Powód\")}",
+          "fields": [],
+          "author": "",
+          "authorUrl": "",
+          "authorIcon": "",
+          "footerText": "",
+          "footerIconUrl": ""
+        }
+      ],
+      "reply": false,
+      "ephemeral": false,
+      "tts": false,
+      "overwrite": false,
+      "dontSend": false,
+      "editMessage": "0",
+      "editMessageVarName": "",
+      "storage": "0",
+      "varName2": "",
+      "name": "Send Message"
+    },
+    {
+      "storage": "101",
+      "varName": "${tempVars(\"delet\")}",
+      "permission": "VIEW_CHANNEL",
+      "state": "1",
+      "reason": "",
+      "name": "Set Channel Permissions"
+    },
+    {
+      "channel": "101",
+      "varName": "${tempVars(\"delet\")}",
+      "member": "5",
+      "varName2": "Slot_Owner",
+      "permission": "VIEW_CHANNEL",
+      "state": "2",
+      "reason": "",
+      "name": "Set Member Channel Perms"
+    },
+    {
+      "member": "5",
+      "varName2": "Slot_Owner",
+      "role": "101",
+      "varName": "1252361964001300665",
+      "reason": "",
+      "name": "Remove Member Role"
+    },
+    {
+      "name": "End Action Sequence"
+    },
+    {
+      "anchorName": "uprawnienia",
+      "name": "Action Anchor"
+    },
+    {
+      "info": "0",
+      "find": "1287848995246444730",
+      "storage": "1",
+      "varName": "NIE",
+      "name": "Find Custom Emoji"
+    },
+    {
+      "channel": "0",
+      "varName": "",
+      "message": "",
+      "buttons": [],
+      "selectMenus": [],
+      "attachments": [],
+      "embeds": [
+        {
+          "title": "",
+          "url": "",
+          "color": "RED",
+          "timestamp": "false",
+          "imageUrl": "https://i.imgur.com/Rav4FMh.png",
+          "thumbUrl": "",
+          "description": "${tempVars(\"NIE\")} **Brak uprawnień do użycia polecenia, abyś mógł użyć wymagane jest uprawnienie do administratora.**",
+          "fields": [],
+          "author": "",
+          "authorUrl": "",
+          "authorIcon": "",
+          "footerText": "",
+          "footerIconUrl": ""
+        }
+      ],
+      "reply": true,
+      "ephemeral": true,
+      "tts": false,
+      "overwrite": false,
+      "dontSend": false,
+      "editMessage": "0",
+      "editMessageVarName": "",
+      "storage": "0",
+      "varName2": "",
+      "name": "Send Message"
+    }
+  ],
+  "comType": "4",
+  "parameters": [
+    {
+      "name": "Slot_Owner",
+      "description": "Użytkownik slotu.",
+      "type": "USER",
+      "required": true,
+      "choices": null
+    },
+    {
+      "name": "Powód",
+      "description": "Powód zablokowania widoczności?",
+      "type": "STRING",
+      "required": true,
+      "choices": null
+    }
+  ],
+  "description": "🛒・Blokowanie slotu dla użytkownika."
+}
