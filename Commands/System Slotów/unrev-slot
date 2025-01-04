@@ -26,16 +26,16 @@
       "name": "Store Member Data"
     },
     {
-      "storage": "1",
-      "varName": "delet",
-      "comparison": "1",
-      "value": "0",
+      "member": "5",
+      "varName": "Slot_Owner",
+      "role": "101",
+      "varName2": "1325142776366633000",
       "branch": {
-        "iftrue": "0",
-        "iffalse": "4",
-        "iffalseVal": "slot"
+        "iftrue": "4",
+        "iffalse": "0",
+        "iftrueVal": "slot"
       },
-      "name": "Check Variable"
+      "name": "Check If Member has Role"
     },
     {
       "info": "0",
@@ -230,6 +230,14 @@
       "varName": "1252361964001300665",
       "reason": "",
       "name": "Add Member Role"
+    },
+    {
+      "member": "5",
+      "varName2": "Slot_Owner",
+      "role": "101",
+      "varName": "1325142776366633000",
+      "reason": "",
+      "name": "Remove Member Role"
     },
     {
       "name": "End Action Sequence"
