@@ -319,6 +319,14 @@
             {
               "member": "1",
               "varName": "",
+              "info": "16",
+              "storage": "1",
+              "varName2": "member_avatarurl",
+              "name": "Store Member Info"
+            },
+            {
+              "member": "1",
+              "varName": "",
               "role": "101",
               "varName2": "1300575339075866664",
               "branch": {
@@ -941,7 +949,7 @@
                   "color": "#0f0f0f",
                   "timestamp": "false",
                   "imageUrl": "",
-                  "thumbUrl": "",
+                  "thumbUrl": "${tempVars(\"member_avatarurl\")}",
                   "description": "**Co chcesz Od nas Zakupić:**\n- ${tempVars(\"sklepik\")} **Zakup?:** ${tempVars(\"zakup1\")}\n\n**Płatność jaką Wykonujesz:**\n- ${tempVars(\"platnosc\")} **Płatność?:** ${tempVars(\"platnosc1\")}\n\n${tempVars(\"info54\")} **Dodatkowe Informacje:**\n- **Opis:** ${tempVars(\"informacje\")}",
                   "fields": [],
                   "author": "",
@@ -1853,6 +1861,132 @@
               "name": "Action Anchor"
             },
             {
+              "title": "Formularz do Zakupu Slotu.",
+              "textInputs": [
+                {
+                  "name": "Jaki rodzaj slotu chcesz zakupić?:",
+                  "placeholder": "Np. Z 1 pingiem umożliwiający pingowanie na slocie.",
+                  "minLength": "0",
+                  "maxLength": "100",
+                  "id": "rodzaj_pingu",
+                  "row": "",
+                  "style": "SHORT",
+                  "required": "true"
+                },
+                {
+                  "name": "Czym płacisz?:",
+                  "placeholder": "Np. Blik, Paypal itp.",
+                  "minLength": "0",
+                  "maxLength": "1000",
+                  "id": "platnosc111",
+                  "row": "",
+                  "style": "SHORT",
+                  "required": "true"
+                },
+                {
+                  "name": "Dodatkowe informacje:",
+                  "placeholder": "Wpisz tutaj jak masz jakieś informację dot. Zakupu.",
+                  "minLength": "0",
+                  "maxLength": "200",
+                  "id": "informacje11",
+                  "row": "",
+                  "style": "SHORT",
+                  "required": "false"
+                }
+              ],
+              "name": "Show Modal"
+            },
+            {
+              "server": "0",
+              "varName": "",
+              "info": "5",
+              "storage": "1",
+              "varName2": "serviconurl",
+              "name": "Store Server Info"
+            },
+            {
+              "info": "0",
+              "find": "1287848995246444730",
+              "storage": "1",
+              "varName": "nołpe",
+              "name": "Find Custom Emoji"
+            },
+            {
+              "info": "0",
+              "find": "1295134066751967252",
+              "storage": "1",
+              "varName": "xd1",
+              "name": "Find Custom Emoji"
+            },
+            {
+              "info": "0",
+              "find": "1302000580079648808",
+              "storage": "1",
+              "varName": "info321",
+              "name": "Find Custom Emoji"
+            },
+            {
+              "storage": "1",
+              "varName": "platnosc111",
+              "changeType": "0",
+              "value": "tempVars(\"platnosc111\").toLowerCase()",
+              "name": "Control Variable"
+            },
+            {
+              "storage": "1",
+              "varName": "platnosc111",
+              "comparison": "6",
+              "value": "(blik|psc|paysafecard|paypal|karta|przelew|przelew bankowy)",
+              "branch": {
+                "iftrue": "4",
+                "iffalse": "0",
+                "iftrueVal": "zakup_slotu1"
+              },
+              "name": "Check Variable"
+            },
+            {
+              "channel": "0",
+              "varName": "",
+              "message": "",
+              "buttons": [],
+              "selectMenus": [],
+              "attachments": [],
+              "embeds": [
+                {
+                  "title": "${tempVars(\"nołpe\")} **Wpisano nie prawidłową wartość płatności!**",
+                  "url": "",
+                  "color": "RED",
+                  "timestamp": "true",
+                  "imageUrl": "",
+                  "thumbUrl": "",
+                  "description": "- ${tempVars(\"xd1\")} **Podano nie prawidłową metodę płatności:**\n*${tempVars(\"platnosc111\")}*\n\n- ${tempVars(\"info321\")} **Aby poprawnie dodać metodę płatności, pamiętaj ze my tylko obsługujemy takie jak;** *Blik, Kod PaySafeCard, Paypal oraz Przelew Bankowy,*\n- **Nasz system modal ma zarejestrowaną, zapisane wartości jak poniżej:**\n\n> *Blik*\n> *Paysafecard , Psc*\n> *Paypal*\n> *Karta , Przelew bankowy*\n",
+                  "fields": [],
+                  "author": "",
+                  "authorUrl": "",
+                  "authorIcon": "",
+                  "footerText": "~ Prawdopodobnie wpisano nie poprawną metodę płatności!",
+                  "footerIconUrl": "${tempVars(\"serviconurl\")}"
+                }
+              ],
+              "reply": true,
+              "ephemeral": true,
+              "tts": false,
+              "overwrite": false,
+              "dontSend": false,
+              "editMessage": "0",
+              "editMessageVarName": "",
+              "storage": "0",
+              "varName2": "",
+              "name": "Send Message"
+            },
+            {
+              "name": "End Action Sequence"
+            },
+            {
+              "anchorName": "zakup_slotu1",
+              "name": "Action Anchor"
+            },
+            {
               "ephemeral": true,
               "name": "Start Thinking"
             },
@@ -1862,6 +1996,14 @@
               "info": "2",
               "storage": "1",
               "varName2": "username",
+              "name": "Store Member Info"
+            },
+            {
+              "member": "1",
+              "varName": "",
+              "info": "16",
+              "storage": "1",
+              "varName2": "member_urlavatar123",
               "name": "Store Member Info"
             },
             {
@@ -2065,6 +2207,20 @@
               "find": "1292103793869066334",
               "storage": "1",
               "varName": "settings",
+              "name": "Find Custom Emoji"
+            },
+            {
+              "info": "0",
+              "find": "1302000580079648808",
+              "storage": "1",
+              "varName": "info54",
+              "name": "Find Custom Emoji"
+            },
+            {
+              "info": "0",
+              "find": "1294957534246866966",
+              "storage": "1",
+              "varName": "platnosc",
               "name": "Find Custom Emoji"
             },
             {
@@ -2477,17 +2633,9 @@
                       "branch": {
                         "iftrue": "0",
                         "iffalse": "2",
-                        "iffalseVal": "7"
+                        "iffalseVal": "6"
                       },
                       "name": "Check Member Permissions"
-                    },
-                    {
-                      "storage": "0",
-                      "varName": "",
-                      "permission": "MANAGE_WEBHOOKS",
-                      "state": "1",
-                      "reason": "",
-                      "name": "Set Channel Permissions"
                     },
                     {
                       "info": "0",
@@ -2507,11 +2655,11 @@
                         {
                           "title": "${tempVars(\"settings\")} Ustawienia Slotu!",
                           "url": "",
-                          "color": "#302c34",
+                          "color": "#0f0f0f",
                           "timestamp": "false",
                           "imageUrl": "",
                           "thumbUrl": "",
-                          "description": "**Komendy Slotu:**\n- **Tworzenie slotu Dla użytkownika:** /stwórz-slot\n",
+                          "description": "**Komendy dla Slotu:**\n- **Tworzenie slotu Dla użytkownika:** */stwórz-slot*\n- **Usuwanie slotu Użytkownikowi:** */delete-slot*\n- **Zabieranie uprawnień Do kanału i Roli dla Użytkownika:** */rev-slot*\n- **Przywracanie kanału i Roli dla Użytkownika:** */unrev-slot*\n",
                           "fields": [],
                           "author": "",
                           "authorUrl": "",
@@ -2588,8 +2736,8 @@
                   "color": "#0f0f0f",
                   "timestamp": "false",
                   "imageUrl": "",
-                  "thumbUrl": "",
-                  "description": "> **・ Aby zakupić u nas slot ``(czyli kanał do sprzedaży)`` to podaj nam opcje zakupu `0,1,2 i na ile dni` oraz płatność którą będziesz płacił.**",
+                  "thumbUrl": "${tempVars(\"member_urlavatar123\")}",
+                  "description": "**Jaki rodzaj Slotu chcesz Zakupić?:**\n- ${tempVars(\"koszyk123\")} **Zakup?:** ${tempVars(\"rodzaj_pingu\")}\n\n**Płatność jaką Wykonujesz:**\n- ${tempVars(\"platnosc\")} **Płatność?:** ${tempVars(\"platnosc111\")}\n\n${tempVars(\"info54\")} **Dodatkowe Informacje:**\n- **Opis:** ${tempVars(\"informacje11\")}",
                   "fields": [],
                   "author": "",
                   "authorUrl": "",
@@ -2759,7 +2907,7 @@
           "url": "",
           "color": "#0f0f0f",
           "timestamp": "true",
-          "imageUrl": "https://i.imgur.com/YuYgLuF.png",
+          "imageUrl": "https://i.imgur.com/GEC8Nzu.png",
           "thumbUrl": "",
           "description": "> - **Wybierz odpowiednią kategorię, aby stworzyć ticket, zbędne otwieranie ticketów będzie karane.**",
           "fields": [],
