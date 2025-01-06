@@ -105,16 +105,12 @@
             {
               "label": "Odbierz Nagrode!",
               "description": "Kliknij, aby odebrać nagrode za zaproszenia.",
-              "value": "zakup-ps99",
+              "value": "nagroda",
               "emoji": "🎁",
               "default": "false"
             }
           ],
           "actions": [
-            {
-              "ephemeral": true,
-              "name": "Start Thinking"
-            },
             {
               "server": "0",
               "varName": "",
@@ -148,7 +144,7 @@
               "storage": "1",
               "varName": "var",
               "comparison": "1",
-              "value": "zakup-ps99",
+              "value": "nagroda",
               "branch": {
                 "iftrue": "4",
                 "iffalse": "1",
@@ -190,11 +186,190 @@
               "name": "Action Anchor"
             },
             {
+              "title": "Formularz do Odbioru Nagrody.",
+              "textInputs": [
+                {
+                  "name": "Twój nick do odbioru? (NICK/ID)",
+                  "placeholder": "Nick użytkownika (np. _perf3kcja)",
+                  "minLength": "0",
+                  "maxLength": "1000",
+                  "id": "nick11",
+                  "row": "",
+                  "style": "SHORT",
+                  "required": "true"
+                },
+                {
+                  "name": "Co chcesz odebrać?:",
+                  "placeholder": "Np. 1 Huge w Pet Sim 99.. Albo 32m Gemów.",
+                  "minLength": "0",
+                  "maxLength": "100",
+                  "id": "odbior",
+                  "row": "",
+                  "style": "SHORT",
+                  "required": "true"
+                },
+                {
+                  "name": "Dodatkowe informacje:",
+                  "placeholder": "Wpisz tutaj jak masz jakieś informację dot. Odbioru.",
+                  "minLength": "0",
+                  "maxLength": "200",
+                  "id": "informacje11",
+                  "row": "",
+                  "style": "SHORT",
+                  "required": "false"
+                }
+              ],
+              "name": "Show Modal"
+            },
+            {
+              "info": "0",
+              "find": "1287848995246444730",
+              "storage": "1",
+              "varName": "nołpe",
+              "name": "Find Custom Emoji"
+            },
+            {
+              "info": "0",
+              "find": "1295134066751967252",
+              "storage": "1",
+              "varName": "xd1",
+              "name": "Find Custom Emoji"
+            },
+            {
+              "info": "0",
+              "find": "1302000580079648808",
+              "storage": "1",
+              "varName": "info321",
+              "name": "Find Custom Emoji"
+            },
+            {
+              "info": "0",
+              "find": "1287848995246444730",
+              "storage": "1",
+              "varName": "nie1",
+              "name": "Find Custom Emoji"
+            },
+            {
+              "info": "0",
+              "find": "1302000580079648808",
+              "storage": "1",
+              "varName": "info1",
+              "name": "Find Custom Emoji"
+            },
+            {
+              "info": "0",
+              "find": "1295134066751967252",
+              "storage": "1",
+              "varName": "nope",
+              "name": "Find Custom Emoji"
+            },
+            {
+              "info": "1",
+              "find": "${tempVars(\"nick11\")}",
+              "storage": "1",
+              "varName": "memberfind",
+              "name": "Find Member"
+            },
+            {
+              "storage": "1",
+              "varName": "nick11",
+              "comparison": "4",
+              "value": "0",
+              "branch": {
+                "iftrue": "4",
+                "iffalse": "0",
+                "iftrueVal": "UserID"
+              },
+              "name": "Check Variable"
+            },
+            {
+              "server": "0",
+              "varName": "",
+              "info": "5",
+              "storage": "1",
+              "varName2": "serviconurl",
+              "name": "Store Server Info"
+            },
+            {
+              "storage": "1",
+              "varName": "memberfind",
+              "comparison": "1",
+              "value": "undefined",
+              "branch": {
+                "iftrue": "0",
+                "iffalse": "4",
+                "iffalseVal": "zakupzoferty11"
+              },
+              "name": "Check Variable"
+            },
+            {
+              "channel": "0",
+              "varName": "",
+              "message": "",
+              "buttons": [],
+              "selectMenus": [],
+              "attachments": [],
+              "embeds": [
+                {
+                  "title": "${tempVars(\"nie1\")} **Błąd przy wprowadzeniu nicku/id!**",
+                  "url": "",
+                  "color": "RED",
+                  "timestamp": "false",
+                  "imageUrl": "https://i.imgur.com/eq6OoNl.png",
+                  "thumbUrl": "",
+                  "description": "- ${tempVars(\"nope\")} **Podano niepoprawny nick/id twojej nazwy:** *${tempVars(\"nick11\")}*\n\n- ${tempVars(\"info1\")} **Aby poprawnie napisac swój nick, pamiętaj aby wpisywać nazwe użytkownika** *( nie wyświetlaną ), lub swoje ID.*\n- **tak jak poniżej na zdjęciu, czyli u mnie jest to** ``_perf3kcja`` **a nie** ``_Perf3kcja.ฅ^•ﻌ•^ฅ.✿•``\n",
+                  "fields": [],
+                  "author": "",
+                  "authorUrl": "",
+                  "authorIcon": "",
+                  "footerText": "~ Prawdopodobnie wpisano nieprawidłowy nick!",
+                  "footerIconUrl": "${tempVars(\"serviconurl\")}"
+                }
+              ],
+              "reply": true,
+              "ephemeral": true,
+              "tts": false,
+              "overwrite": false,
+              "dontSend": false,
+              "editMessage": "0",
+              "editMessageVarName": "",
+              "storage": "0",
+              "varName2": "",
+              "name": "Send Message"
+            },
+            {
+              "name": "End Action Sequence"
+            },
+            {
+              "anchorName": "zakupzoferty11",
+              "name": "Action Anchor"
+            },
+            {
+              "ephemeral": true,
+              "name": "Start Thinking"
+            },
+            {
               "member": "1",
               "varName": "",
               "info": "2",
               "storage": "1",
               "varName2": "username",
+              "name": "Store Member Info"
+            },
+            {
+              "member": "1",
+              "varName": "",
+              "info": "16",
+              "storage": "1",
+              "varName2": "url_member",
+              "name": "Store Member Info"
+            },
+            {
+              "member": "2",
+              "varName": "memberfind",
+              "info": "2",
+              "storage": "1",
+              "varName2": "membername",
               "name": "Store Member Info"
             },
             {
@@ -397,6 +572,20 @@
               "name": "Find Custom Emoji"
             },
             {
+              "info": "0",
+              "find": "1302000580079648808",
+              "storage": "1",
+              "varName": "info321",
+              "name": "Find Custom Emoji"
+            },
+            {
+              "info": "0",
+              "find": "1295081614958657617",
+              "storage": "1",
+              "varName": "members",
+              "name": "Find Custom Emoji"
+            },
+            {
               "server": "0",
               "varName": "",
               "info": "2",
@@ -408,11 +597,46 @@
               "channel": "5",
               "varName": "channel1",
               "message": "${member}",
+              "buttons": [],
+              "selectMenus": [],
+              "attachments": [],
+              "embeds": [
+                {
+                  "title": " 🎁 **Odbiór Nagrody!**",
+                  "url": "",
+                  "color": "#0f0f0f",
+                  "timestamp": "false",
+                  "imageUrl": "",
+                  "thumbUrl": "${tempVars(\"url_member\")}",
+                  "description": "${tempVars(\"members\")} **Twój Nick do Odbioru:**\n- 👤 **Nick:** ${tempVars(\"memberfind\")}\n\n**Co chcesz Odebrać?:**\n- 🎁 **Odbiór?:** ${tempVars(\"odbior\")}\n\n${tempVars(\"info321\")} **Dodatkowe Informacje:**\n- **Opis:** ${tempVars(\"informacje11\")}",
+                  "fields": [],
+                  "author": "",
+                  "authorUrl": "",
+                  "authorIcon": "",
+                  "footerText": "",
+                  "footerIconUrl": ""
+                }
+              ],
+              "reply": true,
+              "ephemeral": false,
+              "tts": false,
+              "overwrite": false,
+              "dontSend": false,
+              "editMessage": "0",
+              "editMessageVarName": "",
+              "storage": "0",
+              "varName2": "",
+              "name": "Send Message"
+            },
+            {
+              "channel": "5",
+              "varName": "channel1",
+              "message": "",
               "buttons": [
                 {
                   "name": "Zamknij!",
                   "type": "DANGER",
-                  "id": "msg-button-24ce64l",
+                  "id": "msg-button-0fd6d6e",
                   "row": "",
                   "url": "",
                   "emoji": "1287848995246444730",
@@ -776,13 +1000,797 @@
               "attachments": [],
               "embeds": [
                 {
-                  "title": " 🎁 **Odbiór Nagrody!**",
+                  "title": "",
                   "url": "",
                   "color": "#0f0f0f",
                   "timestamp": "false",
                   "imageUrl": "",
                   "thumbUrl": "",
-                  "description": "> ・ **Aby odebrać swoją nagrode za zaproszenia to poniżej trzeba wypełnić, próba oszustwa będzie karana oraz nie wliczamy zaproszenia z multikont.**\n\n```\nNick:\nNagroda:\nScreen (tzw. dowód ilości zaproszeń, /invites):\n```",
+                  "description": "**Oraz podeślij nam:**\n- *Screen (tzw. dowód ilości zaproszeń, /invites):*",
+                  "fields": [],
+                  "author": "",
+                  "authorUrl": "",
+                  "authorIcon": "",
+                  "footerText": "",
+                  "footerIconUrl": ""
+                }
+              ],
+              "reply": true,
+              "ephemeral": false,
+              "tts": false,
+              "overwrite": false,
+              "dontSend": false,
+              "editMessage": "0",
+              "editMessageVarName": "",
+              "storage": "0",
+              "varName2": "",
+              "name": "Send Message"
+            },
+            {
+              "channel": "0",
+              "varName": "",
+              "message": "",
+              "buttons": [],
+              "selectMenus": [],
+              "attachments": [],
+              "embeds": [
+                {
+                  "title": "${tempVars(\"yes123\")} **Zgłoszenie!**",
+                  "url": "",
+                  "color": "#54f48c",
+                  "timestamp": "false",
+                  "imageUrl": "",
+                  "thumbUrl": "",
+                  "description": "**${tempVars(\"iconurl1\")} ×** Twoje zgłoszenie zostało otwarte. - ${tempVars(\"channel1\")}",
+                  "fields": [],
+                  "author": "",
+                  "authorUrl": "",
+                  "authorIcon": "",
+                  "footerText": "",
+                  "footerIconUrl": ""
+                }
+              ],
+              "reply": true,
+              "ephemeral": true,
+              "tts": false,
+              "overwrite": false,
+              "dontSend": false,
+              "editMessage": "0",
+              "editMessageVarName": "",
+              "storage": "0",
+              "varName2": "",
+              "name": "Send Message"
+            },
+            {
+              "channel": "3",
+              "varName": "channel1",
+              "info": "1",
+              "storage": "1",
+              "varName2": "TicketChannelID",
+              "name": "Store Channel Info"
+            },
+            {
+              "comment": "new",
+              "color": "#ff0000",
+              "name": "Comment"
+            },
+            {
+              "member": "1",
+              "varName": "",
+              "info": "1",
+              "storage": "1",
+              "varName2": "StoreMemberID",
+              "name": "Store Member Info"
+            },
+            {
+              "channel": "3",
+              "varName": "channel1",
+              "info": "1",
+              "storage": "1",
+              "varName2": "StoreTicketChannelID",
+              "name": "Store Channel Info"
+            },
+            {
+              "server": "0",
+              "varName": "",
+              "dataName": "${tempVars(\"StoreTicketChannelID\")}-Owner",
+              "changeType": "0",
+              "value": "tempVars(\"StoreMemberID\")",
+              "name": "Control Server Data"
+            },
+            {
+              "channel": "3",
+              "varName": "channel1",
+              "info": "1",
+              "storage": "1",
+              "varName2": "TicketChannelID",
+              "name": "Store Channel Info"
+            },
+            {
+              "server": "0",
+              "varName": "",
+              "dataName": "${tempVars(\"TicketChannelID\")}-ID",
+              "changeType": "0",
+              "value": "tempVars(\"GetID\")",
+              "name": "Control Server Data"
+            },
+            {
+              "name": "End Action Sequence"
+            },
+            {
+              "anchorName": "UserID",
+              "name": "Action Anchor"
+            },
+            {
+              "ephemeral": true,
+              "name": "Start Thinking"
+            },
+            {
+              "member": "1",
+              "varName": "",
+              "info": "2",
+              "storage": "1",
+              "varName2": "username",
+              "name": "Store Member Info"
+            },
+            {
+              "member": "1",
+              "varName": "",
+              "info": "16",
+              "storage": "1",
+              "varName2": "url_member",
+              "name": "Store Member Info"
+            },
+            {
+              "info": "0",
+              "find": "${tempVars(\"nick11\")}",
+              "storage": "1",
+              "varName": "memberfindID1",
+              "name": "Find Member"
+            },
+            {
+              "member": "2",
+              "varName": "memberfind",
+              "info": "2",
+              "storage": "1",
+              "varName2": "membername",
+              "name": "Store Member Info"
+            },
+            {
+              "member": "1",
+              "varName": "",
+              "role": "101",
+              "varName2": "1300575339075866664",
+              "branch": {
+                "iftrue": "4",
+                "iffalse": "0",
+                "iftrueVal": "YouHaveRole1"
+              },
+              "name": "Check If Member has Role"
+            },
+            {
+              "member": "1",
+              "varName2": "",
+              "role": "101",
+              "varName": "1300575339075866664",
+              "reason": "",
+              "name": "Add Member Role"
+            },
+            {
+              "channelName": "odbiór-nagrody-${tempVars(\"username\")}",
+              "topic": "",
+              "position": "",
+              "storage": "1",
+              "varName": "channel1",
+              "categoryID": "1289293668481761280",
+              "reason": "",
+              "name": "Create Text Channel"
+            },
+            {
+              "storage": "3",
+              "varName": "channel1",
+              "permission": "VIEW_CHANNEL",
+              "state": "1",
+              "reason": "",
+              "name": "Set Channel Permissions"
+            },
+            {
+              "storage": "3",
+              "varName": "channel1",
+              "permission": "VIEW_CHANNEL",
+              "state": "1",
+              "reason": "",
+              "name": "Set Channel Permissions"
+            },
+            {
+              "storage": "3",
+              "varName": "channel1",
+              "permission": "ATTACH_FILES",
+              "state": "0",
+              "reason": "",
+              "name": "Set Channel Permissions"
+            },
+            {
+              "storage": "3",
+              "varName": "channel1",
+              "permission": "SEND_MESSAGES",
+              "state": "0",
+              "reason": "",
+              "name": "Set Channel Permissions"
+            },
+            {
+              "channel": "3",
+              "varName": "channel1",
+              "member": "1",
+              "varName2": "",
+              "permission": "VIEW_CHANNEL",
+              "state": "0",
+              "reason": "",
+              "name": "Set Member Channel Perms"
+            },
+            {
+              "channel": "3",
+              "varName": "channel1",
+              "member": "1",
+              "varName2": "",
+              "permission": "VIEW_CHANNEL",
+              "state": "0",
+              "reason": "",
+              "name": "Set Member Channel Perms"
+            },
+            {
+              "channel": "3",
+              "varName": "channel1",
+              "member": "1",
+              "varName2": "",
+              "permission": "SEND_MESSAGES",
+              "state": "0",
+              "reason": "",
+              "name": "Set Member Channel Perms"
+            },
+            {
+              "channel": "3",
+              "varName": "channel1",
+              "member": "1",
+              "varName2": "",
+              "permission": "ATTACH_FILES",
+              "state": "0",
+              "reason": "",
+              "name": "Set Member Channel Perms"
+            },
+            {
+              "channel": "3",
+              "varName": "channel1",
+              "role": "101",
+              "varName2": "1280180122837585932",
+              "permission": "VIEW_CHANNEL",
+              "state": "0",
+              "reason": "",
+              "name": "Set Role Channel Perms"
+            },
+            {
+              "channel": "3",
+              "varName": "channel1",
+              "role": "101",
+              "varName2": "1252321599407784217",
+              "permission": "SEND_MESSAGES",
+              "state": "0",
+              "reason": "",
+              "name": "Set Role Channel Perms"
+            },
+            {
+              "channel": "3",
+              "varName": "channel1",
+              "role": "101",
+              "varName2": "1252321599407784217",
+              "permission": "SEND_MESSAGES",
+              "state": "0",
+              "reason": "",
+              "name": "Set Role Channel Perms"
+            },
+            {
+              "channel": "3",
+              "varName": "channel1",
+              "role": "101",
+              "varName2": "1252321599407784217",
+              "permission": "VIEW_CHANNEL",
+              "state": "0",
+              "reason": "",
+              "name": "Set Role Channel Perms"
+            },
+            {
+              "channel": "3",
+              "varName": "channel1",
+              "role": "101",
+              "varName2": "1252321599407784217",
+              "permission": "VIEW_CHANNEL",
+              "state": "0",
+              "reason": "",
+              "name": "Set Role Channel Perms"
+            },
+            {
+              "channel": "3",
+              "varName": "channel1",
+              "role": "101",
+              "varName2": "1252321599407784215",
+              "permission": "SEND_MESSAGES",
+              "state": "0",
+              "reason": "",
+              "name": "Set Role Channel Perms"
+            },
+            {
+              "channel": "3",
+              "varName": "channel1",
+              "role": "101",
+              "varName2": "1252321599407784215",
+              "permission": "SEND_MESSAGES",
+              "state": "0",
+              "reason": "",
+              "name": "Set Role Channel Perms"
+            },
+            {
+              "channel": "3",
+              "varName": "channel1",
+              "role": "101",
+              "varName2": "1252321599407784215",
+              "permission": "VIEW_CHANNEL",
+              "state": "0",
+              "reason": "",
+              "name": "Set Role Channel Perms"
+            },
+            {
+              "channel": "3",
+              "varName": "channel1",
+              "role": "101",
+              "varName2": "1252321599407784215",
+              "permission": "VIEW_CHANNEL",
+              "state": "0",
+              "reason": "",
+              "name": "Set Role Channel Perms"
+            },
+            {
+              "info": "0",
+              "find": "1287848897149931577",
+              "storage": "1",
+              "varName": "yes123",
+              "name": "Find Custom Emoji"
+            },
+            {
+              "info": "0",
+              "find": "1302000580079648808",
+              "storage": "1",
+              "varName": "info321",
+              "name": "Find Custom Emoji"
+            },
+            {
+              "info": "0",
+              "find": "1295081614958657617",
+              "storage": "1",
+              "varName": "members",
+              "name": "Find Custom Emoji"
+            },
+            {
+              "server": "0",
+              "varName": "",
+              "info": "2",
+              "storage": "1",
+              "varName2": "iconurl1",
+              "name": "Store Server Info"
+            },
+            {
+              "channel": "5",
+              "varName": "channel1",
+              "message": "${member}",
+              "buttons": [],
+              "selectMenus": [],
+              "attachments": [],
+              "embeds": [
+                {
+                  "title": " 🎁 **Odbiór Nagrody!**",
+                  "url": "",
+                  "color": "#0f0f0f",
+                  "timestamp": "false",
+                  "imageUrl": "",
+                  "thumbUrl": "${tempVars(\"url_member\")}",
+                  "description": "${tempVars(\"members\")} **Twój Nick do Odbioru:**\n- 👤 **Nick:** ${tempVars(\"memberfindID1\")}\n\n**Co chcesz Odebrać?:**\n- 🎁 **Odbiór?:** ${tempVars(\"odbior\")}\n\n${tempVars(\"info321\")} **Dodatkowe Informacje:**\n- **Opis:** ${tempVars(\"informacje11\")}",
+                  "fields": [],
+                  "author": "",
+                  "authorUrl": "",
+                  "authorIcon": "",
+                  "footerText": "",
+                  "footerIconUrl": ""
+                }
+              ],
+              "reply": true,
+              "ephemeral": false,
+              "tts": false,
+              "overwrite": false,
+              "dontSend": false,
+              "editMessage": "0",
+              "editMessageVarName": "",
+              "storage": "0",
+              "varName2": "",
+              "name": "Send Message"
+            },
+            {
+              "channel": "5",
+              "varName": "channel1",
+              "message": "",
+              "buttons": [
+                {
+                  "name": "Zamknij!",
+                  "type": "DANGER",
+                  "id": "gerg3we4g3",
+                  "row": "",
+                  "url": "",
+                  "emoji": "1287848995246444730",
+                  "mode": "PERSISTENT",
+                  "time": "",
+                  "actions": [
+                    {
+                      "ephemeral": false,
+                      "name": "Start Thinking"
+                    },
+                    {
+                      "info": "0",
+                      "find": "1287848897149931577",
+                      "storage": "1",
+                      "varName": "yo",
+                      "name": "Find Custom Emoji"
+                    },
+                    {
+                      "channel": "0",
+                      "varName": "12",
+                      "message": "",
+                      "buttons": [
+                        {
+                          "name": "Tak, zamknij!",
+                          "type": "DANGER",
+                          "id": "msggerg3434",
+                          "row": "",
+                          "url": "",
+                          "emoji": "1287848897149931577",
+                          "mode": "PERSISTENT",
+                          "time": "",
+                          "actions": [
+                            {
+                              "comment": "new",
+                              "color": "#ff0000",
+                              "name": "Comment"
+                            },
+                            {
+                              "ephemeral": false,
+                              "name": "Start Thinking"
+                            },
+                            {
+                              "info": "0",
+                              "find": "1287848995246444730",
+                              "storage": "1",
+                              "varName": "nie",
+                              "name": "Find Custom Emoji"
+                            },
+                            {
+                              "channel": "0",
+                              "varName": "",
+                              "info": "1",
+                              "storage": "1",
+                              "varName2": "GetTicketChannelID",
+                              "name": "Store Channel Info"
+                            },
+                            {
+                              "server": "0",
+                              "varName": "",
+                              "dataName": "${tempVars(\"GetTicketChannelID\")}-Owner",
+                              "defaultVal": "0",
+                              "storage": "1",
+                              "varName2": "GetTicketOwnerMemberID",
+                              "name": "Store Server Data"
+                            },
+                            {
+                              "server": "0",
+                              "varName": "",
+                              "dataName": "${tempVars(\"GetChannelID\")}-ID",
+                              "defaultVal": "0",
+                              "storage": "1",
+                              "varName2": "GetTicketID",
+                              "name": "Store Server Data"
+                            },
+                            {
+                              "info": "0",
+                              "find": "${tempVars(\"GetTicketOwnerMemberID\")}",
+                              "storage": "1",
+                              "varName": "FindTicketOwner",
+                              "name": "Find Member"
+                            },
+                            {
+                              "member": "2",
+                              "varName2": "FindTicketOwner",
+                              "role": "101",
+                              "varName": "1300575339075866664",
+                              "reason": "",
+                              "name": "Remove Member Role"
+                            },
+                            {
+                              "channel": "0",
+                              "varName": "",
+                              "message": "",
+                              "buttons": [],
+                              "selectMenus": [],
+                              "attachments": [],
+                              "embeds": [
+                                {
+                                  "title": "${tempVars(\"nie\")} **Trwa zamykanie..**",
+                                  "url": "",
+                                  "color": "RED",
+                                  "timestamp": "false",
+                                  "imageUrl": "https://i.imgur.com/YuYgLuF.png",
+                                  "thumbUrl": "",
+                                  "description": "- ***Proszę poczekać, trwa zamykanie ticketu...***",
+                                  "fields": [],
+                                  "author": "",
+                                  "authorUrl": "",
+                                  "authorIcon": "",
+                                  "footerText": "",
+                                  "footerIconUrl": ""
+                                }
+                              ],
+                              "reply": true,
+                              "ephemeral": false,
+                              "tts": false,
+                              "overwrite": false,
+                              "dontSend": false,
+                              "editMessage": "1",
+                              "editMessageVarName": "edit",
+                              "storage": "0",
+                              "varName2": "",
+                              "name": "Send Message"
+                            },
+                            {
+                              "channel": "0",
+                              "varName": "",
+                              "info": "0",
+                              "storage": "1",
+                              "varName2": "object",
+                              "name": "Store Channel Info"
+                            },
+                            {
+                              "channel": "0",
+                              "varName": "",
+                              "info": "2",
+                              "storage": "1",
+                              "varName2": "name",
+                              "name": "Store Channel Info"
+                            },
+                            {
+                              "useMinify": "1",
+                              "saveImages": "1",
+                              "useCDN": "1",
+                              "channelObj": "1",
+                              "channelID": "object",
+                              "storage": "1",
+                              "varName": "transcript",
+                              "name": "Transcript"
+                            },
+                            {
+                              "input": "${tempVars(\"transcript\")}",
+                              "format": "",
+                              "filename": "${tempVars(\"name\")}-${tempVars(\"GetTicketID\")}.html",
+                              "filepath": "./",
+                              "filepath2": "",
+                              "filetask": "1",
+                              "input2": "",
+                              "togglestatus": "no",
+                              "name": "File Control"
+                            },
+                            {
+                              "channel": "103",
+                              "varName": "1280895535775092787",
+                              "message": "",
+                              "buttons": [],
+                              "selectMenus": [],
+                              "attachments": [
+                                {
+                                  "url": "./${tempVars(\"name\")}-${tempVars(\"GetTicketID\")}.html",
+                                  "name": "",
+                                  "spoiler": false
+                                }
+                              ],
+                              "embeds": [],
+                              "reply": false,
+                              "ephemeral": false,
+                              "tts": false,
+                              "overwrite": false,
+                              "dontSend": false,
+                              "editMessage": "0",
+                              "editMessageVarName": "",
+                              "storage": "0",
+                              "varName2": "",
+                              "name": "Send Message"
+                            },
+                            {
+                              "time": "3",
+                              "measurement": "1",
+                              "name": "Wait"
+                            },
+                            {
+                              "storage": "0",
+                              "varName": "",
+                              "reason": "",
+                              "name": "Delete Channel"
+                            }
+                          ]
+                        },
+                        {
+                          "name": "Nie zamykaj.",
+                          "type": "SUCCESS",
+                          "id": "msg-gerg3434t",
+                          "row": "",
+                          "url": "",
+                          "emoji": "1287848995246444730",
+                          "mode": "PERSISTENT",
+                          "time": "",
+                          "actions": [
+                            {
+                              "member": "1",
+                              "varName": "",
+                              "permission": "ADMINISTRATOR",
+                              "branch": {
+                                "iftrue": "0",
+                                "iffalse": "4",
+                                "iffalseVal": "123"
+                              },
+                              "name": "Check Member Permissions"
+                            },
+                            {
+                              "ephemeral": false,
+                              "name": "Start Thinking"
+                            },
+                            {
+                              "info": "0",
+                              "find": "1287848897149931577",
+                              "storage": "1",
+                              "varName": "yo",
+                              "name": "Find Custom Emoji"
+                            },
+                            {
+                              "channel": "0",
+                              "count": "1",
+                              "condition": "0",
+                              "custom": "",
+                              "varName": "123",
+                              "name": "Delete Bulk Messages"
+                            },
+                            {
+                              "channel": "0",
+                              "varName": "12",
+                              "message": "",
+                              "buttons": [],
+                              "selectMenus": [],
+                              "attachments": [],
+                              "embeds": [
+                                {
+                                  "title": "",
+                                  "url": "",
+                                  "color": "#54f48c",
+                                  "timestamp": "false",
+                                  "imageUrl": "",
+                                  "thumbUrl": "",
+                                  "description": "${tempVars(\"yo\")} **Ticket nie został zamknięty.**",
+                                  "fields": [],
+                                  "author": "",
+                                  "authorUrl": "",
+                                  "authorIcon": "",
+                                  "footerText": "",
+                                  "footerIconUrl": ""
+                                }
+                              ],
+                              "reply": true,
+                              "ephemeral": true,
+                              "tts": false,
+                              "overwrite": false,
+                              "dontSend": false,
+                              "editMessage": "0",
+                              "editMessageVarName": "12",
+                              "storage": "0",
+                              "varName2": "",
+                              "name": "Send Message"
+                            },
+                            {
+                              "name": "End Action Sequence"
+                            },
+                            {
+                              "anchorName": "123",
+                              "name": "Action Anchor"
+                            },
+                            {
+                              "info": "0",
+                              "find": "1287848995246444730",
+                              "storage": "1",
+                              "varName": "NIE",
+                              "name": "Find Custom Emoji"
+                            },
+                            {
+                              "channel": "0",
+                              "varName": "",
+                              "message": "",
+                              "buttons": [],
+                              "selectMenus": [],
+                              "attachments": [],
+                              "embeds": [
+                                {
+                                  "title": "",
+                                  "url": "",
+                                  "color": "RED",
+                                  "timestamp": "false",
+                                  "imageUrl": "",
+                                  "thumbUrl": "",
+                                  "description": "${tempVars(\"NIE\")} **Brak uprawnień do użycia przycisku.**",
+                                  "fields": [],
+                                  "author": "",
+                                  "authorUrl": "",
+                                  "authorIcon": "",
+                                  "footerText": "",
+                                  "footerIconUrl": ""
+                                }
+                              ],
+                              "reply": true,
+                              "ephemeral": true,
+                              "tts": false,
+                              "overwrite": false,
+                              "dontSend": false,
+                              "editMessage": "0",
+                              "editMessageVarName": "",
+                              "storage": "0",
+                              "varName2": "",
+                              "name": "Send Message"
+                            }
+                          ]
+                        }
+                      ],
+                      "selectMenus": [],
+                      "attachments": [],
+                      "embeds": [
+                        {
+                          "title": "${tempVars(\"yo\")} **Potwierdzenie zamknięcia!**",
+                          "url": "",
+                          "color": "#54f48c",
+                          "timestamp": "false",
+                          "imageUrl": "",
+                          "thumbUrl": "",
+                          "description": "***${member} Czy na pewno chcesz zamknąć ticket?***",
+                          "fields": [],
+                          "author": "",
+                          "authorUrl": "",
+                          "authorIcon": "",
+                          "footerText": "",
+                          "footerIconUrl": ""
+                        }
+                      ],
+                      "reply": true,
+                      "ephemeral": false,
+                      "tts": false,
+                      "overwrite": false,
+                      "dontSend": false,
+                      "editMessage": "0",
+                      "editMessageVarName": "12",
+                      "storage": "1",
+                      "varName2": "del3233",
+                      "name": "Send Message"
+                    }
+                  ]
+                }
+              ],
+              "selectMenus": [],
+              "attachments": [],
+              "embeds": [
+                {
+                  "title": "",
+                  "url": "",
+                  "color": "#0f0f0f",
+                  "timestamp": "false",
+                  "imageUrl": "",
+                  "thumbUrl": "",
+                  "description": "**Oraz podeślij nam:**\n- *Screen (tzw. dowód ilości zaproszeń, /invites):*",
                   "fields": [],
                   "author": "",
                   "authorUrl": "",
@@ -952,7 +1960,7 @@
           "url": "",
           "color": "#0f0f0f",
           "timestamp": "true",
-          "imageUrl": "https://i.imgur.com/cOrXkY6.png",
+          "imageUrl": "https://i.imgur.com/oxrs1Ws.png",
           "thumbUrl": "",
           "description": "> - **Wybierz kategorię aby stworzyć ticket, przy stworzeniu postępuj zgodnie z instrukcjami aby odebrać nagrodę.**",
           "fields": [],
