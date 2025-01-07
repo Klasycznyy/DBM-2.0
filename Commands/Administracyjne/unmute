@@ -198,7 +198,7 @@
           "timestamp": "true",
           "imageUrl": "",
           "thumbUrl": "",
-          "description": "🔊 **Twoje wyciszenie na `${tempVars(\"nameserver\")}` zostało zdjęte.**\n\n- **Powód:** *``${slashParams(\"powód\")}``*\n",
+          "description": "🔊 **Twoje wyciszenie na `${tempVars(\"nameserver\")}` zostało zdjęte.**\n\n- **Powód:** *``${slashParams(\"powód\") || \"Nie podano powodu odciszenia\" }``*\n",
           "fields": [],
           "author": "",
           "authorUrl": "",
@@ -219,11 +219,6 @@
       "name": "Send Message"
     },
     {
-      "comment": "## V v V / ID Kanału od logów.",
-      "color": "#fff700",
-      "name": "Comment"
-    },
-    {
       "channel": "103",
       "varName": "1305585559661449256",
       "message": "",
@@ -238,7 +233,7 @@
           "timestamp": "true",
           "imageUrl": "",
           "thumbUrl": "",
-          "description": "${slashParams(\"użytkownik\")} *Został odciszony na ${tempVars(\"nameserver\")}, odciszony został przez administratora: ${member}*\n\n${tempVars(\"powud\")} **Powód:**\n`${slashParams(\"powód\")}`",
+          "description": "${slashParams(\"użytkownik\")} *Został odciszony na ${tempVars(\"nameserver\")}, odciszony został przez administratora: ${member}*\n\n${tempVars(\"powud\")} **Powód:**\n`${slashParams(\"powód\") || \"Nie podano powodu odciszenia\" }`",
           "fields": [],
           "author": "",
           "authorUrl": "",
@@ -363,16 +358,6 @@
       "storage": "0",
       "varName2": "",
       "name": "Send Message"
-    },
-    {
-      "comment": "## Rawdata wykonana przez: _perf3kcja",
-      "color": "#fff700",
-      "name": "Comment"
-    },
-    {
-      "comment": "## I została ona opublikowana na Github.",
-      "color": "#e1ff00",
-      "name": "Comment"
     }
   ],
   "comType": "4",
@@ -389,7 +374,7 @@
       "name": "powód",
       "description": "Powód odciszenia?",
       "type": "STRING",
-      "required": true,
+      "required": false,
       "choices": null
     }
   ]
