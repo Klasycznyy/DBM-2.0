@@ -289,7 +289,7 @@
           "timestamp": "true",
           "imageUrl": "",
           "thumbUrl": "",
-          "description": "${slashParams(\"użytkownik\")} *Został wyciszony na ${tempVars(\"nameserver\")}, wyciszony został przez administratora: ${member}*\n\n🕑 **Czas wyciszenia:**\n${slashParams(\"czas\")}${tempVars(\"czas1\")}\n\n${tempVars(\"powud\")} **Powód:**\n`${slashParams(\"powód\")}`",
+          "description": "${slashParams(\"użytkownik\")} *Został wyciszony na ${tempVars(\"nameserver\")}, wyciszony został przez administratora: ${member}*\n\n🕑 **Czas wyciszenia:**\n${slashParams(\"czas\")}${tempVars(\"czas1\")}\n\n${tempVars(\"powud\")} **Powód:**\n`${slashParams(\"powód\") || \"Nie podano powodu wyciszenia\" }`",
           "fields": [],
           "author": "",
           "authorUrl": "",
@@ -324,7 +324,7 @@
           "timestamp": "true",
           "imageUrl": "",
           "thumbUrl": "",
-          "description": "🔇 **Wyciszono Ciebie na Serwerze `${tempVars(\"nameserver\")}`!**\n\n- **Powód:** \n*``${slashParams(\"powód\")}``*\n\n- **Czas:** \n${slashParams(\"czas\")}${tempVars(\"czas1\")}\n",
+          "description": "🔇 **Wyciszono Ciebie na Serwerze `${tempVars(\"nameserver\")}`!**\n\n- **Powód:** \n*``${slashParams(\"powód\") || \"Nie podano powodu wyciszenia\" }``*\n\n- **Czas:** \n${slashParams(\"czas\")}${tempVars(\"czas1\")}\n",
           "fields": [],
           "author": "",
           "authorUrl": "",
@@ -518,7 +518,7 @@
       "name": "powód",
       "description": "Powód wyciszenia?",
       "type": "STRING",
-      "required": true,
+      "required": false,
       "choices": null
     }
   ]
