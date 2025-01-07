@@ -710,7 +710,7 @@
                 {
                   "name": "Przeczytałem! • 0",
                   "type": "SECONDARY",
-                  "id": "msg-button-62a6fff",
+                  "id": "msg-bjtyjtyj5665",
                   "row": "",
                   "url": "",
                   "emoji": "1292159614695247912",
@@ -1301,7 +1301,7 @@
               "selectMenus": [
                 {
                   "placeholder": "❌ :| Nie wybrałeś/aś żadnej kategorii.",
-                  "id": "msg-select-e05abbbf",
+                  "id": "msgbrtb354y45zzz",
                   "tempVarName": "var",
                   "row": "",
                   "min": "1",
@@ -2584,7 +2584,7 @@
               "selectMenus": [
                 {
                   "placeholder": "❌ :| Nie wybrałeś/aś żadnej kategorii.",
-                  "id": "msg-select-e05abbbf",
+                  "id": "msgg43g3g23nccc",
                   "tempVarName": "var",
                   "row": "",
                   "min": "1",
