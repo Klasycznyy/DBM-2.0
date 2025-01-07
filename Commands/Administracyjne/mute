@@ -275,11 +275,6 @@
       "name": "Timeout Member"
     },
     {
-      "comment": "## V v V / ID Kanału od logów.",
-      "color": "#fff700",
-      "name": "Comment"
-    },
-    {
       "channel": "103",
       "varName": "1305585559661449256",
       "message": "",
@@ -369,7 +364,7 @@
           "timestamp": "true",
           "imageUrl": "",
           "thumbUrl": "",
-          "description": "🔊 **Twoje wyciszenie na `${tempVars(\"nameserver\")}` skończyło się.**\n\n- **Powód:** \n*``${slashParams(\"powód\")}``*\n\n- **Czas:** \n${slashParams(\"czas\")}${tempVars(\"czas1\")}\n\n",
+          "description": "🔊 **Twoje wyciszenie na `${tempVars(\"nameserver\")}` skończyło się.**\n\n- **Powód:** \n*``Tymczasowe wyciszenie wygasło. Odciszono automatycznie.``*\n\n- **Czas:** \n${slashParams(\"czas\")}${tempVars(\"czas1\")}\n\n",
           "fields": [],
           "author": "",
           "authorUrl": "",
@@ -404,7 +399,7 @@
           "timestamp": "true",
           "imageUrl": "",
           "thumbUrl": "",
-          "description": "${slashParams(\"użytkownik\")} *Został odciszony na ${tempVars(\"nameserver\")}, wyciszenie skończyło się.*\n\n${tempVars(\"powud\")} **Powód:**\n`${slashParams(\"powód\")}`",
+          "description": "${slashParams(\"użytkownik\")} *Został odciszony na ${tempVars(\"nameserver\")}, wyciszenie skończyło się.*\n\n${tempVars(\"powud\")} **Powód:**\n`Tymczasowe wyciszenie wygasło. Odciszono automatycznie.`",
           "fields": [],
           "author": "",
           "authorUrl": "",
@@ -480,16 +475,6 @@
       "storage": "0",
       "varName2": "",
       "name": "Send Message"
-    },
-    {
-      "comment": "## Rawdata wykonana przez: _perf3kcja",
-      "color": "#fff700",
-      "name": "Comment"
-    },
-    {
-      "comment": "## I została ona opublikowana na Github.",
-      "color": "#e1ff00",
-      "name": "Comment"
     }
   ],
   "comType": "4",
