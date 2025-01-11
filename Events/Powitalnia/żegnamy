@@ -1,0 +1,90 @@
+{
+  "name": "Zegnamy",
+  "temp": "event_member_leave",
+  "event-type": "7",
+  "_id": "LIaVL",
+  "actions": [
+    {
+      "member": "2",
+      "varName": "event_member_leave",
+      "info": "2",
+      "storage": "1",
+      "varName2": "event_member_leave_username",
+      "name": "Store Member Info"
+    },
+    {
+      "member": "2",
+      "varName": "event_member_leave",
+      "info": "16",
+      "storage": "1",
+      "varName2": "event_member_leave_avatar",
+      "name": "Store Member Info"
+    },
+    {
+      "server": "0",
+      "varName": "",
+      "info": "17",
+      "storage": "1",
+      "varName2": "human_count",
+      "name": "Store Server Info"
+    },
+    {
+      "channel": "103",
+      "varName": "1252321599810441319",
+      "message": "",
+      "buttons": [
+        {
+          "name": "${tempVars(\"human_count\")}",
+          "type": "SECONDARY",
+          "id": "count1",
+          "row": "",
+          "url": "",
+          "emoji": "1295081614958657617",
+          "mode": "PERSISTENT",
+          "time": "",
+          "actions": []
+        }
+      ],
+      "selectMenus": [],
+      "attachments": [],
+      "embeds": [
+        {
+          "title": "👋 〡 **Odszedła osoba!**",
+          "url": "",
+          "color": "RED",
+          "timestamp": "false",
+          "imageUrl": "https://i.imgur.com/QdS9LTn.png",
+          "thumbUrl": "${tempVars(\"event_member_leave_avatar\")}",
+          "description": "**Żegnamy użytkownika ``${tempVars(\"event_member_leave_username\")}`` z serwera ${server.name}!**\n**Jest nas teraz ``${tempVars(\"human_count\")}`` osób na serwerze!**\n**Myślę że do nas kiedyś wrócisz : ).**",
+          "fields": [],
+          "author": "",
+          "authorUrl": "",
+          "authorIcon": "",
+          "footerText": "",
+          "footerIconUrl": ""
+        }
+      ],
+      "reply": false,
+      "ephemeral": false,
+      "tts": false,
+      "overwrite": false,
+      "dontSend": false,
+      "editMessage": "0",
+      "editMessageVarName": "",
+      "storage": "1",
+      "varName2": "event_member_message",
+      "name": "Send Message"
+    },
+    {
+      "storage": "1",
+      "varName": "event_member_message",
+      "type": "findButton",
+      "disable": "disable",
+      "searchValue": "count1",
+      "name": "Disable Buttons and Selects"
+    },
+    {
+      "name": "End Action Sequence"
+    }
+  ]
+}
