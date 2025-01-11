@@ -18,6 +18,7 @@ Wszystkie komendy i eventy tutaj mają teraz domyślnie włączony updater, któ
 ## Systemy Bieżące 
   
 - [Giveaway End](https://github.com/Klasycznyy/DBM-2.0/tree/main/Events/Giveaway%20End) / v2.0 Beta
+- [Powitalnia](https://github.com/Klasycznyy/DBM-2.0/tree/Discord-Bot-Maker-/-Raw/Events/Powitalnia) / v2.0 Beta
 - [Status Bota](https://github.com/Klasycznyy/DBM-2.0/tree/main/Events/Status%20Bota) / v2.0 Beta
   
 [![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/aqua.png)](#Important)
