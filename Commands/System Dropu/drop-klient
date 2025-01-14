@@ -1,0 +1,1935 @@
+{
+  "name": "drop-klient",
+  "permissions": "NONE",
+  "permissions2": "NONE",
+  "restriction": "1",
+  "_id": "BArAC",
+  "actions": [
+    {
+      "channelID": "1327380802820116511",
+      "comparison": "0",
+      "branch": {
+        "iftrue": "0",
+        "iffalse": "4",
+        "iffalseVal": "channel"
+      },
+      "name": "Channel Command Restriction"
+    },
+    {
+      "member": "1",
+      "varName": "",
+      "role": "101",
+      "varName2": "1281284380391637005",
+      "branch": {
+        "iftrue": "0",
+        "iffalse": "4",
+        "iffalseVal": "uprawnienia"
+      },
+      "name": "Check If Member has Role"
+    },
+    {
+      "measurement": "3",
+      "value": "3",
+      "save": "0",
+      "restrict": "0",
+      "iftrue": "0",
+      "iftrueVal": "",
+      "iffalse": "2",
+      "iffalseVal": "8",
+      "storage": "1",
+      "varName": "left_time",
+      "name": "Set Time Restriction"
+    },
+    {
+      "time": "${tempVars(\"left_time\")}",
+      "storage": "1",
+      "varName": "left_time1",
+      "name": "Convert Seconds To D/H/M/S"
+    },
+    {
+      "info": "0",
+      "find": "1287848995246444730",
+      "storage": "1",
+      "varName": "NIE",
+      "name": "Find Custom Emoji"
+    },
+    {
+      "channel": "0",
+      "varName": "",
+      "message": "",
+      "buttons": [],
+      "selectMenus": [],
+      "attachments": [],
+      "embeds": [
+        {
+          "title": "",
+          "url": "",
+          "color": "RED",
+          "timestamp": "false",
+          "imageUrl": "",
+          "thumbUrl": "",
+          "description": "${tempVars(\"NIE\")} **Niestety ${member}, przed ponownym wylosowaniem zniżki musisz odczekać jeszcze** `${tempVars(\"left_time1\")}`",
+          "fields": [],
+          "author": "",
+          "authorUrl": "",
+          "authorIcon": "",
+          "footerText": "",
+          "footerIconUrl": ""
+        }
+      ],
+      "reply": true,
+      "ephemeral": true,
+      "tts": false,
+      "overwrite": false,
+      "dontSend": false,
+      "editMessage": "0",
+      "editMessageVarName": "",
+      "storage": "0",
+      "varName2": "",
+      "name": "Send Message"
+    },
+    {
+      "name": "End Action Sequence"
+    },
+    {
+      "user": "1",
+      "varName": "",
+      "info": "0",
+      "storage": "1",
+      "varName2": "member",
+      "name": "Store User Info"
+    },
+    {
+      "info": "0",
+      "find": "1287848897149931577",
+      "storage": "1",
+      "varName": "yes",
+      "name": "Find Custom Emoji"
+    },
+    {
+      "storage": "1",
+      "varName": "losowanie",
+      "min": "1",
+      "max": "100",
+      "name": "Generate Random Number"
+    },
+    {
+      "storage": "1",
+      "varName": "losowanie",
+      "branches": [
+        {
+          "comparison": "1",
+          "value": "3",
+          "actions": [
+            {
+              "storage": "1",
+              "varName": "losowanie",
+              "comparison": "1",
+              "value": "3",
+              "branch": {
+                "iftrue": "0",
+                "iffalse": "1"
+              },
+              "name": "Check Variable"
+            },
+            {
+              "channel": "0",
+              "varName": "",
+              "message": "",
+              "buttons": [],
+              "selectMenus": [],
+              "attachments": [],
+              "embeds": [
+                {
+                  "title": "${tempVars(\"yes\")} **Wygrałeś/aś zniżkę!**",
+                  "url": "",
+                  "color": "GREEN",
+                  "timestamp": "false",
+                  "imageUrl": "",
+                  "thumbUrl": "",
+                  "description": "**Gratulację ${member}, wygrałeś/aś __zniżkę 13%__, aby ją sprawdzić użyj komendy `/znizka`.**",
+                  "fields": [],
+                  "author": "",
+                  "authorUrl": "",
+                  "authorIcon": "",
+                  "footerText": "",
+                  "footerIconUrl": ""
+                }
+              ],
+              "reply": true,
+              "ephemeral": false,
+              "tts": false,
+              "overwrite": false,
+              "dontSend": false,
+              "editMessage": "0",
+              "editMessageVarName": "",
+              "storage": "0",
+              "varName2": "",
+              "name": "Send Message"
+            },
+            {
+              "channel": "103",
+              "varName": "1328119928846553150",
+              "message": "",
+              "buttons": [],
+              "selectMenus": [],
+              "attachments": [],
+              "embeds": [
+                {
+                  "title": "${tempVars(\"yes\")} **Wylosowanie zniżki!**",
+                  "url": "",
+                  "color": "GREEN",
+                  "timestamp": "true",
+                  "imageUrl": "",
+                  "thumbUrl": "",
+                  "description": "${tempVars(\"member\")} **Wylosował/a zniżkę __13%__!**",
+                  "fields": [],
+                  "author": "",
+                  "authorUrl": "",
+                  "authorIcon": "",
+                  "footerText": "",
+                  "footerIconUrl": ""
+                }
+              ],
+              "reply": true,
+              "ephemeral": false,
+              "tts": false,
+              "overwrite": false,
+              "dontSend": false,
+              "editMessage": "0",
+              "editMessageVarName": "",
+              "storage": "0",
+              "varName2": "",
+              "name": "Send Message"
+            },
+            {
+              "storage": "1",
+              "varName": "unix11",
+              "name": "Store Unix Timestamp"
+            },
+            {
+              "FirstNumber": "1",
+              "info": "2",
+              "SecondNumber": "7200",
+              "storage": "1",
+              "varName": "timer.days11",
+              "name": "Basic Math Operation"
+            },
+            {
+              "FirstNumber": "${tempVars(\"timer.days11\")}",
+              "info": "0",
+              "SecondNumber": "${tempVars(\"unix11\")}",
+              "storage": "1",
+              "varName": "timer11",
+              "name": "Basic Math Operation"
+            },
+            {
+              "storage": "1",
+              "varName": "losowanie",
+              "changeType": "0",
+              "value": "\"13% **~ Zakończenie twojej zniżki:** <t:${tempVars(\"timer11\")}:R>\"",
+              "name": "Control Variable"
+            },
+            {
+              "member": "1",
+              "varName": "",
+              "dataName": "znizka",
+              "changeType": "0",
+              "value": "tempVars(\"losowanie\")",
+              "name": "Control Member Data"
+            },
+            {
+              "member": "1",
+              "varName": "",
+              "dataName": "timer",
+              "changeType": "0",
+              "value": "tempVars(\"timer11\")",
+              "name": "Control Member Data"
+            }
+          ]
+        },
+        {
+          "comparison": "1",
+          "value": "4",
+          "actions": [
+            {
+              "storage": "1",
+              "varName": "losowanie",
+              "comparison": "1",
+              "value": "4",
+              "branch": {
+                "iftrue": "0",
+                "iffalse": "1"
+              },
+              "name": "Check Variable"
+            },
+            {
+              "channel": "0",
+              "varName": "",
+              "message": "",
+              "buttons": [],
+              "selectMenus": [],
+              "attachments": [],
+              "embeds": [
+                {
+                  "title": "${tempVars(\"yes\")} **Wygrałeś/aś zniżkę!**",
+                  "url": "",
+                  "color": "GREEN",
+                  "timestamp": "false",
+                  "imageUrl": "",
+                  "thumbUrl": "",
+                  "description": "**Gratulację ${member}, wygrałeś/aś __zniżkę 13%__, aby ją sprawdzić użyj komendy `/znizka`.**",
+                  "fields": [],
+                  "author": "",
+                  "authorUrl": "",
+                  "authorIcon": "",
+                  "footerText": "",
+                  "footerIconUrl": ""
+                }
+              ],
+              "reply": true,
+              "ephemeral": false,
+              "tts": false,
+              "overwrite": false,
+              "dontSend": false,
+              "editMessage": "0",
+              "editMessageVarName": "",
+              "storage": "0",
+              "varName2": "",
+              "name": "Send Message"
+            },
+            {
+              "channel": "103",
+              "varName": "1328119928846553150",
+              "message": "",
+              "buttons": [],
+              "selectMenus": [],
+              "attachments": [],
+              "embeds": [
+                {
+                  "title": "${tempVars(\"yes\")} **Wylosowanie zniżki!**",
+                  "url": "",
+                  "color": "GREEN",
+                  "timestamp": "true",
+                  "imageUrl": "",
+                  "thumbUrl": "",
+                  "description": "${tempVars(\"member\")} **Wylosował/a zniżkę __13%__!**",
+                  "fields": [],
+                  "author": "",
+                  "authorUrl": "",
+                  "authorIcon": "",
+                  "footerText": "",
+                  "footerIconUrl": ""
+                }
+              ],
+              "reply": true,
+              "ephemeral": false,
+              "tts": false,
+              "overwrite": false,
+              "dontSend": false,
+              "editMessage": "0",
+              "editMessageVarName": "",
+              "storage": "0",
+              "varName2": "",
+              "name": "Send Message"
+            },
+            {
+              "storage": "1",
+              "varName": "unix11",
+              "name": "Store Unix Timestamp"
+            },
+            {
+              "FirstNumber": "1",
+              "info": "2",
+              "SecondNumber": "7200",
+              "storage": "1",
+              "varName": "timer.days11",
+              "name": "Basic Math Operation"
+            },
+            {
+              "FirstNumber": "${tempVars(\"timer.days11\")}",
+              "info": "0",
+              "SecondNumber": "${tempVars(\"unix11\")}",
+              "storage": "1",
+              "varName": "timer11",
+              "name": "Basic Math Operation"
+            },
+            {
+              "storage": "1",
+              "varName": "losowanie",
+              "changeType": "0",
+              "value": "\"13% **~ Zakończenie twojej zniżki:** <t:${tempVars(\"timer11\")}:R>\"",
+              "name": "Control Variable"
+            },
+            {
+              "member": "1",
+              "varName": "",
+              "dataName": "znizka",
+              "changeType": "0",
+              "value": "tempVars(\"losowanie\")",
+              "name": "Control Member Data"
+            },
+            {
+              "member": "1",
+              "varName": "",
+              "dataName": "timer",
+              "changeType": "0",
+              "value": "tempVars(\"timer11\")",
+              "name": "Control Member Data"
+            }
+          ]
+        },
+        {
+          "comparison": "1",
+          "value": "5",
+          "actions": [
+            {
+              "storage": "1",
+              "varName": "losowanie",
+              "comparison": "1",
+              "value": "5",
+              "branch": {
+                "iftrue": "0",
+                "iffalse": "1"
+              },
+              "name": "Check Variable"
+            },
+            {
+              "channel": "0",
+              "varName": "",
+              "message": "",
+              "buttons": [],
+              "selectMenus": [],
+              "attachments": [],
+              "embeds": [
+                {
+                  "title": "${tempVars(\"yes\")} **Wygrałeś/aś zniżkę!**",
+                  "url": "",
+                  "color": "GREEN",
+                  "timestamp": "false",
+                  "imageUrl": "",
+                  "thumbUrl": "",
+                  "description": "**Gratulację ${member}, wygrałeś/aś __zniżkę 13%__, aby ją sprawdzić użyj komendy `/znizka`.**",
+                  "fields": [],
+                  "author": "",
+                  "authorUrl": "",
+                  "authorIcon": "",
+                  "footerText": "",
+                  "footerIconUrl": ""
+                }
+              ],
+              "reply": true,
+              "ephemeral": false,
+              "tts": false,
+              "overwrite": false,
+              "dontSend": false,
+              "editMessage": "0",
+              "editMessageVarName": "",
+              "storage": "0",
+              "varName2": "",
+              "name": "Send Message"
+            },
+            {
+              "channel": "103",
+              "varName": "1328119928846553150",
+              "message": "",
+              "buttons": [],
+              "selectMenus": [],
+              "attachments": [],
+              "embeds": [
+                {
+                  "title": "${tempVars(\"yes\")} **Wylosowanie zniżki!**",
+                  "url": "",
+                  "color": "GREEN",
+                  "timestamp": "true",
+                  "imageUrl": "",
+                  "thumbUrl": "",
+                  "description": "${tempVars(\"member\")} **Wylosował/a zniżkę __13%__!**",
+                  "fields": [],
+                  "author": "",
+                  "authorUrl": "",
+                  "authorIcon": "",
+                  "footerText": "",
+                  "footerIconUrl": ""
+                }
+              ],
+              "reply": true,
+              "ephemeral": false,
+              "tts": false,
+              "overwrite": false,
+              "dontSend": false,
+              "editMessage": "0",
+              "editMessageVarName": "",
+              "storage": "0",
+              "varName2": "",
+              "name": "Send Message"
+            },
+            {
+              "storage": "1",
+              "varName": "unix11",
+              "name": "Store Unix Timestamp"
+            },
+            {
+              "FirstNumber": "1",
+              "info": "2",
+              "SecondNumber": "7200",
+              "storage": "1",
+              "varName": "timer.days11",
+              "name": "Basic Math Operation"
+            },
+            {
+              "FirstNumber": "${tempVars(\"timer.days11\")}",
+              "info": "0",
+              "SecondNumber": "${tempVars(\"unix11\")}",
+              "storage": "1",
+              "varName": "timer11",
+              "name": "Basic Math Operation"
+            },
+            {
+              "storage": "1",
+              "varName": "losowanie",
+              "changeType": "0",
+              "value": "\"13% **~ Zakończenie twojej zniżki:** <t:${tempVars(\"timer11\")}:R>\"",
+              "name": "Control Variable"
+            },
+            {
+              "member": "1",
+              "varName": "",
+              "dataName": "znizka",
+              "changeType": "0",
+              "value": "tempVars(\"losowanie\")",
+              "name": "Control Member Data"
+            },
+            {
+              "member": "1",
+              "varName": "",
+              "dataName": "timer",
+              "changeType": "0",
+              "value": "tempVars(\"timer11\")",
+              "name": "Control Member Data"
+            }
+          ]
+        },
+        {
+          "comparison": "1",
+          "value": "6",
+          "actions": [
+            {
+              "storage": "1",
+              "varName": "losowanie",
+              "comparison": "1",
+              "value": "6",
+              "branch": {
+                "iftrue": "0",
+                "iffalse": "1"
+              },
+              "name": "Check Variable"
+            },
+            {
+              "channel": "0",
+              "varName": "",
+              "message": "",
+              "buttons": [],
+              "selectMenus": [],
+              "attachments": [],
+              "embeds": [
+                {
+                  "title": "${tempVars(\"yes\")} **Wygrałeś/aś zniżkę!**",
+                  "url": "",
+                  "color": "GREEN",
+                  "timestamp": "false",
+                  "imageUrl": "",
+                  "thumbUrl": "",
+                  "description": "**Gratulację ${member}, wygrałeś/aś __zniżkę 10%__, aby ją sprawdzić użyj komendy `/znizka`.**",
+                  "fields": [],
+                  "author": "",
+                  "authorUrl": "",
+                  "authorIcon": "",
+                  "footerText": "",
+                  "footerIconUrl": ""
+                }
+              ],
+              "reply": true,
+              "ephemeral": false,
+              "tts": false,
+              "overwrite": false,
+              "dontSend": false,
+              "editMessage": "0",
+              "editMessageVarName": "",
+              "storage": "0",
+              "varName2": "",
+              "name": "Send Message"
+            },
+            {
+              "channel": "103",
+              "varName": "1328119928846553150",
+              "message": "",
+              "buttons": [],
+              "selectMenus": [],
+              "attachments": [],
+              "embeds": [
+                {
+                  "title": "${tempVars(\"yes\")} **Wylosowanie zniżki!**",
+                  "url": "",
+                  "color": "GREEN",
+                  "timestamp": "true",
+                  "imageUrl": "",
+                  "thumbUrl": "",
+                  "description": "${tempVars(\"member\")} **Wylosował/a zniżkę __10%__!**",
+                  "fields": [],
+                  "author": "",
+                  "authorUrl": "",
+                  "authorIcon": "",
+                  "footerText": "",
+                  "footerIconUrl": ""
+                }
+              ],
+              "reply": true,
+              "ephemeral": false,
+              "tts": false,
+              "overwrite": false,
+              "dontSend": false,
+              "editMessage": "0",
+              "editMessageVarName": "",
+              "storage": "0",
+              "varName2": "",
+              "name": "Send Message"
+            },
+            {
+              "storage": "1",
+              "varName": "unix11",
+              "name": "Store Unix Timestamp"
+            },
+            {
+              "FirstNumber": "1",
+              "info": "2",
+              "SecondNumber": "7200",
+              "storage": "1",
+              "varName": "timer.days11",
+              "name": "Basic Math Operation"
+            },
+            {
+              "FirstNumber": "${tempVars(\"timer.days11\")}",
+              "info": "0",
+              "SecondNumber": "${tempVars(\"unix11\")}",
+              "storage": "1",
+              "varName": "timer11",
+              "name": "Basic Math Operation"
+            },
+            {
+              "storage": "1",
+              "varName": "losowanie",
+              "changeType": "0",
+              "value": "\"10% **~ Zakończenie twojej zniżki:** <t:${tempVars(\"timer11\")}:R>\"",
+              "name": "Control Variable"
+            },
+            {
+              "member": "1",
+              "varName": "",
+              "dataName": "znizka",
+              "changeType": "0",
+              "value": "tempVars(\"losowanie\")",
+              "name": "Control Member Data"
+            },
+            {
+              "member": "1",
+              "varName": "",
+              "dataName": "timer",
+              "changeType": "0",
+              "value": "tempVars(\"timer11\")",
+              "name": "Control Member Data"
+            }
+          ]
+        },
+        {
+          "comparison": "1",
+          "value": "7",
+          "actions": [
+            {
+              "storage": "1",
+              "varName": "losowanie",
+              "comparison": "1",
+              "value": "7",
+              "branch": {
+                "iftrue": "0",
+                "iffalse": "1"
+              },
+              "name": "Check Variable"
+            },
+            {
+              "channel": "0",
+              "varName": "",
+              "message": "",
+              "buttons": [],
+              "selectMenus": [],
+              "attachments": [],
+              "embeds": [
+                {
+                  "title": "${tempVars(\"yes\")} **Wygrałeś/aś zniżkę!**",
+                  "url": "",
+                  "color": "GREEN",
+                  "timestamp": "false",
+                  "imageUrl": "",
+                  "thumbUrl": "",
+                  "description": "**Gratulację ${member}, wygrałeś/aś __zniżkę 10%__, aby ją sprawdzić użyj komendy `/znizka`.**",
+                  "fields": [],
+                  "author": "",
+                  "authorUrl": "",
+                  "authorIcon": "",
+                  "footerText": "",
+                  "footerIconUrl": ""
+                }
+              ],
+              "reply": true,
+              "ephemeral": false,
+              "tts": false,
+              "overwrite": false,
+              "dontSend": false,
+              "editMessage": "0",
+              "editMessageVarName": "",
+              "storage": "0",
+              "varName2": "",
+              "name": "Send Message"
+            },
+            {
+              "channel": "103",
+              "varName": "1328119928846553150",
+              "message": "",
+              "buttons": [],
+              "selectMenus": [],
+              "attachments": [],
+              "embeds": [
+                {
+                  "title": "${tempVars(\"yes\")} **Wylosowanie zniżki!**",
+                  "url": "",
+                  "color": "GREEN",
+                  "timestamp": "true",
+                  "imageUrl": "",
+                  "thumbUrl": "",
+                  "description": "${tempVars(\"member\")} **Wylosował/a zniżkę __10%__!**",
+                  "fields": [],
+                  "author": "",
+                  "authorUrl": "",
+                  "authorIcon": "",
+                  "footerText": "",
+                  "footerIconUrl": ""
+                }
+              ],
+              "reply": true,
+              "ephemeral": false,
+              "tts": false,
+              "overwrite": false,
+              "dontSend": false,
+              "editMessage": "0",
+              "editMessageVarName": "",
+              "storage": "0",
+              "varName2": "",
+              "name": "Send Message"
+            },
+            {
+              "storage": "1",
+              "varName": "unix11",
+              "name": "Store Unix Timestamp"
+            },
+            {
+              "FirstNumber": "1",
+              "info": "2",
+              "SecondNumber": "7200",
+              "storage": "1",
+              "varName": "timer.days11",
+              "name": "Basic Math Operation"
+            },
+            {
+              "FirstNumber": "${tempVars(\"timer.days11\")}",
+              "info": "0",
+              "SecondNumber": "${tempVars(\"unix11\")}",
+              "storage": "1",
+              "varName": "timer11",
+              "name": "Basic Math Operation"
+            },
+            {
+              "storage": "1",
+              "varName": "losowanie",
+              "changeType": "0",
+              "value": "\"10% **~ Zakończenie twojej zniżki:** <t:${tempVars(\"timer11\")}:R>\"",
+              "name": "Control Variable"
+            },
+            {
+              "member": "1",
+              "varName": "",
+              "dataName": "znizka",
+              "changeType": "0",
+              "value": "tempVars(\"losowanie\")",
+              "name": "Control Member Data"
+            },
+            {
+              "member": "1",
+              "varName": "",
+              "dataName": "timer",
+              "changeType": "0",
+              "value": "tempVars(\"timer11\")",
+              "name": "Control Member Data"
+            }
+          ]
+        },
+        {
+          "comparison": "1",
+          "value": "8",
+          "actions": [
+            {
+              "storage": "1",
+              "varName": "losowanie",
+              "comparison": "1",
+              "value": "8",
+              "branch": {
+                "iftrue": "0",
+                "iffalse": "1"
+              },
+              "name": "Check Variable"
+            },
+            {
+              "channel": "0",
+              "varName": "",
+              "message": "",
+              "buttons": [],
+              "selectMenus": [],
+              "attachments": [],
+              "embeds": [
+                {
+                  "title": "${tempVars(\"yes\")} **Wygrałeś/aś zniżkę!**",
+                  "url": "",
+                  "color": "GREEN",
+                  "timestamp": "false",
+                  "imageUrl": "",
+                  "thumbUrl": "",
+                  "description": "**Gratulację ${member}, wygrałeś/aś __zniżkę 10%__, aby ją sprawdzić użyj komendy `/znizka`.**",
+                  "fields": [],
+                  "author": "",
+                  "authorUrl": "",
+                  "authorIcon": "",
+                  "footerText": "",
+                  "footerIconUrl": ""
+                }
+              ],
+              "reply": true,
+              "ephemeral": false,
+              "tts": false,
+              "overwrite": false,
+              "dontSend": false,
+              "editMessage": "0",
+              "editMessageVarName": "",
+              "storage": "0",
+              "varName2": "",
+              "name": "Send Message"
+            },
+            {
+              "channel": "103",
+              "varName": "1328119928846553150",
+              "message": "",
+              "buttons": [],
+              "selectMenus": [],
+              "attachments": [],
+              "embeds": [
+                {
+                  "title": "${tempVars(\"yes\")} **Wylosowanie zniżki!**",
+                  "url": "",
+                  "color": "GREEN",
+                  "timestamp": "true",
+                  "imageUrl": "",
+                  "thumbUrl": "",
+                  "description": "${tempVars(\"member\")} **Wylosował/a zniżkę __10%__!**",
+                  "fields": [],
+                  "author": "",
+                  "authorUrl": "",
+                  "authorIcon": "",
+                  "footerText": "",
+                  "footerIconUrl": ""
+                }
+              ],
+              "reply": true,
+              "ephemeral": false,
+              "tts": false,
+              "overwrite": false,
+              "dontSend": false,
+              "editMessage": "0",
+              "editMessageVarName": "",
+              "storage": "0",
+              "varName2": "",
+              "name": "Send Message"
+            },
+            {
+              "storage": "1",
+              "varName": "unix11",
+              "name": "Store Unix Timestamp"
+            },
+            {
+              "FirstNumber": "1",
+              "info": "2",
+              "SecondNumber": "7200",
+              "storage": "1",
+              "varName": "timer.days11",
+              "name": "Basic Math Operation"
+            },
+            {
+              "FirstNumber": "${tempVars(\"timer.days11\")}",
+              "info": "0",
+              "SecondNumber": "${tempVars(\"unix11\")}",
+              "storage": "1",
+              "varName": "timer11",
+              "name": "Basic Math Operation"
+            },
+            {
+              "storage": "1",
+              "varName": "losowanie",
+              "changeType": "0",
+              "value": "\"10% **~ Zakończenie twojej zniżki:** <t:${tempVars(\"timer11\")}:R>\"",
+              "name": "Control Variable"
+            },
+            {
+              "member": "1",
+              "varName": "",
+              "dataName": "znizka",
+              "changeType": "0",
+              "value": "tempVars(\"losowanie\")",
+              "name": "Control Member Data"
+            },
+            {
+              "member": "1",
+              "varName": "",
+              "dataName": "timer",
+              "changeType": "0",
+              "value": "tempVars(\"timer11\")",
+              "name": "Control Member Data"
+            }
+          ]
+        },
+        {
+          "comparison": "1",
+          "value": "9",
+          "actions": [
+            {
+              "storage": "1",
+              "varName": "losowanie",
+              "comparison": "1",
+              "value": "9",
+              "branch": {
+                "iftrue": "0",
+                "iffalse": "1"
+              },
+              "name": "Check Variable"
+            },
+            {
+              "channel": "0",
+              "varName": "",
+              "message": "",
+              "buttons": [],
+              "selectMenus": [],
+              "attachments": [],
+              "embeds": [
+                {
+                  "title": "${tempVars(\"yes\")} **Wygrałeś/aś zniżkę!**",
+                  "url": "",
+                  "color": "GREEN",
+                  "timestamp": "false",
+                  "imageUrl": "",
+                  "thumbUrl": "",
+                  "description": "**Gratulację ${member}, wygrałeś/aś __zniżkę 8%__, aby ją sprawdzić użyj komendy `/znizka`.**",
+                  "fields": [],
+                  "author": "",
+                  "authorUrl": "",
+                  "authorIcon": "",
+                  "footerText": "",
+                  "footerIconUrl": ""
+                }
+              ],
+              "reply": true,
+              "ephemeral": false,
+              "tts": false,
+              "overwrite": false,
+              "dontSend": false,
+              "editMessage": "0",
+              "editMessageVarName": "",
+              "storage": "0",
+              "varName2": "",
+              "name": "Send Message"
+            },
+            {
+              "channel": "103",
+              "varName": "1328119928846553150",
+              "message": "",
+              "buttons": [],
+              "selectMenus": [],
+              "attachments": [],
+              "embeds": [
+                {
+                  "title": "${tempVars(\"yes\")} **Wylosowanie zniżki!**",
+                  "url": "",
+                  "color": "GREEN",
+                  "timestamp": "true",
+                  "imageUrl": "",
+                  "thumbUrl": "",
+                  "description": "${tempVars(\"member\")} **Wylosował/a zniżkę __8%__!**",
+                  "fields": [],
+                  "author": "",
+                  "authorUrl": "",
+                  "authorIcon": "",
+                  "footerText": "",
+                  "footerIconUrl": ""
+                }
+              ],
+              "reply": true,
+              "ephemeral": false,
+              "tts": false,
+              "overwrite": false,
+              "dontSend": false,
+              "editMessage": "0",
+              "editMessageVarName": "",
+              "storage": "0",
+              "varName2": "",
+              "name": "Send Message"
+            },
+            {
+              "storage": "1",
+              "varName": "unix11",
+              "name": "Store Unix Timestamp"
+            },
+            {
+              "FirstNumber": "1",
+              "info": "2",
+              "SecondNumber": "7200",
+              "storage": "1",
+              "varName": "timer.days11",
+              "name": "Basic Math Operation"
+            },
+            {
+              "FirstNumber": "${tempVars(\"timer.days11\")}",
+              "info": "0",
+              "SecondNumber": "${tempVars(\"unix11\")}",
+              "storage": "1",
+              "varName": "timer11",
+              "name": "Basic Math Operation"
+            },
+            {
+              "storage": "1",
+              "varName": "losowanie",
+              "changeType": "0",
+              "value": "\"8% **~ Zakończenie twojej zniżki:** <t:${tempVars(\"timer11\")}:R>\"",
+              "name": "Control Variable"
+            },
+            {
+              "member": "1",
+              "varName": "",
+              "dataName": "znizka",
+              "changeType": "0",
+              "value": "tempVars(\"losowanie\")",
+              "name": "Control Member Data"
+            },
+            {
+              "member": "1",
+              "varName": "",
+              "dataName": "timer",
+              "changeType": "0",
+              "value": "tempVars(\"timer11\")",
+              "name": "Control Member Data"
+            }
+          ]
+        },
+        {
+          "comparison": "1",
+          "value": "10",
+          "actions": [
+            {
+              "storage": "1",
+              "varName": "losowanie",
+              "comparison": "1",
+              "value": "10",
+              "branch": {
+                "iftrue": "0",
+                "iffalse": "1"
+              },
+              "name": "Check Variable"
+            },
+            {
+              "channel": "0",
+              "varName": "",
+              "message": "",
+              "buttons": [],
+              "selectMenus": [],
+              "attachments": [],
+              "embeds": [
+                {
+                  "title": "${tempVars(\"yes\")} **Wygrałeś/aś zniżkę!**",
+                  "url": "",
+                  "color": "GREEN",
+                  "timestamp": "false",
+                  "imageUrl": "",
+                  "thumbUrl": "",
+                  "description": "**Gratulację ${member}, wygrałeś/aś __zniżkę 5%__, aby ją sprawdzić użyj komendy `/znizka`.**",
+                  "fields": [],
+                  "author": "",
+                  "authorUrl": "",
+                  "authorIcon": "",
+                  "footerText": "",
+                  "footerIconUrl": ""
+                }
+              ],
+              "reply": true,
+              "ephemeral": false,
+              "tts": false,
+              "overwrite": false,
+              "dontSend": false,
+              "editMessage": "0",
+              "editMessageVarName": "",
+              "storage": "0",
+              "varName2": "",
+              "name": "Send Message"
+            },
+            {
+              "channel": "103",
+              "varName": "1328119928846553150",
+              "message": "",
+              "buttons": [],
+              "selectMenus": [],
+              "attachments": [],
+              "embeds": [
+                {
+                  "title": "${tempVars(\"yes\")} **Wylosowanie zniżki!**",
+                  "url": "",
+                  "color": "GREEN",
+                  "timestamp": "true",
+                  "imageUrl": "",
+                  "thumbUrl": "",
+                  "description": "${tempVars(\"member\")} **Wylosował/a zniżkę __5%__!**",
+                  "fields": [],
+                  "author": "",
+                  "authorUrl": "",
+                  "authorIcon": "",
+                  "footerText": "",
+                  "footerIconUrl": ""
+                }
+              ],
+              "reply": true,
+              "ephemeral": false,
+              "tts": false,
+              "overwrite": false,
+              "dontSend": false,
+              "editMessage": "0",
+              "editMessageVarName": "",
+              "storage": "0",
+              "varName2": "",
+              "name": "Send Message"
+            },
+            {
+              "storage": "1",
+              "varName": "unix11",
+              "name": "Store Unix Timestamp"
+            },
+            {
+              "FirstNumber": "1",
+              "info": "2",
+              "SecondNumber": "7200",
+              "storage": "1",
+              "varName": "timer.days11",
+              "name": "Basic Math Operation"
+            },
+            {
+              "FirstNumber": "${tempVars(\"timer.days11\")}",
+              "info": "0",
+              "SecondNumber": "${tempVars(\"unix11\")}",
+              "storage": "1",
+              "varName": "timer11",
+              "name": "Basic Math Operation"
+            },
+            {
+              "storage": "1",
+              "varName": "losowanie",
+              "changeType": "0",
+              "value": "\"8% **~ Zakończenie twojej zniżki:** <t:${tempVars(\"timer11\")}:R>\"",
+              "name": "Control Variable"
+            },
+            {
+              "member": "1",
+              "varName": "",
+              "dataName": "znizka",
+              "changeType": "0",
+              "value": "tempVars(\"losowanie\")",
+              "name": "Control Member Data"
+            },
+            {
+              "member": "1",
+              "varName": "",
+              "dataName": "timer",
+              "changeType": "0",
+              "value": "tempVars(\"timer11\")",
+              "name": "Control Member Data"
+            }
+          ]
+        },
+        {
+          "comparison": "1",
+          "value": "11",
+          "actions": [
+            {
+              "storage": "1",
+              "varName": "losowanie",
+              "comparison": "1",
+              "value": "11",
+              "branch": {
+                "iftrue": "0",
+                "iffalse": "1"
+              },
+              "name": "Check Variable"
+            },
+            {
+              "channel": "0",
+              "varName": "",
+              "message": "",
+              "buttons": [],
+              "selectMenus": [],
+              "attachments": [],
+              "embeds": [
+                {
+                  "title": "${tempVars(\"yes\")} **Wygrałeś/aś zniżkę!**",
+                  "url": "",
+                  "color": "GREEN",
+                  "timestamp": "false",
+                  "imageUrl": "",
+                  "thumbUrl": "",
+                  "description": "**Gratulację ${member}, wygrałeś/aś __zniżkę 5%__, aby ją sprawdzić użyj komendy `/znizka`.**",
+                  "fields": [],
+                  "author": "",
+                  "authorUrl": "",
+                  "authorIcon": "",
+                  "footerText": "",
+                  "footerIconUrl": ""
+                }
+              ],
+              "reply": true,
+              "ephemeral": false,
+              "tts": false,
+              "overwrite": false,
+              "dontSend": false,
+              "editMessage": "0",
+              "editMessageVarName": "",
+              "storage": "0",
+              "varName2": "",
+              "name": "Send Message"
+            },
+            {
+              "channel": "103",
+              "varName": "1328119928846553150",
+              "message": "",
+              "buttons": [],
+              "selectMenus": [],
+              "attachments": [],
+              "embeds": [
+                {
+                  "title": "${tempVars(\"yes\")} **Wylosowanie zniżki!**",
+                  "url": "",
+                  "color": "GREEN",
+                  "timestamp": "true",
+                  "imageUrl": "",
+                  "thumbUrl": "",
+                  "description": "${tempVars(\"member\")} **Wylosował/a zniżkę __5%__!**",
+                  "fields": [],
+                  "author": "",
+                  "authorUrl": "",
+                  "authorIcon": "",
+                  "footerText": "",
+                  "footerIconUrl": ""
+                }
+              ],
+              "reply": true,
+              "ephemeral": false,
+              "tts": false,
+              "overwrite": false,
+              "dontSend": false,
+              "editMessage": "0",
+              "editMessageVarName": "",
+              "storage": "0",
+              "varName2": "",
+              "name": "Send Message"
+            },
+            {
+              "storage": "1",
+              "varName": "unix11",
+              "name": "Store Unix Timestamp"
+            },
+            {
+              "FirstNumber": "1",
+              "info": "2",
+              "SecondNumber": "7200",
+              "storage": "1",
+              "varName": "timer.days11",
+              "name": "Basic Math Operation"
+            },
+            {
+              "FirstNumber": "${tempVars(\"timer.days11\")}",
+              "info": "0",
+              "SecondNumber": "${tempVars(\"unix11\")}",
+              "storage": "1",
+              "varName": "timer11",
+              "name": "Basic Math Operation"
+            },
+            {
+              "storage": "1",
+              "varName": "losowanie",
+              "changeType": "0",
+              "value": "\"8% **~ Zakończenie twojej zniżki:** <t:${tempVars(\"timer11\")}:R>\"",
+              "name": "Control Variable"
+            },
+            {
+              "member": "1",
+              "varName": "",
+              "dataName": "znizka",
+              "changeType": "0",
+              "value": "tempVars(\"losowanie\")",
+              "name": "Control Member Data"
+            },
+            {
+              "member": "1",
+              "varName": "",
+              "dataName": "timer",
+              "changeType": "0",
+              "value": "tempVars(\"timer11\")",
+              "name": "Control Member Data"
+            }
+          ]
+        },
+        {
+          "comparison": "1",
+          "value": "12",
+          "actions": [
+            {
+              "storage": "1",
+              "varName": "losowanie",
+              "comparison": "1",
+              "value": "12",
+              "branch": {
+                "iftrue": "0",
+                "iffalse": "1"
+              },
+              "name": "Check Variable"
+            },
+            {
+              "channel": "0",
+              "varName": "",
+              "message": "",
+              "buttons": [],
+              "selectMenus": [],
+              "attachments": [],
+              "embeds": [
+                {
+                  "title": "${tempVars(\"yes\")} **Wygrałeś/aś zniżkę!**",
+                  "url": "",
+                  "color": "GREEN",
+                  "timestamp": "false",
+                  "imageUrl": "",
+                  "thumbUrl": "",
+                  "description": "**Gratulację ${member}, wygrałeś/aś __zniżkę 5%__, aby ją sprawdzić użyj komendy `/znizka`.**",
+                  "fields": [],
+                  "author": "",
+                  "authorUrl": "",
+                  "authorIcon": "",
+                  "footerText": "",
+                  "footerIconUrl": ""
+                }
+              ],
+              "reply": true,
+              "ephemeral": false,
+              "tts": false,
+              "overwrite": false,
+              "dontSend": false,
+              "editMessage": "0",
+              "editMessageVarName": "",
+              "storage": "0",
+              "varName2": "",
+              "name": "Send Message"
+            },
+            {
+              "channel": "103",
+              "varName": "1328119928846553150",
+              "message": "",
+              "buttons": [],
+              "selectMenus": [],
+              "attachments": [],
+              "embeds": [
+                {
+                  "title": "${tempVars(\"yes\")} **Wylosowanie zniżki!**",
+                  "url": "",
+                  "color": "GREEN",
+                  "timestamp": "true",
+                  "imageUrl": "",
+                  "thumbUrl": "",
+                  "description": "${tempVars(\"member\")} **Wylosował/a zniżkę __5%__!**",
+                  "fields": [],
+                  "author": "",
+                  "authorUrl": "",
+                  "authorIcon": "",
+                  "footerText": "",
+                  "footerIconUrl": ""
+                }
+              ],
+              "reply": true,
+              "ephemeral": false,
+              "tts": false,
+              "overwrite": false,
+              "dontSend": false,
+              "editMessage": "0",
+              "editMessageVarName": "",
+              "storage": "0",
+              "varName2": "",
+              "name": "Send Message"
+            },
+            {
+              "storage": "1",
+              "varName": "unix11",
+              "name": "Store Unix Timestamp"
+            },
+            {
+              "FirstNumber": "1",
+              "info": "2",
+              "SecondNumber": "7200",
+              "storage": "1",
+              "varName": "timer.days11",
+              "name": "Basic Math Operation"
+            },
+            {
+              "FirstNumber": "${tempVars(\"timer.days11\")}",
+              "info": "0",
+              "SecondNumber": "${tempVars(\"unix11\")}",
+              "storage": "1",
+              "varName": "timer11",
+              "name": "Basic Math Operation"
+            },
+            {
+              "storage": "1",
+              "varName": "losowanie",
+              "changeType": "0",
+              "value": "\"5% **~ Zakończenie twojej zniżki:** <t:${tempVars(\"timer11\")}:R>\"",
+              "name": "Control Variable"
+            },
+            {
+              "member": "1",
+              "varName": "",
+              "dataName": "znizka",
+              "changeType": "0",
+              "value": "tempVars(\"losowanie\")",
+              "name": "Control Member Data"
+            },
+            {
+              "member": "1",
+              "varName": "",
+              "dataName": "timer",
+              "changeType": "0",
+              "value": "tempVars(\"timer11\")",
+              "name": "Control Member Data"
+            }
+          ]
+        },
+        {
+          "comparison": "1",
+          "value": "13",
+          "actions": [
+            {
+              "storage": "1",
+              "varName": "losowanie",
+              "comparison": "1",
+              "value": "13",
+              "branch": {
+                "iftrue": "0",
+                "iffalse": "1"
+              },
+              "name": "Check Variable"
+            },
+            {
+              "channel": "0",
+              "varName": "",
+              "message": "",
+              "buttons": [],
+              "selectMenus": [],
+              "attachments": [],
+              "embeds": [
+                {
+                  "title": "${tempVars(\"yes\")} **Wygrałeś/aś zniżkę!**",
+                  "url": "",
+                  "color": "GREEN",
+                  "timestamp": "false",
+                  "imageUrl": "",
+                  "thumbUrl": "",
+                  "description": "**Gratulację ${member}, wygrałeś/aś __zniżkę 5%__, aby ją sprawdzić użyj komendy `/znizka`.**",
+                  "fields": [],
+                  "author": "",
+                  "authorUrl": "",
+                  "authorIcon": "",
+                  "footerText": "",
+                  "footerIconUrl": ""
+                }
+              ],
+              "reply": true,
+              "ephemeral": false,
+              "tts": false,
+              "overwrite": false,
+              "dontSend": false,
+              "editMessage": "0",
+              "editMessageVarName": "",
+              "storage": "0",
+              "varName2": "",
+              "name": "Send Message"
+            },
+            {
+              "channel": "103",
+              "varName": "1328119928846553150",
+              "message": "",
+              "buttons": [],
+              "selectMenus": [],
+              "attachments": [],
+              "embeds": [
+                {
+                  "title": "${tempVars(\"yes\")} **Wylosowanie zniżki!**",
+                  "url": "",
+                  "color": "GREEN",
+                  "timestamp": "true",
+                  "imageUrl": "",
+                  "thumbUrl": "",
+                  "description": "${tempVars(\"member\")} **Wylosował/a zniżkę __5%__!**",
+                  "fields": [],
+                  "author": "",
+                  "authorUrl": "",
+                  "authorIcon": "",
+                  "footerText": "",
+                  "footerIconUrl": ""
+                }
+              ],
+              "reply": true,
+              "ephemeral": false,
+              "tts": false,
+              "overwrite": false,
+              "dontSend": false,
+              "editMessage": "0",
+              "editMessageVarName": "",
+              "storage": "0",
+              "varName2": "",
+              "name": "Send Message"
+            },
+            {
+              "storage": "1",
+              "varName": "unix11",
+              "name": "Store Unix Timestamp"
+            },
+            {
+              "FirstNumber": "1",
+              "info": "2",
+              "SecondNumber": "7200",
+              "storage": "1",
+              "varName": "timer.days11",
+              "name": "Basic Math Operation"
+            },
+            {
+              "FirstNumber": "${tempVars(\"timer.days11\")}",
+              "info": "0",
+              "SecondNumber": "${tempVars(\"unix11\")}",
+              "storage": "1",
+              "varName": "timer11",
+              "name": "Basic Math Operation"
+            },
+            {
+              "storage": "1",
+              "varName": "losowanie",
+              "changeType": "0",
+              "value": "\"5% **~ Zakończenie twojej zniżki:** <t:${tempVars(\"timer11\")}:R>\"",
+              "name": "Control Variable"
+            },
+            {
+              "member": "1",
+              "varName": "",
+              "dataName": "znizka",
+              "changeType": "0",
+              "value": "tempVars(\"losowanie\")",
+              "name": "Control Member Data"
+            },
+            {
+              "member": "1",
+              "varName": "",
+              "dataName": "timer",
+              "changeType": "0",
+              "value": "tempVars(\"timer11\")",
+              "name": "Control Member Data"
+            }
+          ]
+        },
+        {
+          "comparison": "1",
+          "value": "14",
+          "actions": [
+            {
+              "storage": "1",
+              "varName": "losowanie",
+              "comparison": "1",
+              "value": "11",
+              "branch": {
+                "iftrue": "0",
+                "iffalse": "1"
+              },
+              "name": "Check Variable"
+            },
+            {
+              "channel": "0",
+              "varName": "",
+              "message": "",
+              "buttons": [],
+              "selectMenus": [],
+              "attachments": [],
+              "embeds": [
+                {
+                  "title": "${tempVars(\"yes\")} **Wygrałeś/aś zniżkę!**",
+                  "url": "",
+                  "color": "GREEN",
+                  "timestamp": "false",
+                  "imageUrl": "",
+                  "thumbUrl": "",
+                  "description": "**Gratulację ${member}, wygrałeś/aś __zniżkę 5%__, aby ją sprawdzić użyj komendy `/znizka`.**",
+                  "fields": [],
+                  "author": "",
+                  "authorUrl": "",
+                  "authorIcon": "",
+                  "footerText": "",
+                  "footerIconUrl": ""
+                }
+              ],
+              "reply": true,
+              "ephemeral": false,
+              "tts": false,
+              "overwrite": false,
+              "dontSend": false,
+              "editMessage": "0",
+              "editMessageVarName": "",
+              "storage": "0",
+              "varName2": "",
+              "name": "Send Message"
+            },
+            {
+              "channel": "103",
+              "varName": "1328119928846553150",
+              "message": "",
+              "buttons": [],
+              "selectMenus": [],
+              "attachments": [],
+              "embeds": [
+                {
+                  "title": "${tempVars(\"yes\")} **Wylosowanie zniżki!**",
+                  "url": "",
+                  "color": "GREEN",
+                  "timestamp": "true",
+                  "imageUrl": "",
+                  "thumbUrl": "",
+                  "description": "${tempVars(\"member\")} **Wylosował/a zniżkę __5%__!**",
+                  "fields": [],
+                  "author": "",
+                  "authorUrl": "",
+                  "authorIcon": "",
+                  "footerText": "",
+                  "footerIconUrl": ""
+                }
+              ],
+              "reply": true,
+              "ephemeral": false,
+              "tts": false,
+              "overwrite": false,
+              "dontSend": false,
+              "editMessage": "0",
+              "editMessageVarName": "",
+              "storage": "0",
+              "varName2": "",
+              "name": "Send Message"
+            },
+            {
+              "storage": "1",
+              "varName": "unix11",
+              "name": "Store Unix Timestamp"
+            },
+            {
+              "FirstNumber": "1",
+              "info": "2",
+              "SecondNumber": "7200",
+              "storage": "1",
+              "varName": "timer.days11",
+              "name": "Basic Math Operation"
+            },
+            {
+              "FirstNumber": "${tempVars(\"timer.days11\")}",
+              "info": "0",
+              "SecondNumber": "${tempVars(\"unix11\")}",
+              "storage": "1",
+              "varName": "timer11",
+              "name": "Basic Math Operation"
+            },
+            {
+              "storage": "1",
+              "varName": "losowanie",
+              "changeType": "0",
+              "value": "\"5% **~ Zakończenie twojej zniżki:** <t:${tempVars(\"timer11\")}:R>\"",
+              "name": "Control Variable"
+            },
+            {
+              "member": "1",
+              "varName": "",
+              "dataName": "znizka",
+              "changeType": "0",
+              "value": "tempVars(\"losowanie\")",
+              "name": "Control Member Data"
+            },
+            {
+              "member": "1",
+              "varName": "",
+              "dataName": "timer",
+              "changeType": "0",
+              "value": "tempVars(\"timer11\")",
+              "name": "Control Member Data"
+            }
+          ]
+        },
+        {
+          "comparison": "4",
+          "value": "15",
+          "actions": [
+            {
+              "storage": "1",
+              "varName": "unix1",
+              "name": "Store Unix Timestamp"
+            },
+            {
+              "FirstNumber": "1",
+              "info": "2",
+              "SecondNumber": "10800",
+              "storage": "1",
+              "varName": "timer.days1",
+              "name": "Basic Math Operation"
+            },
+            {
+              "FirstNumber": "${tempVars(\"timer.days1\")}",
+              "info": "0",
+              "SecondNumber": "${tempVars(\"unix1\")}",
+              "storage": "1",
+              "varName": "timer1",
+              "name": "Basic Math Operation"
+            },
+            {
+              "info": "0",
+              "find": "1287848995246444730",
+              "storage": "1",
+              "varName": "NIE",
+              "name": "Find Custom Emoji"
+            },
+            {
+              "channel": "0",
+              "varName": "",
+              "message": "",
+              "buttons": [],
+              "selectMenus": [],
+              "attachments": [],
+              "embeds": [
+                {
+                  "title": "",
+                  "url": "",
+                  "color": "RED",
+                  "timestamp": "false",
+                  "imageUrl": "",
+                  "thumbUrl": "",
+                  "description": "${tempVars(\"NIE\")} **Niestety nie udało ci się wylosować żadnej zniżki.**",
+                  "fields": [],
+                  "author": "",
+                  "authorUrl": "",
+                  "authorIcon": "",
+                  "footerText": "",
+                  "footerIconUrl": ""
+                }
+              ],
+              "reply": true,
+              "ephemeral": true,
+              "tts": false,
+              "overwrite": false,
+              "dontSend": false,
+              "editMessage": "0",
+              "editMessageVarName": "",
+              "storage": "0",
+              "varName2": "",
+              "name": "Send Message"
+            },
+            {
+              "channel": "0",
+              "varName": "",
+              "message": "${member}",
+              "buttons": [],
+              "selectMenus": [],
+              "attachments": [],
+              "embeds": [
+                {
+                  "title": "${tempVars(\"NIE\")} **Przegrałeś/aś zniżkę!**",
+                  "url": "",
+                  "color": "RED",
+                  "timestamp": "false",
+                  "imageUrl": "",
+                  "thumbUrl": "",
+                  "description": "- **Niestety nie udało ci się wylosować żadnej zniżki,**\n**Spróbuj ponownie za** <t:${tempVars(\"timer1\")}:R>",
+                  "fields": [],
+                  "author": "",
+                  "authorUrl": "",
+                  "authorIcon": "",
+                  "footerText": "",
+                  "footerIconUrl": ""
+                }
+              ],
+              "reply": true,
+              "ephemeral": false,
+              "tts": false,
+              "overwrite": false,
+              "dontSend": false,
+              "editMessage": "0",
+              "editMessageVarName": "",
+              "storage": "0",
+              "varName2": "",
+              "name": "Send Message"
+            },
+            {
+              "channel": "103",
+              "varName": "1328119928846553150",
+              "message": "",
+              "buttons": [],
+              "selectMenus": [],
+              "attachments": [],
+              "embeds": [
+                {
+                  "title": "${tempVars(\"NIE\")} **Niepowodzenie!**",
+                  "url": "",
+                  "color": "RED",
+                  "timestamp": "true",
+                  "imageUrl": "",
+                  "thumbUrl": "",
+                  "description": "**Użytkownikowi ${tempVars(\"member\")} nie udało się wylosować żadnej zniżki.**",
+                  "fields": [],
+                  "author": "",
+                  "authorUrl": "",
+                  "authorIcon": "",
+                  "footerText": "",
+                  "footerIconUrl": ""
+                }
+              ],
+              "reply": true,
+              "ephemeral": false,
+              "tts": false,
+              "overwrite": false,
+              "dontSend": false,
+              "editMessage": "0",
+              "editMessageVarName": "",
+              "storage": "0",
+              "varName2": "",
+              "name": "Send Message"
+            }
+          ]
+        }
+      ],
+      "name": "Multi-Check Variable"
+    },
+    {
+      "name": "End Action Sequence"
+    },
+    {
+      "anchorName": "channel",
+      "name": "Action Anchor"
+    },
+    {
+      "info": "0",
+      "find": "1287848995246444730",
+      "storage": "1",
+      "varName": "NIE",
+      "name": "Find Custom Emoji"
+    },
+    {
+      "channel": "0",
+      "varName": "",
+      "message": "",
+      "buttons": [],
+      "selectMenus": [],
+      "attachments": [],
+      "embeds": [
+        {
+          "title": "",
+          "url": "",
+          "color": "RED",
+          "timestamp": "false",
+          "imageUrl": "",
+          "thumbUrl": "",
+          "description": "${tempVars(\"NIE\")} **To nie jest odpowiedni kanał do użycia `/drop-klient`, użyj go na** <#1327380802820116511>",
+          "fields": [],
+          "author": "",
+          "authorUrl": "",
+          "authorIcon": "",
+          "footerText": "",
+          "footerIconUrl": ""
+        }
+      ],
+      "reply": true,
+      "ephemeral": true,
+      "tts": false,
+      "overwrite": false,
+      "dontSend": false,
+      "editMessage": "0",
+      "editMessageVarName": "",
+      "storage": "0",
+      "varName2": "",
+      "name": "Send Message"
+    },
+    {
+      "name": "End Action Sequence"
+    },
+    {
+      "anchorName": "uprawnienia",
+      "name": "Action Anchor"
+    },
+    {
+      "info": "0",
+      "find": "1287848995246444730",
+      "storage": "1",
+      "varName": "NIE",
+      "name": "Find Custom Emoji"
+    },
+    {
+      "channel": "0",
+      "varName": "",
+      "message": "",
+      "buttons": [],
+      "selectMenus": [],
+      "attachments": [],
+      "embeds": [
+        {
+          "title": "",
+          "url": "",
+          "color": "RED",
+          "timestamp": "false",
+          "imageUrl": "https://i.imgur.com/MUxOv6A.png",
+          "thumbUrl": "",
+          "description": "${tempVars(\"NIE\")} **Brak uprawnień do użycia polecenia, abyś mógł użyć wymagana jest rola <@&1281284380391637005> lub <@&1252362059761324162>**",
+          "fields": [],
+          "author": "",
+          "authorUrl": "",
+          "authorIcon": "",
+          "footerText": "",
+          "footerIconUrl": ""
+        }
+      ],
+      "reply": true,
+      "ephemeral": true,
+      "tts": false,
+      "overwrite": false,
+      "dontSend": false,
+      "editMessage": "0",
+      "editMessageVarName": "",
+      "storage": "0",
+      "varName2": "",
+      "name": "Send Message"
+    }
+  ],
+  "comType": "4",
+  "description": "⏱・Losowanie zniżek z rangą klienta."
+}
