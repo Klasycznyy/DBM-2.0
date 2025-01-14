@@ -18,6 +18,7 @@ Wszystkie komendy i eventy tutaj mają teraz domyślnie włączony updater, któ
 ## Systemy Bieżące 
   
 - [Giveaway Mods](https://github.com/Klasycznyy/DBM-2.0/tree/main/Mods/Giveaway%20Mods) / v2.0 Beta
+- [Command Restriction Mods](https://github.com/Klasycznyy/DBM-2.0/tree/Discord-Bot-Maker-/-Raw/Mods/Command%20Restriction%20MODS) / v2.0 Beta
   
 [![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/aqua.png)](#Important)
 ## Archiwizowane
