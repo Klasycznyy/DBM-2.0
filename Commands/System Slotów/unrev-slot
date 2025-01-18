@@ -87,6 +87,22 @@
       "name": "Action Anchor"
     },
     {
+      "server": "0",
+      "varName": "",
+      "info": "2",
+      "storage": "1",
+      "varName2": "ServerNAME",
+      "name": "Store Server Info"
+    },
+    {
+      "server": "0",
+      "varName": "",
+      "info": "5",
+      "storage": "1",
+      "varName2": "ServerIconURL",
+      "name": "Store Server Info"
+    },
+    {
       "info": "0",
       "find": "1287848897149931577",
       "storage": "1",
@@ -103,25 +119,36 @@
     {
       "channel": "103",
       "varName": "1323674792217284638",
-      "message": "<@&1324367889456824435>",
+      "message": "",
       "buttons": [],
       "selectMenus": [],
       "attachments": [],
       "embeds": [
         {
-          "title": "${tempVars(\"EmojiYes\")} **Odblokowano slot użytkownika!**",
+          "title": "${tempVars(\"EmojiYes\")} **Odblokowano slot Użytkownika!**",
           "url": "",
-          "color": "RED",
-          "timestamp": "false",
+          "color": "GREEN",
+          "timestamp": "true",
           "imageUrl": "",
           "thumbUrl": "",
-          "description": "*Slot użytkownika ${slashParams(\"Slot_Owner\")} został odblokowany.*\n\n- **Administrator odblokowujący slot:** ${member}",
-          "fields": [],
+          "description": "*Slot użytkownika ${slashParams(\"Slot_Owner\")} został odblokowany.*",
+          "fields": [
+            {
+              "name": "**Administrator:**",
+              "value": "${member}",
+              "inline": "false"
+            },
+            {
+              "name": "**Powód Odblokowania:**",
+              "value": "```${slashParams(\"Powód\") || \"Nie podano powodu odblokowania.\" }```",
+              "inline": "false"
+            }
+          ],
           "author": "",
           "authorUrl": "",
           "authorIcon": "",
-          "footerText": "",
-          "footerIconUrl": ""
+          "footerText": "~ System Slotów (logs): ${tempVars(\"ServerNAME\")}",
+          "footerIconUrl": "${tempVars(\"ServerIconURL\")}"
         }
       ],
       "reply": false,
@@ -179,19 +206,30 @@
       "attachments": [],
       "embeds": [
         {
-          "title": "${tempVars(\"yes\")} **Odblokowano kanał**",
+          "title": "${tempVars(\"yes\")} **Odblokowano kanał slotu!**",
           "url": "",
           "color": "GREEN",
-          "timestamp": "false",
+          "timestamp": "true",
           "imageUrl": "",
           "thumbUrl": "",
-          "description": "*Administrator ${member}, przyznał tobie dostęp do kanału slotu.*",
-          "fields": [],
+          "description": "${slashParams(\"Slot_Owner\")} *Twój kanał slot został odblokowany.*",
+          "fields": [
+            {
+              "name": "**Administrator:**",
+              "value": "${member}",
+              "inline": "false"
+            },
+            {
+              "name": "**Powód Odblokowania:**",
+              "value": "```${slashParams(\"Powód\") || \"Nie podano powodu odblokowania.\" }```",
+              "inline": "false"
+            }
+          ],
           "author": "",
           "authorUrl": "",
           "authorIcon": "",
-          "footerText": "",
-          "footerIconUrl": ""
+          "footerText": "~ System Slotów: ${tempVars(\"ServerNAME\")}",
+          "footerIconUrl": "${tempVars(\"ServerIconURL\")}"
         }
       ],
       "reply": false,
@@ -297,6 +335,13 @@
       "description": "Użytkownik slotu.",
       "type": "USER",
       "required": true,
+      "choices": null
+    },
+    {
+      "name": "Powód",
+      "description": "Powód odblokowania widoczności?",
+      "type": "STRING",
+      "required": false,
       "choices": null
     }
   ]
