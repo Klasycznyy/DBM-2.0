@@ -1,0 +1,119 @@
+{
+  "name": "znizka",
+  "permissions": "NONE",
+  "permissions2": "NONE",
+  "restriction": "1",
+  "_id": "VSVdk",
+  "actions": [
+    {
+      "storage": "1",
+      "varName": "unix",
+      "name": "Store Unix Timestamp"
+    },
+    {
+      "member": "1",
+      "varName": "unix",
+      "dataName": "timer",
+      "defaultVal": "0",
+      "storage": "1",
+      "varName2": "timer1",
+      "name": "Store Member Data"
+    },
+    {
+      "storage": "1",
+      "varName": "unix",
+      "comparison": "4",
+      "value": "tempVars(\"timer1\")",
+      "branch": {
+        "iftrue": "2",
+        "iffalse": "0",
+        "iftrueVal": "7"
+      },
+      "name": "Check Variable"
+    },
+    {
+      "member": "1",
+      "varName": "",
+      "dataName": "znizka",
+      "defaultVal": "0",
+      "storage": "1",
+      "varName2": "drop",
+      "name": "Store Member Data"
+    },
+    {
+      "channel": "0",
+      "varName": "",
+      "message": "",
+      "buttons": [],
+      "selectMenus": [],
+      "attachments": [],
+      "embeds": [
+        {
+          "title": "",
+          "url": "",
+          "color": "#0f0f0f",
+          "timestamp": "false",
+          "imageUrl": "",
+          "thumbUrl": "",
+          "description": "### 🎫 **Twoje zniżki:**\n\n${tempVars(\"drop\") || \"Nie posiadasz aktualnie żadnej zniżki.\" }",
+          "fields": [],
+          "author": "",
+          "authorUrl": "",
+          "authorIcon": "",
+          "footerText": "",
+          "footerIconUrl": ""
+        }
+      ],
+      "reply": true,
+      "ephemeral": true,
+      "tts": false,
+      "overwrite": false,
+      "dontSend": false,
+      "editMessage": "0",
+      "editMessageVarName": "123",
+      "storage": "0",
+      "varName2": "",
+      "name": "Send Message"
+    },
+    {
+      "name": "End Action Sequence"
+    },
+    {
+      "channel": "0",
+      "varName": "",
+      "message": "",
+      "buttons": [],
+      "selectMenus": [],
+      "attachments": [],
+      "embeds": [
+        {
+          "title": "",
+          "url": "",
+          "color": "#0f0f0f",
+          "timestamp": "false",
+          "imageUrl": "",
+          "thumbUrl": "",
+          "description": "### 🎫 **Twoje zniżki:**\n\n*Nie posiadasz aktualnie żadnej zniżki.*",
+          "fields": [],
+          "author": "",
+          "authorUrl": "",
+          "authorIcon": "",
+          "footerText": "",
+          "footerIconUrl": ""
+        }
+      ],
+      "reply": true,
+      "ephemeral": true,
+      "tts": false,
+      "overwrite": false,
+      "dontSend": false,
+      "editMessage": "0",
+      "editMessageVarName": "123",
+      "storage": "0",
+      "varName2": "",
+      "name": "Send Message"
+    }
+  ],
+  "comType": "4",
+  "description": "⏱・Twoje aktualne zniżki z dropu klienta/boostera."
+}
