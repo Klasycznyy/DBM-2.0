@@ -3,7 +3,7 @@
 ## ⚠️ Ważne Informację ⚠️
 Polecenia od dropu są bazowane na prywatnych modach, użycia rawdaty bez pobierania potrzebnych modów wnioskuje się z tym ze rawdata nie będzie działała.
 
-Aby pobrać mody dla jednej z tych komend, które są w innej części folderu, należy przejść do działu z [modami...](https://github.com/Klasycznyy/DBM-2.0/tree/Discord-Bot-Maker-/-Raw/Mods/Command%20Restriction%20Mods)
+Aby pobrać mody dla jednej z tych komend, które są w innej części folderu, należy przejść do działu z [modami...](https://github.com/Klasycznyy/DBM-2.0/tree/Discord-Bot-Maker-/-Raw/Mods/Command%20Restriction%20Mods) oraz ten [mod.](https://github.com/Klasycznyy/DBM-2.0/tree/Discord-Bot-Maker-/-Raw/Mods/Convert%20Secounds%20To%20Timestamp%20Mods)
 
 [![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/aqua.png)](#Important)
 ## 📝 Informację 📝  
