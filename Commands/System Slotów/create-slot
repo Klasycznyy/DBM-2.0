@@ -1,5 +1,5 @@
 {
-  "name": "stwórz-slot",
+  "name": "create-slot",
   "permissions": "NONE",
   "permissions2": "NONE",
   "restriction": "1",
@@ -15,6 +15,67 @@
         "iffalseVal": "uprawnienia"
       },
       "name": "Check Member Permissions"
+    },
+    {
+      "member": "5",
+      "varName": "Slot_Owner",
+      "role": "101",
+      "varName2": "1252361964001300665",
+      "branch": {
+        "iftrue": "0",
+        "iffalse": "4",
+        "iffalseVal": "slot"
+      },
+      "name": "Check If Member has Role"
+    },
+    {
+      "info": "0",
+      "find": "1287848995246444730",
+      "storage": "1",
+      "varName": "NIE",
+      "name": "Find Custom Emoji"
+    },
+    {
+      "channel": "0",
+      "varName": "",
+      "message": "",
+      "buttons": [],
+      "selectMenus": [],
+      "attachments": [],
+      "embeds": [
+        {
+          "title": "",
+          "url": "",
+          "color": "RED",
+          "timestamp": "false",
+          "imageUrl": "",
+          "thumbUrl": "",
+          "description": "${tempVars(\"NIE\")} **Ten użytkownik już posiada aktualnie slot.**",
+          "fields": [],
+          "author": "",
+          "authorUrl": "",
+          "authorIcon": "",
+          "footerText": "",
+          "footerIconUrl": ""
+        }
+      ],
+      "reply": true,
+      "ephemeral": true,
+      "tts": false,
+      "overwrite": false,
+      "dontSend": false,
+      "editMessage": "0",
+      "editMessageVarName": "",
+      "storage": "0",
+      "varName2": "",
+      "name": "Send Message"
+    },
+    {
+      "name": "End Action Sequence"
+    },
+    {
+      "anchorName": "slot",
+      "name": "Action Anchor"
     },
     {
       "storage": "4",
@@ -313,7 +374,7 @@
     {
       "member": "5",
       "varName": "Slot_Owner",
-      "info": "3",
+      "info": "2",
       "storage": "1",
       "varName2": "MemberDisplayName",
       "name": "Store Member Info"
@@ -470,6 +531,12 @@
       "name": "Get Current Timestamp"
     },
     {
+      "resultType": "5",
+      "storage": "1",
+      "varName": "time12",
+      "name": "Get Current Timestamp"
+    },
+    {
       "info": "0",
       "find": "${tempVars(\"member_id123\")}",
       "storage": "1",
@@ -496,6 +563,30 @@
       "member": "5",
       "varName": "Slot_Owner",
       "dataName": "timer3",
+      "changeType": "0",
+      "value": "tempVars(\"timer\")",
+      "name": "Control Member Data"
+    },
+    {
+      "member": "5",
+      "varName": "Slot_Owner",
+      "dataName": "slotowner321",
+      "changeType": "0",
+      "value": "slashParams(\"Slot_Owner\")",
+      "name": "Control Member Data"
+    },
+    {
+      "member": "5",
+      "varName": "Slot_Owner",
+      "dataName": "trwal_od",
+      "changeType": "0",
+      "value": "tempVars(\"time12\")",
+      "name": "Control Member Data"
+    },
+    {
+      "member": "5",
+      "varName": "Slot_Owner",
+      "dataName": "trwal_do",
       "changeType": "0",
       "value": "tempVars(\"timer\")",
       "name": "Control Member Data"
@@ -595,10 +686,10 @@
       "tts": false,
       "overwrite": false,
       "dontSend": false,
-      "editMessage": "1",
-      "editMessageVarName": "smsg1",
+      "editMessage": "0",
+      "editMessageVarName": "id",
       "storage": "0",
-      "varName2": "channel",
+      "varName2": "msg",
       "name": "Send Message"
     },
     {
@@ -610,14 +701,40 @@
       "attachments": [],
       "embeds": [
         {
-          "title": "${tempVars(\"EmojiYes\")} **Pomyślnie przyznano tobie slot!**",
+          "title": "${tempVars(\"EmojiYes\")} **Szczegóły zakupu slotu!**",
           "url": "",
           "color": "GREEN",
           "timestamp": "true",
           "imageUrl": "",
           "thumbUrl": "",
-          "description": "${slashParams(\"Slot_Owner\")} *Przyznano tobie slot przez administratora <@531488957452648458>, od teraz możesz sprzedawać swoje rzeczy tam.*",
-          "fields": [],
+          "description": "",
+          "fields": [
+            {
+              "name": "**Użytkownik Slotu:**",
+              "value": "${slashParams(\"Slot_Owner\")}",
+              "inline": "false"
+            },
+            {
+              "name": "**Wygaśnie w Dniu:**",
+              "value": "<t:${tempVars(\"timer\")}:f>",
+              "inline": "false"
+            },
+            {
+              "name": "**Czas Trwania:**",
+              "value": "${slashParams(\"Czas2\")}",
+              "inline": "true"
+            },
+            {
+              "name": "**Ping Slotu:**",
+              "value": "`💰・Ping: Sklep`: **( ${slashParams(\"Ping\")} )**\n`Ping @here`: **( 0 )**",
+              "inline": "true"
+            },
+            {
+              "name": "**Data Zakupu:**",
+              "value": "${tempVars(\"time12\")}",
+              "inline": "false"
+            }
+          ],
           "author": "",
           "authorUrl": "",
           "authorIcon": "",
@@ -639,24 +756,45 @@
     {
       "channel": "103",
       "varName": "1323674792217284638",
-      "message": "<@&1324367889456824435>",
+      "message": "",
       "buttons": [],
       "selectMenus": [],
       "attachments": [],
       "embeds": [
         {
-          "title": "${tempVars(\"EmojiYes\")} **Nadanie slotu dla użytkownika!**",
+          "title": "${tempVars(\"EmojiYes\")} **Utworzono slot Dla użytkownika!**",
           "url": "",
           "color": "GREEN",
           "timestamp": "true",
           "imageUrl": "",
           "thumbUrl": "",
-          "description": "*Slot użytkownika ${slashParams(\"Slot_Owner\")} się rozpoczął.*\n\n- **Administrator tworzący slot:** ${member}",
-          "fields": [],
+          "description": "",
+          "fields": [
+            {
+              "name": "**Właściciel Slotu:**",
+              "value": "${slashParams(\"Slot_Owner\")}",
+              "inline": "true"
+            },
+            {
+              "name": "**Czas Trwania:**",
+              "value": "${slashParams(\"Czas2\")}",
+              "inline": "true"
+            },
+            {
+              "name": "**Koniec Slotu:**",
+              "value": "<t:${tempVars(\"timer\")}:R>",
+              "inline": "false"
+            },
+            {
+              "name": "**Kanał Slotu:**",
+              "value": "${tempVars(\"Channel\")}",
+              "inline": "false"
+            }
+          ],
           "author": "",
           "authorUrl": "",
           "authorIcon": "",
-          "footerText": "~ System Slotów: ${tempVars(\"ServerNAME\")}",
+          "footerText": "~ System Slotów (logs): ${tempVars(\"ServerNAME\")}",
           "footerIconUrl": "${tempVars(\"ServerIconURL\")}"
         }
       ],
@@ -677,6 +815,20 @@
       "name": "Wait"
     },
     {
+      "channel": "3",
+      "channelVarName": "Channel",
+      "channelName": "🛒・Endingˑ${tempVars(\"MemberDisplayName\")}",
+      "reason": "",
+      "channelEdits": {
+        "_index": 0,
+        "topic": "",
+        "categoryID": "1281290711051800617",
+        "slowmode": "",
+        "position": ""
+      },
+      "name": "Edit Any Channel"
+    },
+    {
       "member": "5",
       "varName": "Slot_Owner",
       "info": "1",
@@ -693,13 +845,13 @@
       "attachments": [],
       "embeds": [
         {
-          "title": "${tempVars(\"EmojiNIE\")}  **Twój czas slotu się zakończył!**",
+          "title": "${tempVars(\"EmojiNIE\")}  **Twój czas slotu Się zakończył!**",
           "url": "",
           "color": "RED",
           "timestamp": "true",
           "imageUrl": "",
           "thumbUrl": "",
-          "description": "${slashParams(\"Slot_Owner\")} *Twój czas slotu wygasł..*\n*Aby zakupić następny slot napisz do <@531488957452648458>*",
+          "description": "${slashParams(\"Slot_Owner\")} *Twój czas slotu wygasł, który trwał od* ${tempVars(\"time12\")}. *Aby zakupić następny slot napisz do <@531488957452648458>*",
           "fields": [],
           "author": "",
           "authorUrl": "",
@@ -722,24 +874,35 @@
     {
       "channel": "103",
       "varName": "1323674792217284638",
-      "message": "<@&1324367889456824435>",
+      "message": "",
       "buttons": [],
       "selectMenus": [],
       "attachments": [],
       "embeds": [
         {
-          "title": "${tempVars(\"EmojiNIE\")}  **Zakończenie slotu użytkownika!**",
+          "title": "${tempVars(\"EmojiNIE\")}  **Zakończenie slotu Użytkownika!**",
           "url": "",
           "color": "RED",
           "timestamp": "true",
           "imageUrl": "",
           "thumbUrl": "",
-          "description": "*Slot użytkownika ${slashParams(\"Slot_Owner\")} się zakończył.*",
-          "fields": [],
+          "description": "",
+          "fields": [
+            {
+              "name": "**Użytkownik Slotu:**",
+              "value": "${slashParams(\"Slot_Owner\")}",
+              "inline": "false"
+            },
+            {
+              "name": "**Czas Trwania:**",
+              "value": "**Od:** ${tempVars(\"time12\")}\n**Do:** <t:${tempVars(\"timer\")}:f>",
+              "inline": "false"
+            }
+          ],
           "author": "",
           "authorUrl": "",
           "authorIcon": "",
-          "footerText": "~ System Slotów: ${tempVars(\"ServerNAME\")}",
+          "footerText": "~ System Slotów (logs): ${tempVars(\"ServerNAME\")}",
           "footerIconUrl": "${tempVars(\"ServerIconURL\")}"
         }
       ],
