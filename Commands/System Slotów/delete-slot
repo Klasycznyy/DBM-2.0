@@ -94,27 +94,77 @@
       "name": "Find Custom Emoji"
     },
     {
+      "server": "0",
+      "varName": "",
+      "info": "2",
+      "storage": "1",
+      "varName2": "ServerNAME",
+      "name": "Store Server Info"
+    },
+    {
+      "server": "0",
+      "varName": "",
+      "info": "5",
+      "storage": "1",
+      "varName2": "ServerIconURL",
+      "name": "Store Server Info"
+    },
+    {
+      "member": "5",
+      "varName": "Slot_Owner",
+      "dataName": "trwal_od",
+      "defaultVal": "0",
+      "storage": "1",
+      "varName2": "data_od",
+      "name": "Store Member Data"
+    },
+    {
+      "member": "5",
+      "varName": "Slot_Owner",
+      "dataName": "trwal_do",
+      "defaultVal": "0",
+      "storage": "1",
+      "varName2": "data_do",
+      "name": "Store Member Data"
+    },
+    {
       "channel": "103",
       "varName": "1323674792217284638",
-      "message": "<@&1324367889456824435>",
+      "message": "",
       "buttons": [],
       "selectMenus": [],
       "attachments": [],
       "embeds": [
         {
-          "title": "${tempVars(\"EmojiNIE1\")} **Usunięto slot użytkownika!**",
+          "title": "${tempVars(\"EmojiNIE1\")} **Usunięto slot Użytkownika!**",
           "url": "",
           "color": "RED",
-          "timestamp": "false",
+          "timestamp": "true",
           "imageUrl": "",
           "thumbUrl": "",
-          "description": "*Slot użytkownika ${slashParams(\"Slot_Owner\")} został usunięty.*\n\n- **Administrator usuwający slot:** ${member}",
-          "fields": [],
+          "description": "*Slot użytkownika ${slashParams(\"Slot_Owner\")} został usunięty.*",
+          "fields": [
+            {
+              "name": "**Administrator:**",
+              "value": "${member}",
+              "inline": "false"
+            },
+            {
+              "name": "**Data Usunięcia/Trwania:**",
+              "value": "**Trwał Od:** ${tempVars(\"data_od\")}\n**Trwał Do:** <t:${tempVars(\"data_do\")}:f>",
+              "inline": "false"
+            },
+            {
+              "name": "**Powód Usunięcia:**",
+              "value": "```${slashParams(\"Powód\") || \"Nie podano powodu usunięcia.\" }```",
+              "inline": "false"
+            }
+          ],
           "author": "",
           "authorUrl": "",
           "authorIcon": "",
-          "footerText": "",
-          "footerIconUrl": ""
+          "footerText": "~ System Slotów (logs): ${tempVars(\"ServerNAME\")}",
+          "footerIconUrl": "${tempVars(\"ServerIconURL\")}"
         }
       ],
       "reply": false,
@@ -173,6 +223,57 @@
       "varName": "${tempVars(\"delet\")}",
       "reason": "",
       "name": "Delete Channel"
+    },
+    {
+      "channel": "8",
+      "varName": "Slot_Owner",
+      "message": "",
+      "buttons": [],
+      "selectMenus": [],
+      "attachments": [],
+      "embeds": [
+        {
+          "title": "${tempVars(\"EmojiNIE1\")} **Usunięto twój slot!**",
+          "url": "",
+          "color": "RED",
+          "timestamp": "true",
+          "imageUrl": "",
+          "thumbUrl": "",
+          "description": "${slashParams(\"Slot_Owner\")} *Twój slot został usunięty.*",
+          "fields": [
+            {
+              "name": "**Administrator:**",
+              "value": "${member}",
+              "inline": "false"
+            },
+            {
+              "name": "**Data Usunięcia/Trwania:**",
+              "value": "**Trwał Od:** ${tempVars(\"data_od\")}\n**Trwał Do:** <t:${tempVars(\"data_do\")}:f>",
+              "inline": "false"
+            },
+            {
+              "name": "**Powód Usunięcia:**",
+              "value": "```${slashParams(\"Powód\") || \"Nie podano powodu usunięcia.\" }```",
+              "inline": "false"
+            }
+          ],
+          "author": "",
+          "authorUrl": "",
+          "authorIcon": "",
+          "footerText": "~ System Slotów: ${tempVars(\"ServerNAME\")}",
+          "footerIconUrl": "${tempVars(\"ServerIconURL\")}"
+        }
+      ],
+      "reply": false,
+      "ephemeral": false,
+      "tts": false,
+      "overwrite": false,
+      "dontSend": false,
+      "editMessage": "0",
+      "editMessageVarName": "",
+      "storage": "0",
+      "varName2": "",
+      "name": "Send Message"
     },
     {
       "member": "5",
@@ -240,6 +341,13 @@
       "description": "Użytkownik slotu.",
       "type": "USER",
       "required": true,
+      "choices": null
+    },
+    {
+      "name": "Powód",
+      "description": "Powód usunięcia slotu.",
+      "type": "STRING",
+      "required": false,
       "choices": null
     }
   ]
